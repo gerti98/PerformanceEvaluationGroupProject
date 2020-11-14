@@ -24,7 +24,7 @@ network TwoTxRx
 {
     @display("bgb=520,352");
     submodules:
-        channel: Channel {
+        channel1: Channel {
             @display("p=263,163");
         }
         transmitter: Transmitter {
@@ -40,10 +40,10 @@ network TwoTxRx
             @display("p=384,218");
         }
     connections:
-        transmitter.out --> channel.in_tx++;
-        channel.out_tx++ --> transmitter.in;
-        transmitter1.out --> channel.in_tx++;
-        channel.out_tx++ --> transmitter1.in;
-        channel.out_rx++ --> receiver.in;
-        channel.out_rx++ --> receiver1.in;
+        transmitter.out --> channel1.in_tx++;
+        channel1.out_tx++ --> transmitter.in;
+        transmitter1.out --> channel1.in_tx++;
+        channel1.out_tx++ --> transmitter1.in;
+        channel1.out_rx++ --> receiver.in;
+        channel1.out_rx++ --> receiver1.in;
 }
