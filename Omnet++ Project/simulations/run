@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/slotted_random_access_wireless_network -n .:../src $*
+# for shared lib, use: opp_run -l ../src/slotted_random_access_wireless_network -n .:../src $*
