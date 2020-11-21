@@ -17,7 +17,7 @@
 #define __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_RECEIVER_H_
 
 #include <omnetpp.h>
-
+#include "PacketMsg_m.h"
 
 using namespace omnetpp;
 
@@ -32,6 +32,8 @@ private:
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void handleResponseTime(PacketMsg* pkt);
+    virtual void handleThreshold(PacketMsg* pkt);
 };
 
 #endif

@@ -29,7 +29,7 @@ simple Receiver
         
         //Maintains info of the percentage of the respected time threshold
         @signal[thresholdSignal](type"long");
-        @statistic[threshold](source="thresholdSignal"; record=vector);
+        @statistic[threshold](source="thresholdSignal"; record=vector,stats);
         
     gates:
         input in;

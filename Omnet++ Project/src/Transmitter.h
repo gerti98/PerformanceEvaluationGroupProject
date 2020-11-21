@@ -30,6 +30,7 @@ private:
     simsignal_t overflowPercentageSignal_;
     std::vector<PacketMsg*> buffer;
     int bufferSize;
+
 protected:
     virtual void initialize();
     virtual void scheduleNextPacket();
