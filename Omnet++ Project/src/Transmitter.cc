@@ -19,10 +19,61 @@ Define_Module(Transmitter);
 
 void Transmitter::initialize()
 {
+    bufferSize = par("bufferSize");
+    overflowPercentageSignal_ = registerSignal("overflowPercentageSignal");
+    scheduleNextPacket();
+}
+
+void Transmitter::scheduleNextPacket(){
+    double mean = par("meanInterarrivalTime");
+    simtime_t arrivalTime = exponential(mean) + simTime();
+    PacketMsg* pkt = new PacketMsg("Packet");
+    pkt->setArrivalTime(arrivalTime);
+
+    //TODO handle channel choice
+    //pkt->setIdChannel(var);
+    scheduleAt(arrivalTime, pkt);
+}
+
+
+void Transmitter::scheduleNextTimeSlot(){
+    //Obtain clock parameter
+
+    //scheduleAt()
+
     // TODO - Generated method body
 }
 
 void Transmitter::handleMessage(cMessage *msg)
 {
+
+    // TODO - Generated method body
+    if(msg->isSelfMessage()){
+        //handleArrivedPacket(msg);
+
+    } else {
+        //handleChannelMsg(msg);
+    }
+}
+
+/*
+ * Handle the arrival of a new packet by trying to store it into
+ * the buffer. If not possible, the packet is discarded;
+ */
+void Transmitter::handleArrivedPacket(cMessage* msg){
+    PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
+
+    // TODO - body
+}
+
+/**
+ * Handle the eventual acknowledgement from the Channel. In case of collision
+ * starts the backoff period
+ */
+void Transmitter::handleChannelMsg(cMessage* msg){
+    // TODO - Generated method body
+}
+
+void Transmitter::handleTimeSlotMsg(cMessage* msg){
     // TODO - Generated method body
 }

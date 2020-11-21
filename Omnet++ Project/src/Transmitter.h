@@ -17,7 +17,8 @@
 #define __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_TRANSMITTER_H_
 
 #include <omnetpp.h>
-
+#include <vector>
+#include "PacketMsg_m.h"
 using namespace omnetpp;
 
 /**
@@ -25,9 +26,18 @@ using namespace omnetpp;
  */
 class Transmitter : public cSimpleModule
 {
-  protected:
+private:
+    simsignal_t overflowPercentageSignal_;
+    std::vector<PacketMsg*> buffer;
+    int bufferSize;
+protected:
     virtual void initialize();
+    virtual void scheduleNextPacket();
+    virtual void scheduleNextTimeSlot();
     virtual void handleMessage(cMessage *msg);
+    virtual void handleArrivedPacket(cMessage *msg);
+    virtual void handleChannelMsg(cMessage* msg);
+    virtual void handleTimeSlotMsg(cMessage* msg);
 };
 
 #endif

@@ -20,6 +20,15 @@ package slotted_random_access_wireless_network;
 //
 simple Transmitter
 {
+    parameters:
+        double meanInterarrivalTime @unit(s) = default(1s);
+        int bufferSize = default(10);
+        
+        //Probability of sending a packet in the current timeslot
+        double sendProbability = default(0.5);
+        
+        @signal[overflowPercentageSignal](type="long");
+        @statistic[overflowPercentage](source="overflowPercentageSignal"; record=vector);
 	gates:
 	    output out;
 	    input in;

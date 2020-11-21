@@ -19,8 +19,10 @@ Define_Module(Receiver);
 
 void Receiver::initialize()
 {
-    // TODO - Generated method body
+    responseTimeSignal_ = registerSignal("responseTimeSignal");
+    thresholdSignal_ = registerSignal("thresholdSignal");
 }
+
 
 void Receiver::handleMessage(cMessage *msg)
 {

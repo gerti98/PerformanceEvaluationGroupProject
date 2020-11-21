@@ -13,23 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_CHANNEL_H_
-#define __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_CHANNEL_H_
-
-#include <omnetpp.h>
-
-using namespace omnetpp;
-
-/**
- * TODO - Generated class
- */
-class Channel : public cSimpleModule
-{
-private:
-    simsignal_t throughputSignal_;
-  protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-};
-
-#endif
+//
+// TODO generated message class
+//
+packet PacketMsg {
+    //Channel choosed for the current transmission, may change in case of collision
+    int idChannel;
+    
+    int idTransmitter;
+    //Time in which the packet arrives for the first time at the Transmitter
+    simtime_t creationTime;
+    
+}

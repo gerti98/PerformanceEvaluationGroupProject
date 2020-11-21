@@ -19,7 +19,7 @@ Define_Module(Channel);
 
 void Channel::initialize()
 {
-    // TODO - Generated method body
+    throughputSignal_ = registerSignal("throughputSignal");
 }
 
 void Channel::handleMessage(cMessage *msg)

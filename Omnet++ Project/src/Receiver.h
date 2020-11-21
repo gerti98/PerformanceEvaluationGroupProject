@@ -18,6 +18,7 @@
 
 #include <omnetpp.h>
 
+
 using namespace omnetpp;
 
 /**
@@ -25,6 +26,9 @@ using namespace omnetpp;
  */
 class Receiver : public cSimpleModule
 {
+private:
+    simsignal_t responseTimeSignal_;
+    simsignal_t thresholdSignal_;
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

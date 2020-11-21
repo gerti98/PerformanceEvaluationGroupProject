@@ -23,6 +23,7 @@ import slotted_random_access_wireless_network.Transmitter;
 network TwoTxRx
 {
     @display("bgb=520,352");
+        
     submodules:
         channel1: Channel {
             @display("p=263,163");
