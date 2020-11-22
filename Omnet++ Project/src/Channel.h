@@ -17,6 +17,7 @@
 #define __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_CHANNEL_H_
 
 #include <omnetpp.h>
+#include "PacketMsg_m.h"
 
 using namespace omnetpp;
 
@@ -26,10 +27,19 @@ using namespace omnetpp;
 class Channel : public cSimpleModule
 {
 private:
+    // signal to record throughput
     simsignal_t throughputSignal_;
+    // isCollided_[i] is true if there is a collision on channel i, otherwise is false
+    std::vector<bool> isCollided_;
+    // packetsOfslot_ contains all the packet for a specific slot
+    std::vector<PacketMsg*> packetsOfSlot_;
+
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void scheduleTimeSlot();
+    virtual void findCollisions();
+    virtual void transmission();
 };
 
 #endif

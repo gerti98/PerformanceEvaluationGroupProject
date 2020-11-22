@@ -21,6 +21,7 @@ packet PacketMsg {
     int idChannel;
     
     int idTransmitter;
+    int idReceiver;
     //Time in which the packet arrives for the first time at the Transmitter
     simtime_t creationTime;
     

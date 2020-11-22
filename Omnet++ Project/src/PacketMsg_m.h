@@ -30,6 +30,7 @@
  *     int idChannel;
  * 
  *     int idTransmitter;
+ *     int idReceiver;
  *     //Time in which the packet arrives for the first time at the Transmitter
  *     simtime_t creationTime;
  * 
@@ -41,6 +42,7 @@ class PacketMsg : public ::omnetpp::cPacket
   protected:
     int idChannel;
     int idTransmitter;
+    int idReceiver;
     ::omnetpp::simtime_t creationTime;
 
   private:
@@ -64,6 +66,8 @@ class PacketMsg : public ::omnetpp::cPacket
     virtual void setIdChannel(int idChannel);
     virtual int getIdTransmitter() const;
     virtual void setIdTransmitter(int idTransmitter);
+    virtual int getIdReceiver() const;
+    virtual void setIdReceiver(int idReceiver);
     virtual ::omnetpp::simtime_t getCreationTime() const;
     virtual void setCreationTime(::omnetpp::simtime_t creationTime);
 };
