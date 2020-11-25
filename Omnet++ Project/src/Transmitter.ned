@@ -24,6 +24,7 @@ simple Transmitter
         double meanInterarrivalTime @unit(s) = default(1s);
         int bufferSize = default(10);
         
+        int numChannels = default(1);
         //Probability of sending a packet in the current timeslot
         double sendProbability = default(0.5);
         
