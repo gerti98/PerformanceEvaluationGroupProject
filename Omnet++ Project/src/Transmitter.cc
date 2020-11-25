@@ -145,7 +145,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              */
             if(start_idx != end_idx && uniform(0.0, 1.0) < sendProbability)
             {
-                buffer[start_idx]->setIdChannel(intuniform(0, numChannels));
+                buffer[start_idx]->setIdChannel(intuniform(0, numChannels - 1));
                 send(buffer[start_idx]->dup(), "out");
                 EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
             }
