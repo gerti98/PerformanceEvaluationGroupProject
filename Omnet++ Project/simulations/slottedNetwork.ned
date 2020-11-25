@@ -48,7 +48,6 @@ network slottedNetwork{
         }
         ch: Channel {
             parameters:
-                numChannels = numChannels;
                 timeSlotSize = timeSlotSize;
             gates:
                 in_tx[numTransmitters];
