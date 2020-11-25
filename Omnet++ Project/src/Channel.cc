@@ -22,13 +22,15 @@ void Channel::initialize()
 {
     throughputSignal_ = registerSignal("throughputSignal");
 
+
     // Array Initialization
-    int numOfChannels = par("numChannels");
+    int numOfChannels = getAncestorPar("numChannels");
 
     for(int i=0; i<numOfChannels; i++)
         isCollided_.push_back(false);
 
     scheduleTimeSlot();
+
 }
 
 void Channel::handleMessage(cMessage *msg)
@@ -90,10 +92,15 @@ void Channel::findCollisions()
  * and non-collided packets to the receivers*/
 void Channel::transmission()
 {
+    std::vector<int> triggeredChannels;
+
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
+        // Store the id of the triggered tx
+        triggeredChannels.push_back(idTx);
+
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
             // A collision occur for this packet
@@ -120,6 +127,10 @@ void Channel::transmission()
         }
     }
 
+    /* Trigger the tx which don't transmit a packet in the previous timeslot.
+     * So the ones that are not been triggered yet*/
+    triggerOthers(triggeredChannels);
+
     // Reset vectors
     /* The following instruction it's equivalent
      * to packetsOfSlot_.clear() but force the
@@ -130,6 +141,31 @@ void Channel::transmission()
     for(int i = 0; i<(int)isCollided_.size(); i++)
         isCollided_[i] = false;
 }
+
+/* It triggers the channel that have not been triggered yet */
+void Channel::triggerOthers(std::vector<int> triggeredChannels)
+{
+    int numTx = getAncestorPar("numTransmitters");
+    int cnt = 0;
+    for(int i = 0; i<numTx; i++)
+    {
+        for(int j = 0; j<(int)triggeredChannels.size(); j++)
+        {
+            if(i!=triggeredChannels[j])
+                cnt++;
+        }
+
+        /* If the number of triggered channel is equal to cnt, it
+         * means that the i channel has not been triggered*/
+        if(cnt==(int)triggeredChannels.size())
+        {
+            cMessage* trigger = new cMessage("TRIGGER");
+            send(trigger,"out_tx",i);
+        }
+        cnt = 0;
+    }
+}
+
 
 /* Send a self message in order to trigger the start
  * of the time slot */
@@ -145,7 +181,7 @@ void Channel::scheduleTimeSlot()
     //timeSlotTrigger->setSchedulingPriority(1);
     /* Not needed because the channel trigger txs
      * and control their packet in the at the end of this timeSlot
-     * (so the beginning of the next)/
+     * (so the beginning of the next)*/
 
 
     /*Schedule the sending*/
