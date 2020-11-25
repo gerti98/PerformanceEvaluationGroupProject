@@ -42,10 +42,10 @@ void Channel::handleMessage(cMessage *msg)
          * are collisions*/
         findCollisions();
 
-        /* Now the channel transmit to the receivers the
-         * packets that don't experiment a collision and
-         * retransmit to the transmitters the packets that
-         * experiment a collision*/
+        /* Now the channel transmit to the receivers the ACK for the
+         * packets that don't collide and send a NACK
+         * for the packets that collide.
+         * It transmits to the receiver the non-collided packets */
         transmission();
 
         // Delete the trigger message
@@ -76,7 +76,11 @@ void Channel::scheduleTimeSlot()
      * handle this message when the channel has received
      * all the packets of the transmitters. So I put
      * priority 1 (0 is the highest priority)*/
-    timeSlotTrigger->setSchedulingPriority(1);
+    //timeSlotTrigger->setSchedulingPriority(1);
+    /* Not needed because the channel trigger txs
+     * and control their packet in the at the end of this timeSlot
+     * (so the beginning of the next)/
+
 
     /*Schedule the sending*/
     scheduleAt(simTime()+timeSlot,timeSlotTrigger);
@@ -97,8 +101,8 @@ void Channel::findCollisions()
     }
 }
 
-/* Transmit packets collided to their transmitters
- * and other ones to the receivers*/
+/* Transmit ACK or NACK to the transmitters
+ * and non-collided packets to the receivers*/
 void Channel::transmission()
 {
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
@@ -106,12 +110,19 @@ void Channel::transmission()
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
             // A collision occur for this packet
+            // send a NACK to the transmitter
             int idTx = packetsOfSlot_[i]->getIdTransmitter();
-            send(packetsOfSlot_[i],"out_tx",idTx);
+            cMessage* nack = new cMessage("NACK");
+            send(nack,"out_tx",idTx);
         }
         else
         {
             // No collision
+            // Send a ACK to the transmitter
+            cMessage* ack = new cMessage("ACK");
+            send(ack,"out_tx",idTx);
+
+            // Send the pkt to the receiver
             int idRx = packetsOfSlot_[i]->getIdReceiver();
             send(packetsOfSlot_[i],"out_rx",idRx);
 
