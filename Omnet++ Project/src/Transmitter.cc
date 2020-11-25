@@ -24,7 +24,10 @@ void Transmitter::initialize()
     /*
      * buffer related variable initialization
      */
-    bufferSize = (int)par("bufferSize") + 1;
+
+    bufferSize = par("bufferSize");
+    bufferSize++;
+
     buffer = std::vector<PacketMsg*>(bufferSize);
     start_idx = 0;
     end_idx = 0;
