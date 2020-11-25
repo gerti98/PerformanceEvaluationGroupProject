@@ -36,7 +36,7 @@ void Receiver::handleMessage(cMessage *msg)
 void Receiver::handleResponseTime(PacketMsg* pkt){
     simtime_t respTime = simTime() - pkt->getCreationTime();
     EV << "Response Time: " << respTime << endl;
-    emit(responseTimeSignal_, respTime);
+    emit(responseTimeSignal_, respTime.dbl());
 }
 
 

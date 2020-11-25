@@ -131,6 +131,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              */
             if(strcmp(msg->getName(), "ACK") == 0)
             {
+                delete(buffer[start_idx]);
                 start_idx = (start_idx + 1) % bufferSize;
                 maxBackoffTime = 2;
                 EV << "transmitter " << id << ": ACK received " << endl;
@@ -143,7 +144,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
             if(start_idx != end_idx && uniform(0.0, 1.0) < sendProbability)
             {
                 buffer[start_idx]->setIdChannel(intuniform(0, numChannels));
-                send(buffer[start_idx], "out");
+                send(buffer[start_idx]->dup(), "out");
                 EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
             }
         }
