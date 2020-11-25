@@ -1,15 +1,73 @@
 \documentclass[]{report}
 
 
-% Title Page
-\title{}
-\author{}
+\usepackage{mathtools}
 
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[english]{babel}
+\usepackage[labelfont=bf]{caption}
+\captionsetup{labelfont=bf}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{orange},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\includeonly{
+	chapters/introduction,
+}
 
 \begin{document}
-\maketitle
 
-\begin{abstract}
-\end{abstract}
 
+\begin{titlepage}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{img/marchio_unipi_pant541-eps-converted-to.pdf}         
+		\end{figure}
+		{\Large
+			Computer Engineering\\
+			\vspace{5mm} %5mm vertical space
+			Performance Evaluation of Computer Systems and Networks}\\
+		\vspace{30mm} %5mm vertical space
+		{\Huge\textbf{\textit{Slotted random-access wireless network}}}\\
+		\vspace{10mm} %5mm vertical space
+		{\Large Group Project Report}\\
+		\par\noindent\rule{\textwidth}{0.4pt}
+		\begin{flushright}
+			\textit{TEAM MEMBERS}:\\
+			Tommaso Burlon\\ 
+			Francesco Iemma\\ 
+			Olgerti Xhanej\\
+			
+		\end{flushright}
+		\vfill
+		Academic Year: 2020/2021\\        
+	\end{center}
+\end{titlepage} 
+\tableofcontents
+
+\include{chapters/introduction}
 \end{document}          

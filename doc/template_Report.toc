@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{2}%
+\contentsline {section}{\numberline {1.1}Description}{2}%
+\contentsline {section}{\numberline {1.2}Code Snippets}{3}%
