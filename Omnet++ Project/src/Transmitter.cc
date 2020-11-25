@@ -19,40 +19,53 @@ Define_Module(Transmitter);
 
 void Transmitter::initialize()
 {
-    bufferSize = par("bufferSize");
     overflowPercentageSignal_ = registerSignal("overflowPercentageSignal");
+
+    /*
+     * buffer related variable initialization
+     */
+    bufferSize = par("bufferSize") + 1;
+    buffer = std::vector<PacketMsg*>(bufferSize);
+    start_idx = 0;
+    end_idx = 0;
+
+    /*
+     * back-off related variable initialization
+     */
+    maxBackoffTime = 2;
+    backoffTime = 0;
+
+    /*
+     * retrieve the parameter from the .ned file
+     */
+    sendProbability = par("sendProbability");
+    meanInterarrivalTime = par("meanInterarrivalTime");
+    numChannels = par("numChannels");
+
     scheduleNextPacket();
 }
 
 void Transmitter::scheduleNextPacket(){
-    double mean = par("meanInterarrivalTime");
-    simtime_t arrivalTime = exponential(mean) + simTime();
+    simtime_t arrivalTime = exponential(meanInterarrivalTime) + simTime();
     PacketMsg* pkt = new PacketMsg("Packet");
     pkt->setArrivalTime(arrivalTime);
 
-    //TODO handle channel choice
-    //pkt->setIdChannel(var);
     scheduleAt(arrivalTime, pkt);
-}
-
-
-void Transmitter::scheduleNextTimeSlot(){
-    //Obtain clock parameter
-
-    //scheduleAt()
-
-    // TODO - Generated method body
 }
 
 void Transmitter::handleMessage(cMessage *msg)
 {
-
-    // TODO - Generated method body
-    if(msg->isSelfMessage()){
-        //handleArrivedPacket(msg);
-
-    } else {
-        //handleChannelMsg(msg);
+    /*
+     * if the message come from self then it's a message that declare the
+     * arrival of a new packet
+     */
+    if(msg->isSelfMessage())
+    {
+        handleArrivedPacket(msg);
+    }
+    else
+    {
+        handleChannelPacket(msg);
     }
 }
 
@@ -62,18 +75,75 @@ void Transmitter::handleMessage(cMessage *msg)
  */
 void Transmitter::handleArrivedPacket(cMessage* msg){
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
+    int id = this->getId();
+    /*
+     * if the buffer is full then the packets is discard
+     */
+    if((end_idx + 1) % bufferSize == start_idx)
+    {
+        EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
+        emit(overflowPercentageSignal_, 1);
+    }
+    else
+    {
+        EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
+        buffer[end_idx] = pkt;
+        end_idx = (end_idx + 1) % bufferSize;
+    }
 
-    // TODO - body
+    scheduleNextPacket();
 }
 
 /**
  * Handle the eventual acknowledgement from the Channel. In case of collision
  * starts the backoff period
  */
-void Transmitter::handleChannelMsg(cMessage* msg){
-    // TODO - Generated method body
+void Transmitter::handleChannelPacket(cMessage* msg){
+    int id = this->getId();
+    /*
+     * if the back off time is greater than 0 then the transmitter must
+     * do nothing and wait
+     */
+    if(backoffTime > 0)
+    {
+        backoffTime--;
+    }
+    else
+    {
+        /*
+         * when a NACK is received a collision occurred, so the transmitter
+         * double his back off time from the previous collision and start counting
+         */
+        if(strcmp(msg->getName(), "NACK") == 0)
+        {
+            maxBackoffTime *= 2;
+            backoffTime = intuniform(1, maxBackoffTime);
+            EV << "transmitter " << id << ": NACK received, back-off time = " << backoffTime << endl;
+        }
+        else
+        {
+            /*
+             * when an ACK is received there was no collision and the previous packet
+             * can be removed from the buffer and the back-off time can be cleared
+             */
+            if(strcmp(msg->getName(), "ACK") == 0)
+            {
+                start_idx = (start_idx + 1) % bufferSize;
+                maxBackoffTime = 2;
+                EV << "transmitter " << id << ": ACK received " << endl;
+            }
+
+            /*
+             * if an ACK or a TRIGGER packet is received the transmitter check if
+             * the buffer is empty and if not it starts with the Bernoullian experiment
+             */
+            if(start_idx != end_idx && uniform(0.0, 1.0) < sendProbability)
+            {
+                buffer[start_idx]->setIdChannel(intuniform(0, numChannels));
+                send(buffer[start_idx], "out");
+                EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
+            }
+        }
+    }
 }
 
-void Transmitter::handleTimeSlotMsg(cMessage* msg){
-    // TODO - Generated method body
-}

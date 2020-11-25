@@ -28,17 +28,24 @@ class Transmitter : public cSimpleModule
 {
 private:
     simsignal_t overflowPercentageSignal_;
+
     std::vector<PacketMsg*> buffer;
     int bufferSize;
+    int start_idx, end_idx;
+
+    int maxBackoffTime, backoffTime;
+
+    int numChannels;
+
+    simtime_t meanInterarrivalTime;
+    double sendProbability;
 
 protected:
     virtual void initialize();
     virtual void scheduleNextPacket();
-    virtual void scheduleNextTimeSlot();
     virtual void handleMessage(cMessage *msg);
     virtual void handleArrivedPacket(cMessage *msg);
-    virtual void handleChannelMsg(cMessage* msg);
-    virtual void handleTimeSlotMsg(cMessage* msg);
+    virtual void handleChannelPacket(cMessage* msg);
 };
 
 #endif
