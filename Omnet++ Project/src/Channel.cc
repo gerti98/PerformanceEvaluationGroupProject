@@ -35,6 +35,8 @@ void Channel::handleMessage(cMessage *msg)
 {
     if(msg->isSelfMessage())
     {
+        EV << "Received self message" << endl;
+
         /* If it's a self message then it means that it is
          * the trigger of the start of the slot.
          * So I have to control all the packet in
@@ -65,6 +67,70 @@ void Channel::handleMessage(cMessage *msg)
     }
 }
 
+
+/* Control every packet and set isCollided[i] to true
+ * if there is a collision in the channel i*/
+void Channel::findCollisions()
+{
+    for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
+    {
+        int ch = packetsOfSlot_[i]->getIdChannel();
+        for(int j = i+1; j<(int)packetsOfSlot_.size(); j++)
+        {
+            if(ch==(packetsOfSlot_[j]->getIdChannel())){
+                isCollided_[ch] = true;
+                EV << "Collision at Channel " << ch << endl;
+            }
+
+        }
+    }
+}
+
+/* Transmit ACK or NACK to the transmitters
+ * and non-collided packets to the receivers*/
+void Channel::transmission()
+{
+    for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
+    {
+
+        int idTx = packetsOfSlot_[i]->getIdTransmitter();
+        if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
+        {
+            // A collision occur for this packet
+            // send a NACK to the transmitter
+            EV << "NACK sended to Transmitter " << idTx<< endl;
+            cMessage* nack = new cMessage("NACK");
+            send(nack,"out_tx",idTx);
+        }
+        else
+        {
+            // No collision
+            // Send a ACK to the transmitter
+            EV << "ACK sended to Transmitter " << idTx<< endl;
+            cMessage* ack = new cMessage("ACK");
+            send(ack,"out_tx",idTx);
+
+            // Send the pkt to the receiver
+            int idRx = packetsOfSlot_[i]->getIdReceiver();
+            EV << "Sended packet to Receiver " << idRx<< endl;
+            send(packetsOfSlot_[i],"out_rx",idRx);
+
+            // Emit throughput
+            emit(throughputSignal_,1);
+        }
+    }
+
+    // Reset vectors
+    /* The following instruction it's equivalent
+     * to packetsOfSlot_.clear() but force the
+     * reallocation of the vector. This ensures that
+     * the vector capacity will change (to 0)*/
+    std::vector<PacketMsg*>().swap(packetsOfSlot_);
+
+    for(int i = 0; i<(int)isCollided_.size(); i++)
+        isCollided_[i] = false;
+}
+
 /* Send a self message in order to trigger the start
  * of the time slot */
 void Channel::scheduleTimeSlot()
@@ -86,59 +152,6 @@ void Channel::scheduleTimeSlot()
     scheduleAt(simTime()+timeSlot,timeSlotTrigger);
 }
 
-/* Control every packet and set isCollided[i] to true
- * if there is a collision in the channel i*/
-void Channel::findCollisions()
-{
-    for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
-    {
-        int ch = packetsOfSlot_[i]->getIdChannel();
-        for(int j = i+1; j<(int)packetsOfSlot_.size(); j++)
-        {
-            if(ch==(packetsOfSlot_[j]->getIdChannel()))
-                isCollided_[ch] = true;
-        }
-    }
-}
 
-/* Transmit ACK or NACK to the transmitters
- * and non-collided packets to the receivers*/
-void Channel::transmission()
-{
-    for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
-    {
-        if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
-        {
-            // A collision occur for this packet
-            // send a NACK to the transmitter
-            int idTx = packetsOfSlot_[i]->getIdTransmitter();
-            cMessage* nack = new cMessage("NACK");
-            send(nack,"out_tx",idTx);
-        }
-        else
-        {
-            // No collision
-            // Send a ACK to the transmitter
-            cMessage* ack = new cMessage("ACK");
-            send(ack,"out_tx",idTx);
 
-            // Send the pkt to the receiver
-            int idRx = packetsOfSlot_[i]->getIdReceiver();
-            send(packetsOfSlot_[i],"out_rx",idRx);
-
-            // Emit throughput
-            emit(throughputSignal_,1);
-        }
-    }
-
-    // Reset vectors
-    /* The following instruction it's equivalent
-     * to packetsOfSlot_.clear() but force the
-     * reallocation of the vector. This ensures that
-     * the vector capacity will change (to 0)*/
-    std::vector<PacketMsg*>().swap(packetsOfSlot_);
-
-    for(int i = 0; i<(int)isCollided_.size(); i++)
-        isCollided_[i] = false;
-}
 
