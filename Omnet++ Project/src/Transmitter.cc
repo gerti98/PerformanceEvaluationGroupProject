@@ -67,7 +67,9 @@ void Transmitter::handleMessage(cMessage *msg)
     else
     {
         handleChannelPacket(msg);
+        delete(msg);
     }
+
 }
 
 /*
