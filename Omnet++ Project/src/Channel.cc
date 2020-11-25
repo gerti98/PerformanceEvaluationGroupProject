@@ -24,7 +24,7 @@ void Channel::initialize()
 
 
     // Array Initialization
-    int numOfChannels = par("numChannels");
+    int numOfChannels = getAncestorPar("numChannels");
 
     for(int i=0; i<numOfChannels; i++)
         isCollided_.push_back(false);
@@ -128,7 +128,7 @@ void Channel::transmission()
     }
 
     /* Trigger the tx which don't transmit a packet in the previous timeslot.
-     * So the ones that are not triggered yet*/
+     * So the ones that are not been triggered yet*/
     triggerOthers(triggeredChannels);
 
     // Reset vectors
@@ -149,7 +149,7 @@ void Channel::triggerOthers(std::vector<int> triggeredChannels)
     int cnt = 0;
     for(int i = 0; i<numTx; i++)
     {
-        for(int j = 0; j<triggeredChannels.size(); j++)
+        for(int j = 0; j<(int)triggeredChannels.size(); j++)
         {
             if(i!=triggeredChannels[j])
                 cnt++;
@@ -157,7 +157,7 @@ void Channel::triggerOthers(std::vector<int> triggeredChannels)
 
         /* If the number of triggered channel is equal to cnt, it
          * means that the i channel has not been triggered*/
-        if(cnt==triggeredChannels.size())
+        if(cnt==(int)triggeredChannels.size())
         {
             cMessage* trigger = new cMessage("TRIGGER");
             send(trigger,"out_tx",i);
@@ -181,7 +181,7 @@ void Channel::scheduleTimeSlot()
     //timeSlotTrigger->setSchedulingPriority(1);
     /* Not needed because the channel trigger txs
      * and control their packet in the at the end of this timeSlot
-     * (so the beginning of the next)/
+     * (so the beginning of the next)*/
 
 
     /*Schedule the sending*/

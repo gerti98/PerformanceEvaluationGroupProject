@@ -21,7 +21,7 @@ package slotted_random_access_wireless_network;
 simple Channel
 {
     parameters:
-        int numChannels = default(1);
+      
        	double timeSlotSize @unit(s);
        	
        	@signal[throughputSignal](type="long");
