@@ -65,6 +65,7 @@ void Channel::handleMessage(cMessage *msg)
          * So I have to push it in the vector of packets
          * for this slot*/
         PacketMsg* newPkt = check_and_cast<PacketMsg*>(msg);
+        newPkt->setIdTransmitter(newPkt->getArrivalGate()->getIndex());
         packetsOfSlot_.push_back(newPkt);
     }
 }
