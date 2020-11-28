@@ -1,0 +1,28 @@
+file 1110 1606555784                                            
+version 2
+run General-0-20201128-10:27:59-7314
+attr configname General
+attr datetime 20201128-10:27:59
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 7314
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 1 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 2 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+0	615 170 9 99 0 0 19 1 1 19 19
+1	785 162 13 98 0 0 18 0 0 0 0
+2	947 162 13 98 0 0 18 1 1 18 18
+

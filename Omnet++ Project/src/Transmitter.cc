@@ -51,7 +51,7 @@ void Transmitter::initialize()
 void Transmitter::scheduleNextPacket(){
     simtime_t arrivalTime = exponential(meanInterarrivalTime) + simTime();
     PacketMsg* pkt = new PacketMsg("Packet");
-    pkt->setArrivalTime(arrivalTime);
+    pkt->setCreationTime(arrivalTime);
 
     scheduleAt(arrivalTime, pkt);
 }

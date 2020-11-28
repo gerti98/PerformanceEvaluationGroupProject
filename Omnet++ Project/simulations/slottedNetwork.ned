@@ -20,20 +20,21 @@ import slotted_random_access_wireless_network.Receiver;
 import slotted_random_access_wireless_network.Transmitter;
 
 
-network slottedNetwork{
+network slottedNetwork
+{
     parameters:
         int numTransmitters;
         int numChannels;
-        
+
         int bufferSize;
-        
+
         double sendProbability;
-        
+
         double expMean @unit(s);
-        
+
         double timeSlotSize @unit(s);
-        
-        double thresh @unit(s); 
+
+        double thresh @unit(s);
     submodules:
         transmitters[numTransmitters]: Transmitter {
             parameters:
@@ -42,9 +43,10 @@ network slottedNetwork{
                 sendProbability = sendProbability;
                 meanInterarrivalTime = expMean;
         }
-        receivers[numTransmitters]: Receiver{
-         	parameters:   
-         	    timeThreshold = thresh;
+        receivers[numTransmitters]: Receiver {
+            parameters:
+                timeThreshold = thresh;
+                @display("p=121,106");
         }
         ch: Channel {
             parameters:
@@ -55,10 +57,10 @@ network slottedNetwork{
                 out_rx[numTransmitters];
         }
     connections:
-        
-        for i = 0..numTransmitters-1{
-        	transmitters[i].out --> ch.in_tx[i];
-        	transmitters[i].in <-- ch.out_tx[i];
-        	receivers[i].in <-- ch.out_rx[i];
+
+        for i=0..numTransmitters-1 {
+            transmitters[i].out --> ch.in_tx[i];
+            transmitters[i].in <-- ch.out_tx[i];
+            receivers[i].in <-- ch.out_rx[i];
         }
 }
