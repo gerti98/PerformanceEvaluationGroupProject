@@ -20,6 +20,7 @@ Define_Module(Channel);
 
 void Channel::initialize()
 {
+    //Ciao
     throughputSignal_ = registerSignal("throughputSignal");
 
 
