@@ -66,6 +66,7 @@ void Channel::handleMessage(cMessage *msg)
          * for this slot*/
         PacketMsg* newPkt = check_and_cast<PacketMsg*>(msg);
         newPkt->setIdTransmitter(newPkt->getArrivalGate()->getIndex());
+        EV << "Packet from tx " << newPkt->getIdTransmitter() << " arrived" << endl;
         packetsOfSlot_.push_back(newPkt);
     }
 }
@@ -164,6 +165,7 @@ void Channel::triggerOthers(std::vector<int> triggeredTx)
         if(cnt==(int)triggeredTx.size())
         {
             cMessage* trigger = new cMessage("TRIGGER");
+            EV << "Trigger sent to tx " << i << endl;
             send(trigger,"out_tx",i);
         }
         cnt = 0;

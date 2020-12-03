@@ -1,14 +1,14 @@
 version 2
-run General-0-20201203-11:45:15-3878
+run General-0-20201203-12:10:31-4358
 attr configname General
-attr datetime 20201203-11:45:15
+attr datetime 20201203-12:10:31
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 3878
+attr processid 4358
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -16,6 +16,42 @@ attr runnumber 0
 attr seedset 0
 
 statistic slottedNetwork.receivers[0] threshold:stats
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source thresholdSignal
+statistic slottedNetwork.receivers[1] threshold:stats
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source thresholdSignal
+statistic slottedNetwork.receivers[2] threshold:stats
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source thresholdSignal
+statistic slottedNetwork.receivers[3] threshold:stats
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source thresholdSignal
+statistic slottedNetwork.receivers[4] threshold:stats
 field count 0
 field mean -nan
 field stddev -nan

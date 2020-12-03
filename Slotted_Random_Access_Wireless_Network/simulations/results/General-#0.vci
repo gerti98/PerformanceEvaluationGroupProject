@@ -1,15 +1,15 @@
-file 447 1606992342                                             
+file 92703 1606993804                                           
 version 2
-run General-0-20201203-11:45:15-3878
+run General-0-20201203-12:07:59-4272
 attr configname General
-attr datetime 20201203-11:45:15
+attr datetime 20201203-12:07:59
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 3878
+attr processid 4272
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,5 +18,26 @@ attr seedset 0
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-0	437 9 6 6 10 10 1 1 1 1 1
+0	437 10 25 25 15 15 1 1 1 1 1
+vector 1 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 2 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+1	625 23 28 28 15 15 1 10.50719805758 10.50719805758 10.50719805758 110.40121102121
+2	648 10 28 28 15 15 1 1 1 1 1
+vector 3 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 4 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 5 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 6 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+0	1086 8521 63 7923 35 3600 627 1 1 627 627
+1	9607 17217 65 7925 35 3600 627 11.638657411127 509.16500752926 66138.694453089 9681741.3922774
+2	26824 8521 65 7925 35 3600 627 1 1 627 627
+3	35345 13569 45 7912 23.173973235175 3592.27636387454 513 1 1 513 513
+4	48914 15666 52 7922 28.23921917712 3598.778266234812 591 1 1 591 591
+5	64580 13822 60 7921 31.451557084374 3595.655197796787 523 1 1 523 523
+6	78402 14300 61 7906 31.803787072648 3590.620766103464 540 1 1 540 540
 
