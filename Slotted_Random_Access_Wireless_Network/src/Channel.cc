@@ -65,7 +65,7 @@ void Channel::handleMessage(cMessage *msg)
          * So I have to push it in the vector of packets
          * for this slot*/
         PacketMsg* newPkt = check_and_cast<PacketMsg*>(msg);
-        newPkt->setIdTransmitter(newPkt->getArrivalGate()->getIndex());
+        newPkt->setIndexTx(newPkt->getArrivalGate()->getIndex());
         EV << "Packet from tx " << newPkt->getIdTransmitter() << " arrived" << endl;
         packetsOfSlot_.push_back(newPkt);
     }
@@ -100,8 +100,9 @@ void Channel::transmission()
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
-        // Store the id of the triggered tx
-        triggeredTx.push_back(idTx);
+        int indexTx = packetsOfSlot_[i]->getIndexTx();
+        // Store the index of the triggered tx
+        triggeredTx.push_back(indexTx);
 
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
@@ -109,7 +110,7 @@ void Channel::transmission()
             // send a NACK to the transmitter
             EV << "NACK sended to Transmitter " << idTx<< endl;
             cMessage* nack = new cMessage("NACK");
-            send(nack,"out_tx",idTx);
+            send(nack,"out_tx",indexTx);
         }
         else
         {
@@ -117,7 +118,7 @@ void Channel::transmission()
             // Send a ACK to the transmitter
             EV << "ACK sended to Transmitter " << idTx<< endl;
             cMessage* ack = new cMessage("ACK");
-            send(ack,"out_tx",idTx);
+            send(ack,"out_tx",indexTx);
 
             // Send the pkt to the receiver
             int idRx = packetsOfSlot_[i]->getIdReceiver();
@@ -165,7 +166,7 @@ void Channel::triggerOthers(std::vector<int> triggeredTx)
         if(cnt==(int)triggeredTx.size())
         {
             cMessage* trigger = new cMessage("TRIGGER");
-            EV << "Trigger sent to tx " << i << endl;
+            EV << "Trigger sent to tx at gate" << i << endl;
             send(trigger,"out_tx",i);
         }
         cnt = 0;

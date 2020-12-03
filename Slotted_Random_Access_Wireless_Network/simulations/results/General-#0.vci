@@ -1,15 +1,15 @@
-file 92703 1606993804                                           
+file 126255 1607000560                                          
 version 2
-run General-0-20201203-12:07:59-4272
+run General-0-20201203-14:02:13-3605
 attr configname General
-attr datetime 20201203-12:07:59
+attr datetime 20201203-14:02:13
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 4272
+attr processid 3605
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,26 +18,26 @@ attr seedset 0
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-0	437 10 25 25 15 15 1 1 1 1 1
 vector 1 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
 vector 2 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
-1	625 23 28 28 15 15 1 10.50719805758 10.50719805758 10.50719805758 110.40121102121
-2	648 10 28 28 15 15 1 1 1 1 1
-vector 3 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
+vector 3 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
 attr source overflowPercentageSignal
-vector 4 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
+vector 4 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
 attr source overflowPercentageSignal
-vector 5 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
+vector 5 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
 attr source overflowPercentageSignal
-vector 6 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
+vector 6 slottedNetwork.transmitters[4] overflowPercentage:vector ETV
 attr source overflowPercentageSignal
-0	1086 8521 63 7923 35 3600 627 1 1 627 627
-1	9607 17217 65 7925 35 3600 627 11.638657411127 509.16500752926 66138.694453089 9681741.3922774
-2	26824 8521 65 7925 35 3600 627 1 1 627 627
-3	35345 13569 45 7912 23.173973235175 3592.27636387454 513 1 1 513 513
-4	48914 15666 52 7922 28.23921917712 3598.778266234812 591 1 1 591 591
-5	64580 13822 60 7921 31.451557084374 3595.655197796787 523 1 1 523 523
-6	78402 14300 61 7906 31.803787072648 3590.620766103464 540 1 1 540 540
+vector 7 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+0	1150 13992 16 10416 10 3595 1025 1 1 1025 1025
+1	15142 28190 18 10418 10 3595 1025 5.241825342569 517.02654216581 79016.756422114 11675528.532147
+2	43332 13994 18 10418 10 3595 1025 1 1 1025 1025
+3	57326 13394 57 10431 24.737968804707 3598.179600872531 507 1 1 507 507
+4	70720 15572 69 10427 29.449161101714 3595.765383228691 585 1 1 585 585
+5	86292 13820 148 10428 58.043889723155 3595.814732524424 520 1 1 520 520
+6	100112 12989 158 10352 61.970388046651 3573.708156367733 490 1 1 490 490
+7	113101 13153 244 10430 92.861336434457 3597.91036172692 495 1 1 495 495
 

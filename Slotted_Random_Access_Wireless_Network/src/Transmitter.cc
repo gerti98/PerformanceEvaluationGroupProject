@@ -92,6 +92,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     else
     {
         EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
+        pkt->setIdTransmitter(id);
         buffer[end_idx] = pkt;
         end_idx = (end_idx + 1) % bufferSize;
     }
