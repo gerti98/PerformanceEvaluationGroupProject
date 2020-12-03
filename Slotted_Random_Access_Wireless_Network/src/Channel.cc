@@ -20,7 +20,6 @@ Define_Module(Channel);
 
 void Channel::initialize()
 {
-    //Ciao
     throughputSignal_ = registerSignal("throughputSignal");
 
 
@@ -94,14 +93,14 @@ void Channel::findCollisions()
  * and non-collided packets to the receivers*/
 void Channel::transmission()
 {
-    std::vector<int> triggeredChannels;
+    std::vector<int> triggeredTx;
 
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
         // Store the id of the triggered tx
-        triggeredChannels.push_back(idTx);
+        triggeredTx.push_back(idTx);
 
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
@@ -131,7 +130,7 @@ void Channel::transmission()
 
     /* Trigger the tx which don't transmit a packet in the previous timeslot.
      * So the ones that are not been triggered yet*/
-    triggerOthers(triggeredChannels);
+    triggerOthers(triggeredTx);
 
     // Reset vectors
     /* The following instruction it's equivalent
@@ -144,22 +143,25 @@ void Channel::transmission()
         isCollided_[i] = false;
 }
 
-/* It triggers the channel that have not been triggered yet */
-void Channel::triggerOthers(std::vector<int> triggeredChannels)
+/* It triggers the transmitters that have not been triggered yet */
+void Channel::triggerOthers(std::vector<int> triggeredTx)
 {
     int numTx = getAncestorPar("numTransmitters");
     int cnt = 0;
     for(int i = 0; i<numTx; i++)
     {
-        for(int j = 0; j<(int)triggeredChannels.size(); j++)
+        for(int j = 0; j<(int)triggeredTx.size(); j++)
         {
-            if(i!=triggeredChannels[j])
+            if(i!=triggeredTx[j])
                 cnt++;
         }
 
-        /* If the number of triggered channel is equal to cnt, it
-         * means that the i channel has not been triggered*/
-        if(cnt==(int)triggeredChannels.size())
+        /* If the i-th transmitter is not in the vector triggeredTx it means
+         * that the i-th transmitter has not been triggered.
+         * i-th tx is not in the vector if i!=triggeredTx[j] for any valid i,j
+         * and so if the previous relation is respected n time with n equal to the
+         * size of triggeredTx*/
+        if(cnt==(int)triggeredTx.size())
         {
             cMessage* trigger = new cMessage("TRIGGER");
             send(trigger,"out_tx",i);

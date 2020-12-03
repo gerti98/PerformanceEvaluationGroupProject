@@ -38,7 +38,7 @@ private:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
     virtual void scheduleTimeSlot();
-    virtual void triggerOthers(std::vector<int> triggeredChannels);
+    virtual void triggerOthers(std::vector<int> triggeredTx);
     virtual void findCollisions();
     virtual void transmission();
 };

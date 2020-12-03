@@ -1,4 +1,3 @@
-file 447 1606992342                                             
 version 2
 run General-0-20201203-11:45:15-3878
 attr configname General
@@ -16,7 +15,13 @@ attr resultdir results
 attr runnumber 0
 attr seedset 0
 
-vector 0 slottedNetwork.ch throughput:vector ETV
-attr source throughputSignal
-0	437 9 6 6 10 10 1 1 1 1 1
+statistic slottedNetwork.receivers[0] threshold:stats
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source thresholdSignal
 
