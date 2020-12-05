@@ -27,7 +27,7 @@ void Receiver::initialize()
 void Receiver::handleMessage(cMessage *msg)
 {
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
-    EV << "Packet received from transmitter " << pkt->getIdTransmitter() << endl;
+    EV << "Receiver " << this->getId() << ":packet received from transmitter " << pkt->getIdTransmitter() << endl;
     handleResponseTime(pkt);
     handleThreshold(pkt);
     delete(msg);
@@ -35,7 +35,7 @@ void Receiver::handleMessage(cMessage *msg)
 
 void Receiver::handleResponseTime(PacketMsg* pkt){
     simtime_t respTime = simTime() - pkt->getCreationTime();
-    EV << "Response Time: " << respTime << endl;
+    EV << "Receiver " << this->getId() << ": response Time = " << respTime << endl;
     emit(responseTimeSignal_, respTime.dbl());
 }
 
@@ -51,10 +51,10 @@ void Receiver::handleThreshold(PacketMsg* pkt){
 
 
     if(respTime < threshold){
-        EV << "Threshold(" << threshold << ") respected" << endl;
+        EV << "Receiver " << this->getId() << ": threshold(" << threshold << "s) respected" << endl;
         emit_value = 0;
     } else {
-        EV << "Threshold(" << threshold << ") not respected" << endl;
+        EV << "Receiver " << this->getId() << ":threshold(" << threshold << "s) not respected" << endl;
         emit_value = 1;
     }
     emit(thresholdSignal_, emit_value);

@@ -95,12 +95,13 @@ void Channel::findCollisions()
 void Channel::transmission()
 {
     std::vector<int> triggeredTx;
-
+    int packetSent = 0;
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
         int indexTx = packetsOfSlot_[i]->getIndexTx();
+
         // Store the index of the triggered tx
         triggeredTx.push_back(indexTx);
 
@@ -123,14 +124,25 @@ void Channel::transmission()
             send(ack,"out_tx",indexTx);
 
             // Send the pkt to the receiver
-            int idRx = packetsOfSlot_[i]->getIdReceiver();
-            EV << "Sended packet to Receiver " << idRx<< endl;
-            send(packetsOfSlot_[i],"out_rx",idRx);
+            //int idRx = packetsOfSlot_[i]->getIdReceiver();
+            //Reused indexTx to get the id of the port
+            EV << "Sended packet to Receiver " << indexTx<< endl;
+            send(packetsOfSlot_[i],"out_rx",indexTx);
 
-            // Emit throughput
-            emit(throughputSignal_,1);
+            //Count packet sent to the receiver
+            packetSent++;
         }
     }
+
+    // Emit throughput (num channel with packets sent / total channels)
+    EV << "Channel: sent " << packetSent << " packets" << endl;
+
+    if(isCollided_.size() > 0)
+        emit(throughputSignal_, ((packetSent*1.0)/isCollided_.size()));
+    else
+        emit(throughputSignal_, 0);
+
+
 
     /* Trigger the tx which don't transmit a packet in the previous timeslot.
      * So the ones that are not been triggered yet*/
@@ -199,6 +211,9 @@ void Channel::scheduleTimeSlot()
 }
 
 
+/**
+ * Delete every packet left in the Channel
+ */
 void Channel::finish(){
     for(PacketMsg* p: packetsOfSlot_){
         delete(p);
