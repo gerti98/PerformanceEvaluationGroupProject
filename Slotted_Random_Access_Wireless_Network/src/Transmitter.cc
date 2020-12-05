@@ -25,12 +25,9 @@ void Transmitter::initialize()
      * buffer related variable initialization
      */
 
-    bufferSize = par("bufferSize");
-    bufferSize++;
+    bufferMaxSize = par("bufferSize");
 
-    buffer = std::vector<PacketMsg*>(bufferSize);
-    start_idx = 0;
-    end_idx = 0;
+    buffer = std::queue<PacketMsg*>();
 
     /*
      * back-off related variable initialization
@@ -84,7 +81,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     /*
      * if the buffer is full then the packets is discard
      */
-    if((end_idx + 1) % bufferSize == start_idx)
+    if(buffer.size() == bufferMaxSize)
     {
         EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
         emit(overflowPercentageSignal_, 1);
@@ -94,8 +91,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     {
         EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
         pkt->setIdTransmitter(id);
-        buffer[end_idx] = pkt;
-        end_idx = (end_idx + 1) % bufferSize;
+        buffer.push(pkt);
     }
 
     scheduleNextPacket();
@@ -135,8 +131,9 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              */
             if(strcmp(msg->getName(), "ACK") == 0)
             {
-                delete(buffer[start_idx]);
-                start_idx = (start_idx + 1) % bufferSize;
+                delete(buffer.front());
+                buffer.pop();
+
                 maxBackoffTime = 2;
                 EV << "transmitter " << id << ": ACK received " << endl;
             }
@@ -145,10 +142,11 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              * if an ACK or a TRIGGER packet is received the transmitter check if
              * the buffer is empty and if not it starts with the Bernoullian experiment
              */
-            if(start_idx != end_idx && uniform(0.0, 1.0) < sendProbability)
+            if(buffer.empty() == false && uniform(0.0, 1.0) < sendProbability)
             {
-                buffer[start_idx]->setIdChannel(intuniform(0, numChannels - 1));
-                send(buffer[start_idx]->dup(), "out");
+                PacketMsg* pkt = buffer.front();
+                pkt->setIdChannel(intuniform(0, numChannels - 1));
+                send(pkt->dup(), "out");
                 EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
             }
         }
@@ -157,8 +155,9 @@ void Transmitter::handleChannelPacket(cMessage* msg){
 
 
 void Transmitter::finish(){
-    for(int i = start_idx; i != end_idx; i = (i + 1) % bufferSize){
-        delete(buffer[i]);
+    while(buffer.empty() == false){
+        delete(buffer.front());
+        buffer.pop();
     }
 }
 

@@ -17,7 +17,7 @@
 #define __SLOTTED_RANDOM_ACCESS_WIRELESS_NETWORK_TRANSMITTER_H_
 
 #include <omnetpp.h>
-#include <vector>
+#include <queue>
 #include "PacketMsg_m.h"
 using namespace omnetpp;
 
@@ -29,9 +29,8 @@ class Transmitter : public cSimpleModule
 private:
     simsignal_t overflowPercentageSignal_;
 
-    std::vector<PacketMsg*> buffer;
-    int bufferSize;
-    int start_idx, end_idx;
+    std::queue<PacketMsg*> buffer;
+    int bufferMaxSize;
 
     int maxBackoffTime, backoffTime;
 
