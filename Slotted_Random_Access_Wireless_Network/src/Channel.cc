@@ -38,6 +38,8 @@ void Channel::handleMessage(cMessage *msg)
     if(msg->isSelfMessage())
     {
         EV << "Received self message" << endl;
+        // Delete the trigger message
+        delete(msg);
 
         /* If it's a self message then it means that it is
          * the trigger of the start of the slot.
@@ -52,8 +54,7 @@ void Channel::handleMessage(cMessage *msg)
          * It transmits to the receiver the non-collided packets */
         transmission();
 
-        // Delete the trigger message
-        delete(msg);
+
 
         // Schedule the next time slot
         scheduleTimeSlot();
@@ -138,7 +139,7 @@ void Channel::transmission()
     EV << "Channel: sent " << packetSent << " packets" << endl;
 
     if(isCollided_.size() > 0)
-        emit(throughputSignal_, ((packetSent*1.0)/isCollided_.size()));
+        emit(throughputSignal_, (long)((packetSent*1.0)/isCollided_.size()));
     else
         emit(throughputSignal_, 0);
 
@@ -154,6 +155,8 @@ void Channel::transmission()
      * to packetsOfSlot_.clear() but force the
      * reallocation of the vector. This ensures that
      * the vector capacity will change (to 0)*/
+    packetsOfSlot_.clear();
+
     std::vector<PacketMsg*>().swap(packetsOfSlot_);
 
     for(int i = 0; i<(int)isCollided_.size(); i++)
@@ -163,8 +166,7 @@ void Channel::transmission()
 /* It triggers the transmitters that have not been triggered yet */
 void Channel::triggerOthers(std::vector<bool> triggeredTx)
 {
-    int cnt = 0;
-    for(int i = 0; i < triggeredTx.size(); i++)
+    for(int i = 0; i < (int)triggeredTx.size(); i++)
     {
         /*
          * check which transmitter needs to be triggered
@@ -175,7 +177,6 @@ void Channel::triggerOthers(std::vector<bool> triggeredTx)
             EV << "Trigger sent to tx at gate" << i << endl;
             send(trigger,"out_tx",i);
         }
-        cnt = 0;
     }
 }
 
@@ -209,6 +210,7 @@ void Channel::finish(){
     for(PacketMsg* p: packetsOfSlot_){
         delete(p);
     }
+    packetsOfSlot_.clear();
     std::vector<PacketMsg*>().swap(packetsOfSlot_);
 }
 

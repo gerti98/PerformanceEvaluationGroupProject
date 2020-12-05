@@ -1,67 +1,65 @@
-file 119709 1607164966                                          
+file 99106 1607194368                                           
 version 2
-run General-0-20201205-11:42:27-210838
+run General-0-20201205-19:52:46-9247
 attr configname General
-attr datetime 20201205-11:42:27
+attr datetime 20201205-19:52:46
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 210838
+attr processid 9247
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+param **.numTransmitters 4
+param **.numChannels 4
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-vector 1 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 2 slottedNetwork.receivers[0] responseTime:vector ETV
+vector 1 slottedNetwork.receivers[2] responseTime:vector ETV
 attr source responseTimeSignal
-vector 3 slottedNetwork.receivers[0] threshold:vector ETV
+vector 2 slottedNetwork.receivers[2] threshold:vector ETV
 attr source thresholdSignal
-vector 4 slottedNetwork.receivers[1] responseTime:vector ETV
+vector 3 slottedNetwork.receivers[3] responseTime:vector ETV
 attr source responseTimeSignal
-vector 5 slottedNetwork.receivers[1] threshold:vector ETV
+vector 4 slottedNetwork.receivers[3] threshold:vector ETV
 attr source thresholdSignal
-vector 6 slottedNetwork.receivers[4] responseTime:vector ETV
+vector 5 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 6 slottedNetwork.receivers[1] responseTime:vector ETV
 attr source responseTimeSignal
-vector 7 slottedNetwork.receivers[4] threshold:vector ETV
+vector 7 slottedNetwork.receivers[1] threshold:vector ETV
 attr source thresholdSignal
-vector 8 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
+vector 8 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
 attr source overflowPercentageSignal
-vector 9 slottedNetwork.receivers[2] responseTime:vector ETV
+vector 9 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 10 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
+attr source overflowPercentageSignal
+vector 11 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
-vector 10 slottedNetwork.receivers[2] threshold:vector ETV
+vector 12 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
-vector 11 slottedNetwork.receivers[3] responseTime:vector ETV
-attr source responseTimeSignal
-vector 12 slottedNetwork.receivers[3] threshold:vector ETV
-attr source thresholdSignal
-vector 13 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 14 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 15 slottedNetwork.transmitters[4] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-0	1872 10873 4 9791 5 3600 720 0 0.8 169 63.559999999999
-1	12745 13680 14 9773 8.42880764233 3591.364056061588 517 1 1 517 517
-2	26425 4550 18 9793 10 3600 170 5.021182781195 138.26938002654 2696.8841839163 99175.20430919
-3	30975 2312 18 9793 10 3600 170 0 1 44 44
-4	33287 4128 20 9667 10 3555 155 5.035893453814 151.19590389653 2685.4178014373 122674.39400612
-5	37415 2091 20 9667 10 3555 155 0 1 40 40
-6	39506 4500 22 9736 10 3580 169 5.106509182013 452.40883343773 2750.9895254264 264693.55094803
-7	44006 2286 22 9736 10 3580 169 0 1 36 36
-8	46292 14383 29 9788 11.716031585115 3595.174964659671 544 1 1 544 544
-9	60675 4328 38 9781 15 3595 162 5.024842111112 166.82403609275 2778.7210737776 115674.30283471
-10	65003 2354 38 9781 15 3595 162 0 1 45 45
-11	67357 5239 40 9795 15 3600 189 5.038472995837 77.440192928938 2615.9792695143 68992.223686596
-12	72596 2757 40 9795 15 3600 189 0 1 40 40
-13	75353 16000 75 9776 27.961374561624 3592.902099994095 582 1 1 582 582
-14	91353 13722 77 9778 29.050676030562 3594.326782775104 499 1 1 499 499
-15	105075 14633 95 9790 32.807197687663 3595.518411110486 532 1 1 532 532
+0	1744 9762 3 8422 5 3600 720 0 0 0 0
+1	11506 7163 27 8185 15 3500 260 6.209372132845 178.32124863725 15154.381439394 1238674.7990109
+2	18669 3558 27 8185 15 3500 260 0 1 228 228
+3	22227 6249 29 8424 15 3600 228 5.701978939627 287.77557400719 16054.485435191 1811656.8455182
+4	28476 3090 29 8424 15 3600 228 0 1 204 204
+5	31566 12998 35 8396 17.906200353476 3585.581756776556 493 1 1 493 493
+6	44564 3096 68 8329 35 3560 113 5.155220181171 725.4046728706 16200.847134011 7005911.4684369
+7	47660 1538 68 8329 35 3560 113 0 1 90 90
+8	49198 11290 75 8421 35.59258269545 3598.906875811779 427 1 1 427 427
+9	60488 12284 85 8395 40.268740611132 3585.576793213792 464 1 1 464 464
+10	72772 16194 107 8420 54.402231824725 3598.630064535179 589 1 1 589 589
+11	88966 6701 148 8403 75 3590 235 7.946831428842 225.43939123872 16198.687829281 1569771.3394505
+12	95667 3438 148 8403 75 3590 235 0 1 212 212
 
