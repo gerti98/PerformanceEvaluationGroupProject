@@ -65,13 +65,13 @@ void Transmitter::handleMessage(cMessage *msg)
     if(msg->isSelfMessage())
     {
         handleArrivedPacket(msg);
+
     }
     else
     {
         handleChannelPacket(msg);
         delete(msg);
     }
-
 }
 
 /*
@@ -88,6 +88,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     {
         EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
         emit(overflowPercentageSignal_, 1);
+        delete(msg);
     }
     else
     {
@@ -151,6 +152,13 @@ void Transmitter::handleChannelPacket(cMessage* msg){
                 EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
             }
         }
+    }
+}
+
+
+void Transmitter::finish(){
+    for(int i = start_idx; i != end_idx; i = (i + 1) % bufferSize){
+        delete(buffer[i]);
     }
 }
 

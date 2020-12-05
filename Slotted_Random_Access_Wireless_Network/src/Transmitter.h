@@ -46,6 +46,7 @@ protected:
     virtual void handleMessage(cMessage *msg);
     virtual void handleArrivedPacket(cMessage *msg);
     virtual void handleChannelPacket(cMessage* msg);
+    virtual void finish();
 };
 
 #endif

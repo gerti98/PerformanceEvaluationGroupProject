@@ -41,6 +41,7 @@ private:
     virtual void triggerOthers(std::vector<int> triggeredTx);
     virtual void findCollisions();
     virtual void transmission();
+    virtual void finish();
 };
 
 #endif

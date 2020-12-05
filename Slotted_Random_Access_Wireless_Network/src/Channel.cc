@@ -111,6 +111,8 @@ void Channel::transmission()
             EV << "NACK sended to Transmitter " << idTx<< endl;
             cMessage* nack = new cMessage("NACK");
             send(nack,"out_tx",indexTx);
+
+            delete(packetsOfSlot_[i]);
         }
         else
         {
@@ -133,6 +135,7 @@ void Channel::transmission()
     /* Trigger the tx which don't transmit a packet in the previous timeslot.
      * So the ones that are not been triggered yet*/
     triggerOthers(triggeredTx);
+
 
     // Reset vectors
     /* The following instruction it's equivalent
@@ -193,6 +196,14 @@ void Channel::scheduleTimeSlot()
 
     /*Schedule the sending*/
     scheduleAt(simTime()+timeSlot,timeSlotTrigger);
+}
+
+
+void Channel::finish(){
+    for(PacketMsg* p: packetsOfSlot_){
+        delete(p);
+    }
+    std::vector<PacketMsg*>().swap(packetsOfSlot_);
 }
 
 
