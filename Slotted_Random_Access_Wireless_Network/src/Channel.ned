@@ -24,7 +24,7 @@ simple Channel
       
        	double timeSlotSize @unit(s);
        	
-       	@signal[throughputSignal](type="float");
+       	@signal[throughputSignal](type="double");
        	@statistic[throughput](source="throughputSignal"; record=vector);
        	
     gates:

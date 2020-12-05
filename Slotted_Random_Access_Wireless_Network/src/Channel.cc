@@ -76,17 +76,15 @@ void Channel::handleMessage(cMessage *msg)
  * if there is a collision in the channel i*/
 void Channel::findCollisions()
 {
+    std::vector<int> n_collisions(isCollided_.size(), 0);
+
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
     {
         int ch = packetsOfSlot_[i]->getIdChannel();
-        for(int j = i+1; j<(int)packetsOfSlot_.size(); j++)
-        {
-            if(ch==(packetsOfSlot_[j]->getIdChannel())){
-                isCollided_[ch] = true;
-                EV << "Collision at Channel " << ch << endl;
-            }
 
-        }
+        if(n_collisions[ch] == 1)
+            isCollided_[ch] = true;
+        n_collisions[ch]++;
     }
 }
 
@@ -94,16 +92,18 @@ void Channel::findCollisions()
  * and non-collided packets to the receivers*/
 void Channel::transmission()
 {
-    std::vector<int> triggeredTx;
+    int numTx = getAncestorPar("numTransmitters");
+    std::vector<bool> triggeredTx(numTx, false);
     int packetSent = 0;
+
     for(int i = 0; i<(int)packetsOfSlot_.size(); i++)
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
         int indexTx = packetsOfSlot_[i]->getIndexTx();
 
-        // Store the index of the triggered tx
-        triggeredTx.push_back(indexTx);
+        // this transmitter doesn't need to be triggered with a TRIGGER message
+        triggeredTx[indexTx] = true;
 
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
@@ -161,24 +161,15 @@ void Channel::transmission()
 }
 
 /* It triggers the transmitters that have not been triggered yet */
-void Channel::triggerOthers(std::vector<int> triggeredTx)
+void Channel::triggerOthers(std::vector<bool> triggeredTx)
 {
-    int numTx = getAncestorPar("numTransmitters");
     int cnt = 0;
-    for(int i = 0; i<numTx; i++)
+    for(int i = 0; i < triggeredTx.size(); i++)
     {
-        for(int j = 0; j<(int)triggeredTx.size(); j++)
-        {
-            if(i!=triggeredTx[j])
-                cnt++;
-        }
-
-        /* If the i-th transmitter is not in the vector triggeredTx it means
-         * that the i-th transmitter has not been triggered.
-         * i-th tx is not in the vector if i!=triggeredTx[j] for any valid i,j
-         * and so if the previous relation is respected n time with n equal to the
-         * size of triggeredTx*/
-        if(cnt==(int)triggeredTx.size())
+        /*
+         * check which transmitter needs to be triggered
+         */
+        if(triggeredTx[i] == false)
         {
             cMessage* trigger = new cMessage("TRIGGER");
             EV << "Trigger sent to tx at gate" << i << endl;
