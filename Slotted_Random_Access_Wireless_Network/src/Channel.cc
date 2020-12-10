@@ -139,7 +139,7 @@ void Channel::transmission()
     EV << "Channel: sent " << packetSent << " packets" << endl;
 
     if(isCollided_.size() > 0)
-        emit(throughputSignal_, (long)((packetSent*1.0)/isCollided_.size()));
+        emit(throughputSignal_, (long)(packetSent));
     else
         emit(throughputSignal_, 0);
 

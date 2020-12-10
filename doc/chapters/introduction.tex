@@ -1,154 +1,34 @@
-\chapter{Introduction}
-\textbf{\textit{PokèMongo}} is a gaming application in which users compete each other to build up the best Team choosing from the set of Pokemon available in the environment. Every user can make just one single Team. 
+\section{Introduction}
+\subsection{Problem Description}
+From the group project assignment:
+\vspace{0.4cm}
 
-\section{Description}
-Every Team is composed by up to 6 distinct Pokemons and is assigned to a numerical value based on features and properties of the chosen Pokemons, for ranking purposes.
-
-Users can also navigate through the ranking in order to visualize the best teams (according to the values cited before), most used/caught Pokemons.
-
-The user can also search a specific Pokemon using the Pokedex tool, in which he/she can browse Pokemons according to specific search filters (e.g. Pokemon name, Type, Points…).
-
-Moreover, as a “real” Pokemon Trainer, the user is invited to “Catch ‘em ‘all”, i.e. to catch Pokemon in order to create/update his own team. Thus, it is provided to the user a prefix number of daily Pokeball to be used to try to catch them. 
-
-At each Pokemon is associated a probability to catch it, the higher the Pokemon’s value, the lower the probability.
-
-Under discussion are the following ideas:
+\textit{In a \textbf{slotted random-access network}, \textbf{N couples transmitter-receiver} share the same communication
+medium, which consists of \textbf{C separate channels}. Multiple attempts to use the same channel in the
+same slot by different transmissions will lead to collision, hence no receiver listening on that
+channel will be able to decode the message.
+Assume that each of the N transmitters generate packets according to an \textbf{exponential interarrival
+distribution}, and picks its channel at random on every new transmission. Before sending a packet, it
+keeps extracting a value from a \textbf{Bernoullian RV with success probability p} on every slot, until it
+achieves success. Then it transmits the packet and starts over. If a collision occurs, then the
+transmitter backs off for a random number of slots (see later), and then starts over the whole
+Bernoullian experiment.
+The number of backoff slots is extracted as $U(1, 2^{x+1})$, where x is the number of collisions
+experienced by the packet being transmitted.}
+\subsection{Objectives}
+The aim of the project report is the \textit{Assessment of the Effectiveness of the Slotted Random-Access Network Protocol} described in the latter paragraph.
+\subsection{Performance Indexes}
+In order to define a metric of performance of the objective, the following Performance Indexes are defined:
 \begin{itemize}
-    \item Creating a “social” structure in which users can follow each other in order to share his/her own team
-    \item Creating a chat system to pair with the social structure 
-    \item Reduce catchable Pokemons to a daily subset of the entire Pokemon Database
-\end{itemize} 
-
-\section{Code Snippets}
-Other things: let's show some code snippets!
-
-\begin{lstlisting}[language=Python, caption=Python example]
-    import requests
-    import json
-    
-    
-    #exampleW
-    new_json = []
-    description = ""
-    
-    for i in range(500, 894):
-        response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{i}/")
-        work_string_json = response.json()
-        response = requests.get(f"https://pokeapi.co/api/v2/pokemon-species/{i}/")
-        work_string_json2 = response.json()
-    
-        for desc in work_string_json2['flavor_text_entries']:
-            if(desc['language']['name'] == "en"):
-                description = desc['flavor_text']
-                break
-    
-        curr_json = {
-            "id": work_string_json['id'],
-            "name": work_string_json['name'],
-            "weight": work_string_json['weight'],
-            "height": work_string_json['height'],
-            "capture_rate": work_string_json2['capture_rate'],
-            "biology": description,
-            "types": [],
-            "portrait": work_string_json['sprites']['other']['official-artwork']['front_default'],
-            "sprite": work_string_json['sprites']['front_default']
-        }
-    
-        print(i)
-        for i in work_string_json['types']:
-            curr_json["types"].append(i['type']['name'])
-    
-        new_json.append(curr_json)
-        
-    with open('pokemon2.json', 'a', encoding='utf-8') as f:
-        json.dump(new_json, f, ensure_ascii=False, indent=4)
-    
-\end{lstlisting}
-
-\begin{lstlisting}[language=Java, caption=Java example]
-    package it.unipi.dii.lsmsd.pokeMongo.utils;
-
-import java.time.LocalDate;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javafx.scene.control.*;
-
-public class FormValidatorPokeMongo {
-
-    /**
-     * In this section are present the event handler for the 'setOnKeyReleased' event in the form.
-     */
-    public static void handleName(TextField nameTF, Label invalidNameLabel){
-        if(FormValidatorPokeMongo.isPersonNoun(nameTF.getText()))
-            invalidNameLabel.setVisible(false);
-        else
-            invalidNameLabel.setVisible(true);
-    }
-
-    /**
-     * Check if the string contains only letters, spaces, dots and apostrophes.
-     */
-    public static boolean isPersonNoun(String possibleNoun){
-        Pattern pattern = Pattern.compile("^[a-zA-Z '.]*$");
-        Matcher matcher = pattern.matcher(possibleNoun);
-        return matcher.find();
-    }
-
-    public static void handleEmail(TextField emailTF, Label invalidEmailLabel){
-        if(FormValidatorPokeMongo.isValidEmail(emailTF.getText()))
-            invalidEmailLabel.setVisible(false);
-        else
-            invalidEmailLabel.setVisible(true);
-    }
-
-    /**
-     * Check if the email follows the format example@domain.tld
-     */
-    public static boolean isValidEmail(String possibleEmail){
-        Pattern pattern = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
-        Matcher matcher = pattern.matcher(possibleEmail);
-        return matcher.find();
-    }
-
-    public static void handlePassword(TextField passwordTF, Label invalidPasswordLabel){
-        if(FormValidatorPokeMongo.isValidPassword(passwordTF.getText()))
-            invalidPasswordLabel.setVisible(false);
-        else
-            invalidPasswordLabel.setVisible(true);
-    }
-
-    /**
-     * Checks if the password contains minimum eight characters, at least one letter and one number.
-     */
-    public static boolean isValidPassword(String possiblePassword){
-        Pattern pattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
-        Matcher matcher = pattern.matcher(possiblePassword);
-        return matcher.find();
-    }
-
-    public static void handleConfirmField(TextField fieldTF, TextField confirmFieldTF, Label invalidConfirmFieldLabel){
-        String password = fieldTF.getText(), confirmPassword = confirmFieldTF.getText();
-
-        if(password.equals(confirmPassword))
-            invalidConfirmFieldLabel.setVisible(false);
-        else
-            invalidConfirmFieldLabel.setVisible(true);
-    }
-
-    /**
-     * Checks if the birthday date selected is valid: future dates cannot be picked
-     */
-    public static void handleBirthday(DatePicker birthdayDP, Label invalidBirthdayLabel){
-        LocalDate localDate = birthdayDP.getValue();
-        LocalDate today = LocalDate.now();
-        System.out.println(today);
-
-        if(localDate.isAfter(today)){
-            invalidBirthdayLabel.setVisible(true);
-        } else {
-            invalidBirthdayLabel.setVisible(false);
-        }
-    }
-}
-
-\end{lstlisting}
+	\item \textbf{Throughput}: let $Tp$ be the Throughput to be measured, $N_{p}$ the number of packets successfully sent in the same timeslot, $T_{timeslot}$ the timeslot duration, the Throughput can be measured as:
+	
+	\begin{equation}
+	Tp = \frac{N_{packets  timeslot}}{T_{timeslot}} = [s^{-1}]
+	\end{equation}
+	
+	\item \textbf{Response Time}: defined as the time that occurs from the first appearance of one packet at the Transmitter up to the reception of the packet at the Receiver.
+	
+	\item \textbf{Percentage of Loss Packets}: due to the fact that the transmitter has a limited buffer capacity (see next chapter), there is a need to consider even this variable as a performance index.
+	\item \textbf{Network Traffic}: (?)
+	\item \textbf{Percentage of Deadlines not respected}: if we consider running this type of communication protocol of a real-time system with his own deadlines, there is a need to consider even this variable as a performance index.
+\end{itemize}
