@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  10 DEC 2020 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  10 DEC 2020 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,27 +331,27 @@ Overfull \hbox (12.8611pt too wide) in paragraph at lines 16--17
 ]) [5]
 \openout2 = `chapters/implementation.aux'.
 
- (./chapters/implementation.tex) [6
+ (./chapters/implementation.tex [6
 
 
-]
+]) [7]
 \openout2 = `chapters/verification.aux'.
 
  (./chapters/verification.tex)
-[7
+[8
 
 
 ]
 \openout2 = `chapters/simulation_experiments.aux'.
 
- (./chapters/simulation_experiments.tex) [8
+ (./chapters/simulation_experiments.tex) [9
 
 
 ]
 \openout2 = `chapters/conclusions.aux'.
 
  (./chapters/conclusions.tex)
-[9
+[10
 
 
 ] (./template_Report.aux (./chapters/introduction.aux)
@@ -361,7 +361,7 @@ Overfull \hbox (12.8611pt too wide) in paragraph at lines 16--17
 Here is how much of TeX's memory you used:
  5929 strings out of 483183
  88876 string characters out of 5966291
- 343441 words of memory out of 5000000
+ 344442 words of memory out of 5000000
  20863 multiletter control sequences out of 15000+600000
  539274 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -376,10 +376,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on template_Report.pdf (10 pages, 179507 bytes).
+Output written on template_Report.pdf (11 pages, 183547 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

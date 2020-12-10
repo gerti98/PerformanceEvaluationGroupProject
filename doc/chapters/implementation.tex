@@ -1,13 +1,13 @@
 \section{Implementation}
 \subsection{Modules}
-The following modules has been defined:
+The following modules have been defined:
 \begin{itemize}
 	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $K$, $lambda$, $p$, overflow Signal (for the queue)
 	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Parameters: $T_timeslot$, Throughput Signal
 	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$, Response Time Signal, Threshold Signal
 \end{itemize}
 \subsection{Messages}
-A new format of message has been defined with the following fields:
+A new format of message has been defined, in order to store all packet information,with the following fields:
 \begin{itemize}
 	\item \textit{simtime-t creationTime}: time in which the packet arrives for the first time at the Transmitter
 	\item \textit{int idChannel}: Channel choosed for the current transmission, may change in case of collision
@@ -15,6 +15,34 @@ A new format of message has been defined with the following fields:
 	\item \textit{int indexTx} ??
 	\item \textit{int idReceiver} ??
 \end{itemize}
+
 \subsection{Modules Behaviour}
-
-
+\subsubsection{\textit{Transmitter} Module Behaviour in the implementation}
+\begin{enumerate}
+	\item \textbf{Message Arrival} at the \textit{Transmitter}:
+	\begin{itemize}
+		\item \textbf{IF} an \textit{ACK} has been received the packet at the top of the queue can be removed. \textbf{GOTO (2)}
+		\item \textbf{ELSE IF} a \textit{NACK} has been received the \textit{Transmitter} starts his backoff time and \textbf{waits for another message}.
+		\item \textbf{ELSE IF} an \textit{Synchronization message} has been received \textbf{AND} the \textit{Transmitter} is not in backoff-time \textbf{GOTO (2)}
+		\item \textbf{ELSE IF} a packet arrives at the \textit{Transmitter}, the Transmitter tries to store the packet in the queue, make a reschedule of the next packet and \textbf{waits for another message}
+	\end{itemize}
+	\item The \textit{Transmitter} tries to send the packet
+	\begin{itemize}
+		\item \textbf{IF} success on the Bernoullian Experiment, then the packet will be forwarded to the \textit{Channel}.
+		\item \textbf{ELSE waits for another message}
+	\end{itemize}
+\end{enumerate}
+\subsubsection{\textit{Channel} Module Behaviour in the implementation}
+\begin{enumerate}
+	\item The \textit{Channel} wakes up at the beginning of each timeslot and checks his channels status.
+	\begin{itemize}
+		\item \textbf{IF} two or more packets have arrived in the same channel, the \textit{Channel} will send a NACK to the \textit{Transmitters} that have forwarded the packet in that specific channel.
+		\item \textbf{ELSE IF} one and only one packet has arrived in a channel, the \textit{Channel} will send an ACK to the relative \textit{Transmitter} and will forward the packet to the relative \textit{Receiver}.
+		\item \textbf{ELSE} the \textit{Transmitters} that did not send a packet will receive from the Channel a \textit{Synchronization Message}
+	\end{itemize}
+	\item The \textit{Channel} will gather of the packets for the current timeslot, to be processed in the next one.
+\end{enumerate}
+\subsubsection{\textit{Receiver} Module Behaviour in the implementation:}
+\begin{enumerate}
+	\item The \textit{Receiver} wakes up when a packet arrives. Then are computed some statistics (concerning Response Time and Threshold).
+\end{enumerate}
