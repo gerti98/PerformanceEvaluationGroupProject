@@ -1,2 +1,20 @@
 \section{Implementation}
 \subsection{Modules}
+The following modules has been defined:
+\begin{itemize}
+	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $K$, $lambda$, $p$, overflow Signal (for the queue)
+	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Parameters: $T_timeslot$, Throughput Signal
+	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$, Response Time Signal, Threshold Signal
+\end{itemize}
+\subsection{Messages}
+A new format of message has been defined with the following fields:
+\begin{itemize}
+	\item \textit{simtime-t creationTime}: time in which the packet arrives for the first time at the Transmitter
+	\item \textit{int idChannel}: Channel choosed for the current transmission, may change in case of collision
+	\item \textit{int idTransmitter} ??
+	\item \textit{int indexTx} ??
+	\item \textit{int idReceiver} ??
+\end{itemize}
+\subsection{Modules Behaviour}
+
+

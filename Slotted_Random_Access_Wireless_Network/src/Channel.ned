@@ -21,15 +21,16 @@ package slotted_random_access_wireless_network;
 simple Channel
 {
     parameters:
-      
-       	double timeSlotSize @unit(s);
-       	
-       	@signal[throughputSignal](type="long");
-       	@statistic[throughput](source="throughputSignal"; record=vector);
-       	
+
+        double timeSlotSize @unit(s);
+
+        @signal[throughputSignal](type="long");
+        @statistic[throughput](source="throughputSignal"; record=vector);
+
+        @display("i=block/table");
     gates:
         input in_tx[];
         output out_tx[];
         output out_rx[];
-        
+
 }

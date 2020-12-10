@@ -22,15 +22,16 @@ simple Receiver
 {
     parameters:
         double timeThreshold @unit(s);
-        
+
         //From the first arrival at the transmitter to the receiver
         @signal[responseTimeSignal](type="double");
         @statistic[responseTime](source="responseTimeSignal"; record=vector);
-        
+
         //Maintains info of the percentage of the respected time threshold
         @signal[thresholdSignal](type"long");
         @statistic[threshold](source="thresholdSignal"; record=vector,stats);
-        
+
+        @display("i=block/rx");
     gates:
         input in;
 }

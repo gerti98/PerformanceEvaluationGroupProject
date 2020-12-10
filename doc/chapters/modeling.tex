@@ -1,6 +1,27 @@
 \section{Modeling}
 \subsection{Introduction}
+
 \subsection{General Assumptions}
+The following general assumption has been made:
+\begin{itemize}
+	\item \textbf{Pure Slotted}: packets are attempted to be transmitter by the Transmitter only at the \textbf{beginning of the timeslot}
+	\item \textbf{Constant Packet Size and Transmission Rate}: each packet has a constant packet size and each transmitter has a constant and equal transmission rate for which to transmit a packet (without collision) from the receiver to the transmitter will last \textbf{one timeslot}.
+	\item \textbf{No Propagation Error in the channel}: the only cause of a failed transmission has to be considered as the packet collision. Other causes, i.e. path-loss, are 
+	\item \textbf{FIFO Queues of limited Capacity at the Transmitter} 
+	\item \textbf{Transmitters and Receivers always synchronized with the timeslot period}
+	\item \textbf{After an eventual collision the packet will change his channel choice}
+\end{itemize}
+
 \subsection{Preliminar Validation}
+\textbf{+++++++++++ Aggiungere due righe +++++++++++++++}
 \subsection{Factors}
-\subsection{Simulation Tool}
+The following factors has been defined which may affect the performance of the system:
+\begin{itemize}
+	\item \textbf{N}: Transmitter-Receiver Couples.
+	\item \textbf{C}: numbers of Channels.
+	\item \textbf{p}: probability of success for sending a packet in the current timeslot for a Transmitter.
+	\item \textbf{$lambda$}: exponential distribution rate of packets arrival at the Transmitter.
+	\item \textbf{K}: Transmitter Buffer Size.
+	\item $T_{deadline}$: deadline in case of communication with a real-time system.
+	\item $T_{timeslot}$: timeslot duration. 
+\end{itemize}
