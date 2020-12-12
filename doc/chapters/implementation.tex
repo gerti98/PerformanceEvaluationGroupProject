@@ -11,9 +11,8 @@ A new format of message has been defined, in order to store all packet informati
 \begin{itemize}
 	\item \textit{simtime-t creationTime}: time in which the packet arrives for the first time at the Transmitter
 	\item \textit{int idChannel}: Channel choosed for the current transmission, may change in case of collision
-	\item \textit{int idTransmitter} ??
-	\item \textit{int indexTx} ??
-	\item \textit{int idReceiver} ??
+	\item \textit{int idTransmitter}: Index of the module Trasmitter related to the message
+	\item \textit{int indexTx}: Index of the gate in which the Trasmitter is linked to the Channel
 \end{itemize}
 
 \subsection{Modules Behaviour}

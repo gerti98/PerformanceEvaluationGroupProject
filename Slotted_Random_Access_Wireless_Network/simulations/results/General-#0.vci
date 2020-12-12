@@ -1,65 +1,44 @@
-file 99108 1607196487                                           
+file 64835 1607770047                                           
 version 2
-run General-0-20201205-20:27:45-11672
+run General-0-20201212-11:47:20-16667
 attr configname General
-attr datetime 20201205-20:27:45
+attr datetime 20201212-11:47:20
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 11672
+attr processid 16667
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-param **.numTransmitters 4
-param **.numChannels 4
+param **.numTransmitters 1
+param **.numChannels 1
 param **.bufferSize 5
 param **.sendProbability 1
 param **.expMean 5s
 param **.timeSlotSize 5s
 param **.thresh 20s
 
-vector 0 slottedNetwork.ch throughput:vector ETV
+vector 0 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 1 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-vector 1 slottedNetwork.receivers[2] responseTime:vector ETV
+vector 2 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 3 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
-vector 2 slottedNetwork.receivers[2] threshold:vector ETV
+vector 4 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
-vector 3 slottedNetwork.receivers[3] responseTime:vector ETV
-attr source responseTimeSignal
-vector 4 slottedNetwork.receivers[3] threshold:vector ETV
-attr source thresholdSignal
-vector 5 slottedNetwork.transmitters[0] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 6 slottedNetwork.receivers[1] responseTime:vector ETV
-attr source responseTimeSignal
-vector 7 slottedNetwork.receivers[1] threshold:vector ETV
-attr source thresholdSignal
-vector 8 slottedNetwork.transmitters[2] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 9 slottedNetwork.transmitters[3] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 10 slottedNetwork.transmitters[1] overflowPercentage:vector ETV
-attr source overflowPercentageSignal
-vector 11 slottedNetwork.receivers[0] responseTime:vector ETV
-attr source responseTimeSignal
-vector 12 slottedNetwork.receivers[0] threshold:vector ETV
-attr source thresholdSignal
-0	1746 9762 3 8422 5 3600 720 0 3 836 1522
-1	11508 7163 27 8185 15 3500 260 6.209372132845 178.32124863725 15154.381439394 1238674.7990109
-2	18671 3558 27 8185 15 3500 260 0 1 228 228
-3	22229 6249 29 8424 15 3600 228 5.701978939627 287.77557400719 16054.485435191 1811656.8455182
-4	28478 3090 29 8424 15 3600 228 0 1 204 204
-5	31568 12998 35 8396 17.906200353476 3585.581756776556 493 1 1 493 493
-6	44566 3096 68 8329 35 3560 113 5.155220181171 725.4046728706 16200.847134011 7005911.4684369
-7	47662 1538 68 8329 35 3560 113 0 1 90 90
-8	49200 11290 75 8421 35.59258269545 3598.906875811779 427 1 1 427 427
-9	60490 12284 85 8395 40.268740611132 3585.576793213792 464 1 1 464 464
-10	72774 16194 107 8420 54.402231824725 3598.630064535179 589 1 1 589 589
-11	88968 6701 148 8403 75 3590 235 7.946831428842 225.43939123872 16198.687829281 1569771.3394505
-12	95669 3438 148 8403 75 3590 235 0 1 212 212
+vector 5 slottedNetwork.transmitters[0] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+0	1093 18623 1 3381 3.979372522829 3599.982858232783 709 1 1 709 709
+1	19716 9621 2 3382 5 3600 720 0 1 617 617
+2	29337 8248 8 3378 10 3595 617 1 1 617 617
+3	37585 16642 8 3378 10 3595 617 5.004643153841 25.995291364036 9233.0131994283 158470.20016665
+4	54227 8248 8 3378 10 3595 617 0 1 156 156
+5	62475 2359 129 3151 144.333972113373 3324.546004756187 89 1 1 89 89
 

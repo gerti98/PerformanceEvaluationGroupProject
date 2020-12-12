@@ -28,8 +28,12 @@ simple Transmitter
         //Probability of sending a packet in the current timeslot
         double sendProbability = default(0.5);
 
-        @signal[overflowPercentageSignal](type="long");
-        @statistic[overflowPercentage](source="overflowPercentageSignal"; record=vector);
+        @signal[numPacketDiscardedSignal](type="long");
+        @statistic[numPacketDiscarded](source="numPacketDiscardedSignal"; record=vector, stats);
+        
+        @signal[numPacketCreatedSignal](type="long");
+		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=vector, stats);
+        
         @display("i=block/tx");
     gates:
         output out;

@@ -27,8 +27,8 @@ using namespace omnetpp;
 class Transmitter : public cSimpleModule
 {
 private:
-    simsignal_t overflowPercentageSignal_;
-
+    simsignal_t numPacketDiscardedSignal_;
+    simsignal_t numPacketCreatedSignal_;
     std::queue<PacketMsg*> buffer;
     int bufferMaxSize;
 

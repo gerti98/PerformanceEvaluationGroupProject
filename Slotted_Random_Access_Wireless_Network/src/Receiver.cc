@@ -21,6 +21,7 @@ void Receiver::initialize()
 {
     responseTimeSignal_ = registerSignal("responseTimeSignal");
     thresholdSignal_ = registerSignal("thresholdSignal");
+    numPacketReceivedSignal_ = registerSignal("numPacketReceivedSignal");
 }
 
 
@@ -28,6 +29,9 @@ void Receiver::handleMessage(cMessage *msg)
 {
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
     EV << "Receiver " << this->getId() << ":packet received from transmitter " << pkt->getIdTransmitter() << endl;
+    //Register received signal
+    emit(numPacketReceivedSignal_, 1);
+
     handleResponseTime(pkt);
     handleThreshold(pkt);
     delete(msg);

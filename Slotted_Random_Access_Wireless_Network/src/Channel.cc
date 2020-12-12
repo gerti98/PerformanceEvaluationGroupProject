@@ -135,7 +135,7 @@ void Channel::transmission()
         }
     }
 
-    // Emit throughput (num channel with packets sent / total channels)
+    // Emit throughput (num channel with packets sent in the current timeslot)
     EV << "Channel: sent " << packetSent << " packets" << endl;
 
     if(isCollided_.size() > 0)

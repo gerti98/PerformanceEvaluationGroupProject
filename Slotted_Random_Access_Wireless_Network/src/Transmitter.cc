@@ -1,4 +1,3 @@
-//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +18,8 @@ Define_Module(Transmitter);
 
 void Transmitter::initialize()
 {
-    overflowPercentageSignal_ = registerSignal("overflowPercentageSignal");
+    numPacketDiscardedSignal_ = registerSignal("numPacketDiscardedSignal");
+    numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
 
     /*
      * buffer related variable initialization
@@ -78,13 +78,17 @@ void Transmitter::handleMessage(cMessage *msg)
 void Transmitter::handleArrivedPacket(cMessage* msg){
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
     int id = this->getId();
+
+    //Register creation of the packet
+    emit(numPacketCreatedSignal_, 1);
+
     /*
      * if the buffer is full then the packets is discard
      */
     if(buffer.size() == bufferMaxSize)
     {
         EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
-        emit(overflowPercentageSignal_, 1);
+        emit(numPacketDiscardedSignal_, 1);
         delete(msg);
     }
     else
