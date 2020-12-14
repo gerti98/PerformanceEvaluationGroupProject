@@ -1,0 +1,626 @@
+file 1433169 1607955583                                         
+version 2
+run FourthVerification-0-20201214-15:19:43-220816
+attr configname FourthVerification
+attr datetime 20201214-15:19:43
+attr experiment FourthVerification
+attr inifile omnetpp.ini
+attr iterationvars $0=0.2
+attr iterationvarsf 0.2-
+attr measurement $0=0.2
+attr network slottedNetwork
+attr processid 220816
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 50
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 0.2
+param **.expMean 4s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 1 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 2 slottedNetwork.transmitters[2] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 3 slottedNetwork.transmitters[3] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 4 slottedNetwork.transmitters[4] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 5 slottedNetwork.transmitters[5] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 6 slottedNetwork.transmitters[6] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 7 slottedNetwork.transmitters[7] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 8 slottedNetwork.transmitters[8] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 9 slottedNetwork.transmitters[9] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 10 slottedNetwork.transmitters[10] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 11 slottedNetwork.transmitters[11] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 12 slottedNetwork.transmitters[12] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 13 slottedNetwork.transmitters[13] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 14 slottedNetwork.transmitters[14] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 15 slottedNetwork.transmitters[15] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 16 slottedNetwork.transmitters[16] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 17 slottedNetwork.transmitters[17] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 18 slottedNetwork.transmitters[18] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 19 slottedNetwork.transmitters[19] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 20 slottedNetwork.transmitters[20] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 21 slottedNetwork.transmitters[21] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 22 slottedNetwork.transmitters[22] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 23 slottedNetwork.transmitters[23] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 24 slottedNetwork.transmitters[24] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 25 slottedNetwork.transmitters[25] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 26 slottedNetwork.transmitters[26] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 27 slottedNetwork.transmitters[27] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 28 slottedNetwork.transmitters[28] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 29 slottedNetwork.transmitters[29] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 30 slottedNetwork.transmitters[30] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 31 slottedNetwork.transmitters[31] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 32 slottedNetwork.transmitters[32] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 33 slottedNetwork.transmitters[33] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 34 slottedNetwork.transmitters[34] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 35 slottedNetwork.transmitters[35] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 36 slottedNetwork.transmitters[36] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 37 slottedNetwork.transmitters[37] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 38 slottedNetwork.transmitters[38] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 39 slottedNetwork.transmitters[39] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 40 slottedNetwork.transmitters[40] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 41 slottedNetwork.transmitters[41] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 42 slottedNetwork.transmitters[42] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 43 slottedNetwork.transmitters[43] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 44 slottedNetwork.transmitters[44] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 45 slottedNetwork.transmitters[45] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 46 slottedNetwork.transmitters[46] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 47 slottedNetwork.transmitters[47] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 48 slottedNetwork.transmitters[48] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 49 slottedNetwork.transmitters[49] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 50 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 51 slottedNetwork.receivers[35] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 52 slottedNetwork.receivers[35] responseTime:vector ETV
+attr source responseTimeSignal
+vector 53 slottedNetwork.receivers[35] threshold:vector ETV
+attr source thresholdSignal
+vector 54 slottedNetwork.transmitters[0] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 55 slottedNetwork.transmitters[1] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 56 slottedNetwork.transmitters[2] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 57 slottedNetwork.transmitters[3] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 58 slottedNetwork.transmitters[4] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 59 slottedNetwork.transmitters[5] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 60 slottedNetwork.transmitters[6] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 61 slottedNetwork.transmitters[7] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 62 slottedNetwork.transmitters[8] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 63 slottedNetwork.transmitters[9] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 64 slottedNetwork.transmitters[10] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 65 slottedNetwork.transmitters[11] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 66 slottedNetwork.transmitters[12] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 67 slottedNetwork.transmitters[13] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 68 slottedNetwork.transmitters[14] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 69 slottedNetwork.transmitters[15] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 70 slottedNetwork.transmitters[16] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 71 slottedNetwork.transmitters[17] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 72 slottedNetwork.transmitters[18] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 73 slottedNetwork.transmitters[19] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 74 slottedNetwork.transmitters[20] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 75 slottedNetwork.transmitters[21] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 76 slottedNetwork.transmitters[22] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 77 slottedNetwork.transmitters[23] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 78 slottedNetwork.transmitters[24] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 79 slottedNetwork.transmitters[25] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 80 slottedNetwork.transmitters[26] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 81 slottedNetwork.transmitters[27] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 82 slottedNetwork.transmitters[28] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 83 slottedNetwork.transmitters[29] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 84 slottedNetwork.transmitters[30] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 85 slottedNetwork.transmitters[31] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 86 slottedNetwork.transmitters[32] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 87 slottedNetwork.transmitters[33] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 88 slottedNetwork.transmitters[34] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 89 slottedNetwork.transmitters[36] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 90 slottedNetwork.transmitters[37] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 91 slottedNetwork.transmitters[38] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 92 slottedNetwork.transmitters[39] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 93 slottedNetwork.transmitters[40] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 94 slottedNetwork.transmitters[41] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 95 slottedNetwork.transmitters[42] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 96 slottedNetwork.transmitters[43] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 97 slottedNetwork.transmitters[44] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 98 slottedNetwork.transmitters[45] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 99 slottedNetwork.transmitters[46] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 100 slottedNetwork.transmitters[47] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 101 slottedNetwork.transmitters[48] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 102 slottedNetwork.transmitters[49] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 103 slottedNetwork.transmitters[35] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 104 slottedNetwork.receivers[9] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 105 slottedNetwork.receivers[9] responseTime:vector ETV
+attr source responseTimeSignal
+vector 106 slottedNetwork.receivers[9] threshold:vector ETV
+attr source thresholdSignal
+vector 107 slottedNetwork.receivers[33] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 108 slottedNetwork.receivers[33] responseTime:vector ETV
+attr source responseTimeSignal
+vector 109 slottedNetwork.receivers[33] threshold:vector ETV
+attr source thresholdSignal
+vector 110 slottedNetwork.receivers[42] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 111 slottedNetwork.receivers[42] responseTime:vector ETV
+attr source responseTimeSignal
+vector 112 slottedNetwork.receivers[42] threshold:vector ETV
+attr source thresholdSignal
+vector 113 slottedNetwork.receivers[46] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 114 slottedNetwork.receivers[46] responseTime:vector ETV
+attr source responseTimeSignal
+vector 115 slottedNetwork.receivers[46] threshold:vector ETV
+attr source thresholdSignal
+vector 116 slottedNetwork.receivers[22] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 117 slottedNetwork.receivers[22] responseTime:vector ETV
+attr source responseTimeSignal
+vector 118 slottedNetwork.receivers[22] threshold:vector ETV
+attr source thresholdSignal
+vector 119 slottedNetwork.receivers[18] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 120 slottedNetwork.receivers[18] responseTime:vector ETV
+attr source responseTimeSignal
+vector 121 slottedNetwork.receivers[18] threshold:vector ETV
+attr source thresholdSignal
+vector 122 slottedNetwork.receivers[41] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 123 slottedNetwork.receivers[41] responseTime:vector ETV
+attr source responseTimeSignal
+vector 124 slottedNetwork.receivers[41] threshold:vector ETV
+attr source thresholdSignal
+vector 125 slottedNetwork.receivers[7] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 126 slottedNetwork.receivers[7] responseTime:vector ETV
+attr source responseTimeSignal
+vector 127 slottedNetwork.receivers[7] threshold:vector ETV
+attr source thresholdSignal
+vector 128 slottedNetwork.receivers[6] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 129 slottedNetwork.receivers[6] responseTime:vector ETV
+attr source responseTimeSignal
+vector 130 slottedNetwork.receivers[6] threshold:vector ETV
+attr source thresholdSignal
+vector 131 slottedNetwork.receivers[44] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 132 slottedNetwork.receivers[44] responseTime:vector ETV
+attr source responseTimeSignal
+vector 133 slottedNetwork.receivers[44] threshold:vector ETV
+attr source thresholdSignal
+vector 134 slottedNetwork.receivers[21] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 135 slottedNetwork.receivers[21] responseTime:vector ETV
+attr source responseTimeSignal
+vector 136 slottedNetwork.receivers[21] threshold:vector ETV
+attr source thresholdSignal
+vector 137 slottedNetwork.receivers[12] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 138 slottedNetwork.receivers[12] responseTime:vector ETV
+attr source responseTimeSignal
+vector 139 slottedNetwork.receivers[12] threshold:vector ETV
+attr source thresholdSignal
+vector 140 slottedNetwork.receivers[4] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 141 slottedNetwork.receivers[4] responseTime:vector ETV
+attr source responseTimeSignal
+vector 142 slottedNetwork.receivers[4] threshold:vector ETV
+attr source thresholdSignal
+vector 143 slottedNetwork.receivers[1] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 144 slottedNetwork.receivers[1] responseTime:vector ETV
+attr source responseTimeSignal
+vector 145 slottedNetwork.receivers[1] threshold:vector ETV
+attr source thresholdSignal
+vector 146 slottedNetwork.receivers[28] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 147 slottedNetwork.receivers[28] responseTime:vector ETV
+attr source responseTimeSignal
+vector 148 slottedNetwork.receivers[28] threshold:vector ETV
+attr source thresholdSignal
+vector 149 slottedNetwork.receivers[15] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 150 slottedNetwork.receivers[15] responseTime:vector ETV
+attr source responseTimeSignal
+vector 151 slottedNetwork.receivers[15] threshold:vector ETV
+attr source thresholdSignal
+vector 152 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 153 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 154 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+vector 155 slottedNetwork.receivers[47] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 156 slottedNetwork.receivers[47] responseTime:vector ETV
+attr source responseTimeSignal
+vector 157 slottedNetwork.receivers[47] threshold:vector ETV
+attr source thresholdSignal
+vector 158 slottedNetwork.receivers[23] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 159 slottedNetwork.receivers[23] responseTime:vector ETV
+attr source responseTimeSignal
+vector 160 slottedNetwork.receivers[23] threshold:vector ETV
+attr source thresholdSignal
+vector 161 slottedNetwork.receivers[49] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 162 slottedNetwork.receivers[49] responseTime:vector ETV
+attr source responseTimeSignal
+vector 163 slottedNetwork.receivers[49] threshold:vector ETV
+attr source thresholdSignal
+vector 164 slottedNetwork.receivers[40] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 165 slottedNetwork.receivers[40] responseTime:vector ETV
+attr source responseTimeSignal
+vector 166 slottedNetwork.receivers[40] threshold:vector ETV
+attr source thresholdSignal
+vector 167 slottedNetwork.receivers[5] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 168 slottedNetwork.receivers[5] responseTime:vector ETV
+attr source responseTimeSignal
+vector 169 slottedNetwork.receivers[5] threshold:vector ETV
+attr source thresholdSignal
+vector 170 slottedNetwork.receivers[25] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 171 slottedNetwork.receivers[25] responseTime:vector ETV
+attr source responseTimeSignal
+vector 172 slottedNetwork.receivers[25] threshold:vector ETV
+attr source thresholdSignal
+vector 173 slottedNetwork.receivers[13] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 174 slottedNetwork.receivers[13] responseTime:vector ETV
+attr source responseTimeSignal
+vector 175 slottedNetwork.receivers[13] threshold:vector ETV
+attr source thresholdSignal
+vector 176 slottedNetwork.receivers[10] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 177 slottedNetwork.receivers[10] responseTime:vector ETV
+attr source responseTimeSignal
+vector 178 slottedNetwork.receivers[10] threshold:vector ETV
+attr source thresholdSignal
+vector 179 slottedNetwork.receivers[31] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 180 slottedNetwork.receivers[31] responseTime:vector ETV
+attr source responseTimeSignal
+vector 181 slottedNetwork.receivers[31] threshold:vector ETV
+attr source thresholdSignal
+vector 182 slottedNetwork.receivers[19] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 183 slottedNetwork.receivers[19] responseTime:vector ETV
+attr source responseTimeSignal
+vector 184 slottedNetwork.receivers[19] threshold:vector ETV
+attr source thresholdSignal
+vector 185 slottedNetwork.receivers[26] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 186 slottedNetwork.receivers[26] responseTime:vector ETV
+attr source responseTimeSignal
+vector 187 slottedNetwork.receivers[26] threshold:vector ETV
+attr source thresholdSignal
+vector 188 slottedNetwork.receivers[34] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 189 slottedNetwork.receivers[34] responseTime:vector ETV
+attr source responseTimeSignal
+vector 190 slottedNetwork.receivers[34] threshold:vector ETV
+attr source thresholdSignal
+vector 191 slottedNetwork.receivers[29] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 192 slottedNetwork.receivers[29] responseTime:vector ETV
+attr source responseTimeSignal
+vector 193 slottedNetwork.receivers[29] threshold:vector ETV
+attr source thresholdSignal
+vector 194 slottedNetwork.receivers[48] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 195 slottedNetwork.receivers[48] responseTime:vector ETV
+attr source responseTimeSignal
+vector 196 slottedNetwork.receivers[48] threshold:vector ETV
+attr source thresholdSignal
+0	20803 13105 1 83023 4 3600 900 1 1 900 900
+1	33908 13105 2 83024 4 3600 900 1 1 900 900
+2	47013 13105 3 83025 4 3600 900 1 1 900 900
+3	60118 13105 4 83026 4 3600 900 1 1 900 900
+4	73223 13105 5 83027 4 3600 900 1 1 900 900
+5	86328 13105 6 83028 4 3600 900 1 1 900 900
+6	99433 13105 7 83029 4 3600 900 1 1 900 900
+7	112538 13105 8 83030 4 3600 900 1 1 900 900
+8	125643 13105 9 83031 4 3600 900 1 1 900 900
+9	138748 13106 10 83032 4 3600 900 1 1 900 900
+10	151854 14006 11 83033 4 3600 900 1 1 900 900
+11	165860 14006 12 83034 4 3600 900 1 1 900 900
+12	179866 14006 13 83035 4 3600 900 1 1 900 900
+13	193872 14006 14 83036 4 3600 900 1 1 900 900
+14	207878 14006 15 83037 4 3600 900 1 1 900 900
+15	221884 14006 16 83038 4 3600 900 1 1 900 900
+16	235890 14006 17 83039 4 3600 900 1 1 900 900
+17	249896 14006 18 83040 4 3600 900 1 1 900 900
+18	263902 14006 19 83041 4 3600 900 1 1 900 900
+19	277908 14006 20 83042 4 3600 900 1 1 900 900
+20	291914 14006 21 83043 4 3600 900 1 1 900 900
+21	305920 14006 22 83044 4 3600 900 1 1 900 900
+22	319926 14006 23 83045 4 3600 900 1 1 900 900
+23	333932 14006 24 83046 4 3600 900 1 1 900 900
+24	347938 14006 25 83047 4 3600 900 1 1 900 900
+25	361944 14006 26 83048 4 3600 900 1 1 900 900
+26	375950 14006 27 83049 4 3600 900 1 1 900 900
+27	389956 14006 28 83050 4 3600 900 1 1 900 900
+28	403962 14006 29 83051 4 3600 900 1 1 900 900
+29	417968 14006 30 83052 4 3600 900 1 1 900 900
+30	431974 14006 31 83053 4 3600 900 1 1 900 900
+31	445980 14006 32 83054 4 3600 900 1 1 900 900
+32	459986 14006 33 83055 4 3600 900 1 1 900 900
+33	473992 14006 34 83056 4 3600 900 1 1 900 900
+34	487998 14006 35 83057 4 3600 900 1 1 900 900
+35	502004 14006 36 83058 4 3600 900 1 1 900 900
+36	516010 14006 37 83059 4 3600 900 1 1 900 900
+37	530016 14006 38 83060 4 3600 900 1 1 900 900
+38	544022 14007 39 83061 4 3600 900 1 1 900 900
+39	558029 14007 40 83062 4 3600 900 1 1 900 900
+40	572036 14007 41 83063 4 3600 900 1 1 900 900
+41	586043 14007 42 83064 4 3600 900 1 1 900 900
+42	600050 14007 43 83065 4 3600 900 1 1 900 900
+43	614057 14007 44 83066 4 3600 900 1 1 900 900
+44	628064 14007 45 83067 4 3600 900 1 1 900 900
+45	642071 14007 46 83068 4 3600 900 1 1 900 900
+46	656078 14007 47 83069 4 3600 900 1 1 900 900
+47	670085 14007 48 83070 4 3600 900 1 1 900 900
+48	684092 14007 49 83071 4 3600 900 1 1 900 900
+49	698099 14007 50 83072 4 3600 900 1 1 900 900
+50	712106 11206 51 83022 5 3600 720 0 1 240 240
+51	723312 56 269 13209 15 570 4 1 1 4 4
+52	723368 63 269 13209 15 570 4 11 554 1400 668610
+53	723431 56 269 13209 15 570 4 0 1 3 3
+54	723487 13744 490 83023 24 3600 882 1 1 882 882
+55	737231 13680 491 83024 24 3600 878 1 1 878 878
+56	750911 13949 492 83025 24 3600 895 1 1 895 895
+57	764860 13949 493 83026 24 3600 895 1 1 895 895
+58	778809 13903 494 83027 24 3600 892 1 1 892 892
+59	792712 13597 495 83028 24 3600 873 1 1 873 873
+60	806309 13870 496 83029 24 3600 890 1 1 890 890
+61	820179 13711 497 83030 24 3600 880 1 1 880 880
+62	833890 13949 498 83031 24 3600 895 1 1 895 895
+63	847839 13878 499 83032 24 3600 890 1 1 890 890
+64	861717 13933 500 83033 24 3600 894 1 1 894 894
+65	875650 13949 501 83034 24 3600 895 1 1 895 895
+66	889599 13870 502 83035 24 3600 890 1 1 890 890
+67	903469 13789 503 83036 24 3600 885 1 1 885 885
+68	917258 13949 504 83037 24 3600 895 1 1 895 895
+69	931207 13934 505 83038 24 3600 894 1 1 894 894
+70	945141 13949 506 83039 24 3600 895 1 1 895 895
+71	959090 13949 507 83040 24 3600 895 1 1 895 895
+72	973039 13843 508 83041 24 3600 888 1 1 888 888
+73	986882 13917 509 83042 24 3600 893 1 1 893 893
+74	1000799 13949 510 83043 24 3600 895 1 1 895 895
+75	1014748 13919 511 83044 24 3600 893 1 1 893 893
+76	1028667 13791 512 83045 24 3600 885 1 1 885 885
+77	1042458 13869 513 83046 24 3600 890 1 1 890 890
+78	1056327 13949 514 83047 24 3600 895 1 1 895 895
+79	1070276 13933 515 83048 24 3600 894 1 1 894 894
+80	1084209 13885 516 83049 24 3600 891 1 1 891 891
+81	1098094 13949 517 83050 24 3600 895 1 1 895 895
+82	1112043 13791 518 83051 24 3600 885 1 1 885 885
+83	1125834 13837 519 83052 24 3600 888 1 1 888 888
+84	1139671 13949 520 83053 24 3600 895 1 1 895 895
+85	1153620 13837 521 83054 24 3600 888 1 1 888 888
+86	1167457 13949 522 83055 24 3600 895 1 1 895 895
+87	1181406 13887 523 83056 24 3600 891 1 1 891 891
+88	1195293 13853 524 83057 24 3600 889 1 1 889 889
+89	1209146 13949 526 83059 24 3600 895 1 1 895 895
+90	1223095 13949 527 83060 24 3600 895 1 1 895 895
+91	1237044 13950 528 83061 24 3600 895 1 1 895 895
+92	1250994 13950 529 83062 24 3600 895 1 1 895 895
+93	1264944 13838 530 83063 24 3600 888 1 1 888 888
+94	1278782 13714 531 83064 24 3600 880 1 1 880 880
+95	1292496 13872 532 83065 24 3600 890 1 1 890 890
+96	1306368 13950 533 83066 24 3600 895 1 1 895 895
+97	1320318 13765 534 83067 24 3600 883 1 1 883 883
+98	1334083 13950 535 83068 24 3600 895 1 1 895 895
+99	1348033 13936 536 83069 24 3600 894 1 1 894 894
+100	1361969 14421 537 83070 24 3600 870 1 1 870 870
+101	1376390 14811 538 83071 24 3600 893 1 1 893 893
+102	1391201 14726 539 83072 24 3600 888 1 1 888 888
+103	1405927 14784 631 83058 28 3600 891 1 1 891 891
+104	1420711 76 4528 10347 195 445 5 1 1 5 5
+105	1420787 86 4528 10347 195 445 5 191 425 1365 411155
+106	1420873 76 4528 10347 195 445 5 1 1 5 5
+107	1420949 66 6068 29818 260 1290 4 1 1 4 4
+108	1421015 76 6068 29818 260 1290 4 256 1274 3600 3833950
+109	1421091 66 6068 29818 260 1290 4 1 1 4 4
+110	1421157 83 6536 80621 280 3495 5 1 1 5 5
+111	1421240 97 6536 80621 280 3495 5 276 3475 10620 29694500
+112	1421337 83 6536 80621 280 3495 5 1 1 5 5
+113	1421420 15 6639 6639 285 285 1 1 1 1 1
+114	1421435 17 6639 6639 285 285 1 281 281 281 78961
+115	1421452 15 6639 6639 285 285 1 1 1 1 1
+116	1421467 168 6997 48984 300 2120 10 1 1 10 10
+117	1421635 193 6997 48984 300 2120 10 296 1265 8724 9025344
+118	1421828 168 6997 48984 300 2120 10 1 1 10 10
+119	1421996 113 7100 24387 305 1055 7 1 1 7 7
+120	1422109 127 7100 24387 305 1055 7 301 930 4585 3350043
+121	1422236 113 7100 24387 305 1055 7 1 1 7 7
+122	1422349 250 8393 73863 360 3200 15 1 1 15 15
+123	1422599 285 8393 73863 360 3200 15 347 1789 13941 16296007
+124	1422884 250 8393 73863 360 3200 15 1 1 15 15
+125	1423134 253 11270 81901 485 3550 15 1 1 15 15
+126	1423387 291 11270 81901 485 3550 15 481 1827 16478 20243794
+127	1423678 253 11270 81901 485 3550 15 1 1 15 15
+128	1423931 84 12287 40324 530 1745 5 1 1 5 5
+129	1424015 98 12287 40324 530 1745 5 526 1725 7140 11225950
+130	1424113 84 12287 40324 530 1745 5 1 1 5 5
+131	1424197 197 12749 59587 550 2580 12 1 1 12 12
+132	1424394 222 12749 59587 550 2580 12 254 1688 8214 7281154
+133	1424616 197 12749 59587 550 2580 12 1 1 12 12
+134	1424813 32 13465 13776 580 595 2 1 1 2 2
+135	1424845 36 13465 13776 580 595 2 576 587 1163 676345
+136	1424881 32 13465 13776 580 595 2 1 1 2 2
+137	1424913 84 14032 67165 605 2910 5 1 1 5 5
+138	1424997 98 14032 67165 605 2910 5 601 2890 11740 31396190
+139	1425095 84 14032 67165 605 2910 5 1 1 5 5
+140	1425179 49 14494 62916 625 2725 3 1 1 3 3
+141	1425228 56 14494 62916 625 2725 3 621 2713 4131 8381219
+142	1425284 49 14494 62916 625 2725 3 1 1 3 3
+143	1425333 286 14854 72123 640 3125 17 1 1 17 17
+144	1425619 324 14854 72123 640 3125 17 381 1530 14629 14252567
+145	1425943 286 14854 72123 640 3125 17 1 1 17 17
+146	1426229 168 15161 76172 655 3300 10 1 1 10 10
+147	1426397 193 15161 76172 655 3300 10 508 2171 10952 15081806
+148	1426590 168 15161 76172 655 3300 10 1 1 10 10
+149	1426758 16 16455 16455 710 710 1 1 1 1 1
+150	1426774 18 16455 16455 710 710 1 706 706 706 498436
+151	1426792 16 16455 16455 710 710 1 1 1 1 1
+152	1426808 218 22438 61895 970 2680 13 1 1 13 13
+153	1427026 248 22438 61895 970 2680 13 208 1306 10381 9845607
+154	1427274 218 22438 61895 970 2680 13 1 1 13 13
+155	1427492 424 22541 81695 975 3540 25 1 1 25 25
+156	1427916 479 22541 81695 975 3540 25 124 1915 15685 15852417
+157	1428395 424 22541 81695 975 3540 25 1 1 25 25
+158	1428819 85 25212 60716 1090 2630 5 1 1 5 5
+159	1428904 100 25212 60716 1090 2630 5 1086 2610 11195 26753665
+160	1429004 85 25212 60716 1090 2630 5 1 1 5 5
+161	1429089 119 30384 81542 1315 3535 7 1 1 7 7
+162	1429208 140 30384 81542 1315 3535 7 1311 3325 14913 36132037
+163	1429348 119 30384 81542 1315 3535 7 1 1 7 7
+164	1429467 119 32476 76479 1405 3315 7 1 1 7 7
+165	1429586 140 32476 76479 1405 3315 7 1401 2980 14808 34033680
+166	1429726 119 32476 76479 1405 3315 7 1 1 7 7
+167	1429845 374 33761 82464 1460 3575 22 1 1 22 22
+168	1430219 423 33761 82464 1460 3575 22 326 1965 16901 19209875
+169	1430642 374 33761 82464 1460 3575 22 1 1 22 22
+170	1431016 17 34328 34328 1485 1485 1 1 1 1 1
+171	1431033 20 34328 34328 1485 1485 1 1481 1481 1481 2193361
+172	1431053 17 34328 34328 1485 1485 1 1 1 1 1
+173	1431070 170 39038 74325 1690 3220 10 1 1 10 10
+174	1431240 196 39038 74325 1690 3220 10 668 1890 13265 20222079
+175	1431436 170 39038 74325 1690 3220 10 1 1 10 10
+176	1431606 17 40992 40992 1775 1775 1 1 1 1 1
+177	1431623 20 40992 40992 1775 1775 1 1771 1771 1771 3136441
+178	1431643 17 40992 40992 1775 1775 1 1 1 1 1
+179	1431660 119 44834 60049 1940 2600 7 1 1 7 7
+180	1431779 138 44834 60049 1940 2600 7 464 2420 12310 26043462
+181	1431917 119 44834 60049 1940 2600 7 1 1 7 7
+182	1432036 34 45401 45607 1965 1975 2 1 1 2 2
+183	1432070 40 45401 45607 1965 1975 2 1961 1967 3928 7714610
+184	1432110 34 45401 45607 1965 1975 2 1 1 2 2
+185	1432144 68 50012 81336 2165 3525 4 1 1 4 4
+186	1432212 80 50012 81336 2165 3525 4 2161 3509 10175 27139095
+187	1432292 68 50012 81336 2165 3525 4 1 1 4 4
+188	1432360 102 51038 74635 2210 3235 6 1 1 6 6
+189	1432462 120 51038 74635 2210 3235 6 1023 3190 13223 31522819
+190	1432582 102 51038 74635 2210 3235 6 1 1 6 6
+191	1432684 119 65226 81439 2825 3530 7 1 1 7 7
+192	1432803 138 65226 81439 2825 3530 7 462 3380 17039 51725713
+193	1432941 119 65226 81439 2825 3530 7 1 1 7 7
+194	1433060 34 71764 79244 3110 3435 2 1 1 2 2
+195	1433094 40 71764 79244 3110 3435 2 3106 3427 6533 21391565
+196	1433134 34 71764 79244 3110 3435 2 1 1 2 2
+

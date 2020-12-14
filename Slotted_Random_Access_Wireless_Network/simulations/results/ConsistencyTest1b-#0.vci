@@ -1,0 +1,62 @@
+file 30442 1607954888                                           
+version 2
+run ConsistencyTest1b-0-20201214-15:08:04-220248
+attr configname ConsistencyTest1b
+attr datetime 20201214-15:08:04
+attr experiment ConsistencyTest1b
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 220248
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 2
+param **.numChannels 500
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 20s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 1 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 2 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 3 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 4 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 5 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+vector 6 slottedNetwork.receivers[1] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 7 slottedNetwork.receivers[1] responseTime:vector ETV
+attr source responseTimeSignal
+vector 8 slottedNetwork.receivers[1] threshold:vector ETV
+attr source thresholdSignal
+0	1657 9612 1 3234 5 3600 720 0 2 358 716
+1	11269 2407 10 3232 20 3600 180 1 1 180 180
+2	13676 2407 11 3233 20 3600 180 1 1 180 180
+3	16083 2393 19 3223 25 3585 179 1 1 179 179
+4	18476 2393 19 3223 25 3585 179 5 5 895 4475
+5	20869 2393 19 3223 25 3585 179 0 0 0 0
+6	23262 2393 21 3225 25 3585 179 1 1 179 179
+7	25655 2393 21 3225 25 3585 179 5 5 895 4475
+8	28048 2393 21 3225 25 3585 179 0 0 0 0
+

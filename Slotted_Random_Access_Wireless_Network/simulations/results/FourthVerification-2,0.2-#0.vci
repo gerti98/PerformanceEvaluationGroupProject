@@ -1,0 +1,68 @@
+file 65973 1607955280                                           
+version 2
+run FourthVerification-0-20201214-15:14:40-220608
+attr configname FourthVerification
+attr datetime 20201214-15:14:40
+attr experiment FourthVerification
+attr inifile omnetpp.ini
+attr iterationvars "$0=2, $1=0.2"
+attr iterationvarsf 2,0.2-
+attr measurement "$0=2, $1=0.2"
+attr network slottedNetwork
+attr processid 220608
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 2
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 0.2
+param **.expMean 4s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 1 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 2 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 3 slottedNetwork.transmitters[0] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 4 slottedNetwork.transmitters[1] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 5 slottedNetwork.receivers[1] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 6 slottedNetwork.receivers[1] responseTime:vector ETV
+attr source responseTimeSignal
+vector 7 slottedNetwork.receivers[1] threshold:vector ETV
+attr source thresholdSignal
+vector 8 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 9 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 10 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+0	1902 12097 1 4419 4 3600 900 1 1 900 900
+1	13999 12098 2 4420 4 3600 900 1 1 900 900
+2	26097 9679 3 4418 5 3600 720 0 1 208 208
+3	35776 10581 23 4419 24 3600 787 1 1 787 787
+4	46357 10711 24 4420 24 3600 795 1 1 795 795
+5	57068 1339 74 4390 65 3575 100 1 1 100 100
+6	58407 1516 74 4390 65 3575 100 41 372 16966 3431780
+7	59923 1339 74 4390 65 3575 100 1 1 100 100
+8	61262 1470 81 4414 70 3595 108 1 1 108 108
+9	62732 1662 81 4414 70 3595 108 41 467 17185 3386469
+10	64394 1578 81 4414 70 3595 108 1 1 108 108
+

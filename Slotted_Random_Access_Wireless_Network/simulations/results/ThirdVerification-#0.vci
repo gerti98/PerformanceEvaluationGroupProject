@@ -1,0 +1,53 @@
+file 29848 1607952237                                           
+version 2
+run ThirdVerification-0-20201214-14:23:54-8422
+attr configname ThirdVerification
+attr datetime 20201214-14:23:54
+attr experiment ThirdVerification
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 8422
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 0.5
+param **.expMean 10s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 1 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 2 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 3 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 4 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+vector 5 slottedNetwork.transmitters[0] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+0	1377 9535 1 2483 5 3600 720 0 1 342 342
+1	10912 4769 3 2482 10 3600 360 1 1 360 360
+2	15681 4546 19 2481 35 3595 342 1 1 342 342
+3	20227 4849 19 2481 35 3595 342 5 105 8640 311150
+4	25076 4546 19 2481 35 3595 342 0 1 219 219
+5	29622 225 162 2005 250 2930 17 1 1 17 17
+

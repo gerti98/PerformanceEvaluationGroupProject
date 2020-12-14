@@ -1,0 +1,57 @@
+file 29872 1607951740                                           
+version 2
+run FirstVerification-0-20201214-14:14:39-8070
+attr configname FirstVerification
+attr datetime 20201214-14:14:39
+attr experiment FirstVerification
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 8070
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 10s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+0	885 8 1 1 5 5 1 0 0 0 0
+vector 1 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+1	996 9 3 3 10 10 1 1 1 1 1
+0	1005 9 4 4 10 10 1 0 0 0 0
+0	1014 9 7 7 15 15 1 1 1 1 1
+vector 2 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 3 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 4 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+2	1303 9 9 9 15 15 1 1 1 1 1
+3	1312 9 9 9 15 15 1 5 5 5 25
+4	1321 9 9 9 15 15 1 0 0 0 0
+0	1330 9517 11 2517 20 3600 717 0 1 358 358
+1	10847 4765 10 2516 20 3600 359 1 1 359 359
+2	15612 4753 16 2515 25 3595 358 1 1 358 358
+3	20365 4753 16 2515 25 3595 358 5 5 1790 8950
+4	25118 4753 16 2515 25 3595 358 0 0 0 0
+

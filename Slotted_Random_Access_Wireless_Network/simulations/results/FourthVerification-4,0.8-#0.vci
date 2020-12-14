@@ -1,0 +1,98 @@
+file 119392 1607955282                                          
+version 2
+run FourthVerification-11-20201214-15:14:42-220663
+attr configname FourthVerification
+attr datetime 20201214-15:14:42
+attr experiment FourthVerification
+attr inifile omnetpp.ini
+attr iterationvars "$0=4, $1=0.8"
+attr iterationvarsf 4,0.8-
+attr measurement "$0=4, $1=0.8"
+attr network slottedNetwork
+attr processid 220663
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param **.numTransmitters 4
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 0.8
+param **.expMean 4s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.bufferSize 5
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 1 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 2 slottedNetwork.transmitters[2] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 3 slottedNetwork.transmitters[3] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 4 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 5 slottedNetwork.transmitters[0] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 6 slottedNetwork.transmitters[1] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 7 slottedNetwork.transmitters[2] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 8 slottedNetwork.transmitters[3] numPacketDiscarded:vector ETV
+attr source numPacketDiscardedSignal
+vector 9 slottedNetwork.receivers[3] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 10 slottedNetwork.receivers[3] responseTime:vector ETV
+attr source responseTimeSignal
+vector 11 slottedNetwork.receivers[3] threshold:vector ETV
+attr source thresholdSignal
+vector 12 slottedNetwork.receivers[1] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 13 slottedNetwork.receivers[1] responseTime:vector ETV
+attr source responseTimeSignal
+vector 14 slottedNetwork.receivers[1] threshold:vector ETV
+attr source thresholdSignal
+vector 15 slottedNetwork.receivers[2] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 16 slottedNetwork.receivers[2] responseTime:vector ETV
+attr source responseTimeSignal
+vector 17 slottedNetwork.receivers[2] threshold:vector ETV
+attr source thresholdSignal
+vector 18 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 19 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 20 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+0	2895 12200 1 8044 4 3600 900 1 1 900 900
+1	15095 12200 2 8045 4 3600 900 1 1 900 900
+2	27295 12200 3 8046 4 3600 900 1 1 900 900
+3	39495 12200 4 8047 4 3600 900 1 1 900 900
+4	51695 9760 5 8043 5 3600 720 0 1 295 295
+5	61455 11601 47 8044 24 3600 854 1 1 854 854
+6	73056 11180 48 8045 24 3600 823 1 1 823 823
+7	84236 10783 49 8046 24 3600 796 1 1 796 796
+8	95019 11031 50 8047 24 3600 812 1 1 812 812
+9	106050 1122 63 6674 30 2985 83 1 1 83 83
+10	107172 1345 63 6674 30 2985 83 21 763 14620 4698110
+11	108517 1205 63 6674 30 2985 83 1 1 83 83
+12	109722 1045 107 8033 50 3595 72 1 1 72 72
+13	110767 1167 107 8033 50 3595 72 21 1262 17700 9378014
+14	111934 1045 107 8033 50 3595 72 1 1 72 72
+15	112979 1469 793 7646 360 3420 99 1 1 99 99
+16	114448 1622 793 7646 360 3420 99 21 619 16629 5382251
+17	116070 1469 793 7646 360 3420 99 1 1 99 99
+18	117539 593 924 4558 420 2035 41 1 1 41 41
+19	118132 666 924 4558 420 2035 41 41 512 9788 3194496
+20	118798 593 924 4558 420 2035 41 1 1 41 41
+
