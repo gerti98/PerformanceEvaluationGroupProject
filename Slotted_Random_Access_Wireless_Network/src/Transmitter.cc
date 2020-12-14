@@ -46,7 +46,11 @@ void Transmitter::initialize()
 }
 
 void Transmitter::scheduleNextPacket(){
-    simtime_t arrivalTime = exponential(meanInterarrivalTime) + simTime();
+    simtime_t interArrivalTime = exponential(meanInterarrivalTime);
+    if(par("deterministicInterarrivalTime"))
+        interArrivalTime = meanInterarrivalTime;
+
+    simtime_t arrivalTime = interArrivalTime + simTime();
     PacketMsg* pkt = new PacketMsg("Packet");
     pkt->setCreationTime(arrivalTime);
 

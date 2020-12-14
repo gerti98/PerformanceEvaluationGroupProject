@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
   <inputs>
     <inputs name="/Slotted_Random_Access_Wireless_Network/simulations/results/General-*.vec"/>
     <inputs name="/Slotted_Random_Access_Wireless_Network/simulations/results/General-*.sca"/>
   </inputs>
-  <datasets/>
-  <chartSheets/>
+  <datasets>
+    <datasets name="proa">
+      <items xsi:type="scave:Group">
+        <items xsi:type="scave:Group">
+          <items xsi:type="scave:Add" filterPattern="file(/Slotted_Random_Access_Wireless_Network/simulations/results/General-#0.vec) AND attr:configname(General) AND attr:runnumber(0) AND module(slottedNetwork.transmitters[0]) AND name(numPacketCreated:vector)" type="VECTOR"/>
+          <items xsi:type="scave:Apply" operation="sum"/>
+          <items xsi:type="scave:LineChart" name="" lineNameFormat=""/>
+        </items>
+        <items xsi:type="scave:Group">
+          <items xsi:type="scave:Add" filterPattern="file(/Slotted_Random_Access_Wireless_Network/simulations/results/General-#0.vec) AND attr:configname(General) AND attr:runnumber(0) AND module(slottedNetwork.receivers[0]) AND name(numPacketReceived:vector)" type="VECTOR"/>
+          <items xsi:type="scave:Apply" operation="sum">
+            <filters xsi:type="scave:Select"/>
+          </items>
+          <items xsi:type="scave:Compute" operation="merger">
+            <filters xsi:type="scave:Select"/>
+          </items>
+          <items xsi:type="scave:Add" filterPattern="file(/Slotted_Random_Access_Wireless_Network/simulations/results/General-#0.vec) AND attr:configname(General) AND attr:runnumber(0) AND module(slottedNetwork.transmitters[0]) AND name(numPacketDiscarded:vector)" type="VECTOR"/>
+        </items>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.0/@items.0/@items.2"/>
+  </chartSheets>
 </scave:Analysis>

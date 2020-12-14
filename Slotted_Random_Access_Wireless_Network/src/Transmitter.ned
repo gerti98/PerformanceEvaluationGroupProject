@@ -27,7 +27,8 @@ simple Transmitter
         int numChannels = default(1);
         //Probability of sending a packet in the current timeslot
         double sendProbability = default(0.5);
-
+		
+		bool deterministicInterarrivalTime = default(false);
         @signal[numPacketDiscardedSignal](type="long");
         @statistic[numPacketDiscarded](source="numPacketDiscardedSignal"; record=vector, stats);
         
