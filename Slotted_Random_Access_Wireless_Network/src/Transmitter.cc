@@ -46,7 +46,7 @@ void Transmitter::initialize()
 }
 
 void Transmitter::scheduleNextPacket(){
-    simtime_t interArrivalTime = exponential(meanInterarrivalTime);
+    simtime_t interArrivalTime = exponential(meanInterarrivalTime,0);
     if(par("deterministicInterarrivalTime"))
         interArrivalTime = meanInterarrivalTime;
 
@@ -128,7 +128,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
         if(strcmp(msg->getName(), "NACK") == 0)
         {
             maxBackoffTime *= 2;
-            backoffTime = intuniform(1, maxBackoffTime);
+            backoffTime = intuniform(1, maxBackoffTime, 1);
             EV << "transmitter " << id << ": NACK received, back-off time = " << backoffTime << endl;
         }
         else
@@ -150,10 +150,10 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              * if an ACK or a TRIGGER packet is received the transmitter check if
              * the buffer is empty and if not it starts with the Bernoullian experiment
              */
-            if(buffer.empty() == false && uniform(0.0, 1.0) < sendProbability)
+            if(buffer.empty() == false && uniform(0.0, 1.0, 3) < sendProbability)
             {
                 PacketMsg* pkt = buffer.front();
-                pkt->setIdChannel(intuniform(0, numChannels - 1));
+                pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
                 send(pkt->dup(), "out");
                 EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
             }
