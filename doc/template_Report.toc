@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.1}Introduction}{4}%
 \contentsline {subsection}{\numberline {2.2}General Assumptions}{4}%
 \contentsline {subsection}{\numberline {2.3}Preliminar Validation}{5}%
-\contentsline {subsection}{\numberline {2.4}Factors}{6}%
+\contentsline {subsection}{\numberline {2.4}Factors}{5}%
 \contentsline {section}{\numberline {3}Implementation}{7}%
 \contentsline {subsection}{\numberline {3.1}Modules}{7}%
 \contentsline {subsection}{\numberline {3.2}Messages}{7}%
