@@ -2,7 +2,7 @@
 \subsection{Modules}
 The following modules have been defined:
 \begin{itemize}
-	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $K$, $lambda$, $p$, overflow Signal (for the queue)
+	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $lambda$, $p$, packetsInQueue Signal (for the queue)
 	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Parameters: $T_{timeslot}$, Throughput Signal
 	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$, Response Time Signal, Threshold Signal
 \end{itemize}
@@ -23,7 +23,7 @@ A new format of message has been defined, in order to store all packet informati
 		\item \textbf{IF} an \textit{ACK} has been received the packet at the top of the queue can be removed. \textbf{GOTO (2)}
 		\item \textbf{ELSE IF} a \textit{NACK} has been received, then the \textit{Transmitter} starts his backoff time and \textbf{waits for another message}.
 		\item \textbf{ELSE IF} an \textit{Synchronization message} has been received \textbf{AND} the \textit{Transmitter} is not in backoff-time \textbf{GOTO (2)}
-		\item \textbf{ELSE IF} a packet arrives at the \textit{Transmitter}, the Transmitter tries to store the packet in the queue, make a reschedule of the next packet and \textbf{waits for another message}
+		\item \textbf{ELSE IF} a packet arrives at the \textit{Transmitter}, the Transmitter stores the packet in the queue, make a reschedule of the arrival of the next packet and \textbf{waits for another message}
 	\end{itemize}
 	\item The \textit{Transmitter} tries to send the packet
 	\begin{itemize}
