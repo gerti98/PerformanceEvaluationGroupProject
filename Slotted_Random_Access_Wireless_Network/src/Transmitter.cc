@@ -18,14 +18,14 @@ Define_Module(Transmitter);
 
 void Transmitter::initialize()
 {
-    numPacketDiscardedSignal_ = registerSignal("numPacketDiscardedSignal");
+    //numPacketDiscardedSignal_ = registerSignal("numPacketDiscardedSignal");
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
 
     /*
      * buffer related variable initialization
      */
 
-    bufferMaxSize = par("bufferSize"); //todo: cancel buffersize
+    //bufferMaxSize = par("bufferSize"); //todo: cancel buffersize
 
     buffer = std::queue<PacketMsg*>();
 
@@ -89,18 +89,19 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     /*
      * if the buffer is full then the packets is discard
      */
-    if(buffer.size() == bufferMaxSize) //todo: cancel buffersize
-    {
-        EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
-        emit(numPacketDiscardedSignal_, 1);
-        delete(msg);
-    }
-    else
-    {
-        EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
-        pkt->setIdTransmitter(id);
-        buffer.push(pkt);
-    }
+//    if(buffer.size() == bufferMaxSize) //todo: cancel buffersize
+//    {
+//        EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
+//        emit(numPacketDiscardedSignal_, 1);
+//        delete(msg);
+//    }
+    //else
+    //{
+    EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
+    pkt->setIdTransmitter(id);
+    buffer.push(pkt);
+
+    //}
 
     scheduleNextPacket();
 }

@@ -27,10 +27,10 @@ using namespace omnetpp;
 class Transmitter : public cSimpleModule
 {
 private:
-    simsignal_t numPacketDiscardedSignal_; //todo: cancel buffersize
+    //simsignal_t numPacketDiscardedSignal_; //todo: cancel buffersize
     simsignal_t numPacketCreatedSignal_;
     std::queue<PacketMsg*> buffer;
-    int bufferMaxSize; //todo: cancel buffersize
+    //int bufferMaxSize; //todo: cancel buffersize
 
     int maxBackoffTime, backoffTime;
 
