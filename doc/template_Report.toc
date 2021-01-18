@@ -16,7 +16,8 @@
 \contentsline {subsubsection}{\numberline {3.3.2}\textit {Channel} Module Behaviour in the implementation}{8}%
 \contentsline {subsubsection}{\numberline {3.3.3}\textit {Receiver} Module Behaviour in the implementation:}{9}%
 \contentsline {section}{\numberline {4}Verification}{10}%
-\contentsline {subsection}{\numberline {4.1}Test Simulations}{10}%
+\contentsline {subsection}{\numberline {4.1}Degeneracy Tests}{10}%
+\contentsline {subsection}{\numberline {4.2}Test Simulations}{10}%
 \contentsline {section}{\numberline {5}Simulations Experiments}{11}%
 \contentsline {subsection}{\numberline {5.1}Calibration of Warm-Up Period and Simulation duration}{11}%
 \contentsline {subsection}{\numberline {5.2}Design of Experiments}{11}%

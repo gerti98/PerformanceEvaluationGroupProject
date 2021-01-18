@@ -26,6 +26,9 @@ void Channel::initialize()
     // Array Initialization
     int numOfChannels = getAncestorPar("numChannels");
 
+    if(numOfChannels==0)
+        endSimulation();
+
     for(int i=0; i<numOfChannels; i++)
         isCollided_.push_back(false);
 

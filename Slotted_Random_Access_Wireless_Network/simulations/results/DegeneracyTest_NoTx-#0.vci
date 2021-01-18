@@ -1,0 +1,31 @@
+file 3655 1610989807                                            
+version 2
+run DegeneracyTest_NoTx-0-20210118-18:09:53-9286
+attr configname DegeneracyTest_NoTx
+attr datetime 20210118-18:09:53
+attr experiment DegeneracyTest_NoTx
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 9286
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 0
+param **.timeSlotSize 0s
+param **.numTransmitters 1
+param **.numChannels 1
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+0	712 2942 1 305 0 0 305 0 0 0 0
+
