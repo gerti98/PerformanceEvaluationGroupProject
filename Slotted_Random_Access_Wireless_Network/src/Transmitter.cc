@@ -25,7 +25,7 @@ void Transmitter::initialize()
      * buffer related variable initialization
      */
 
-    bufferMaxSize = par("bufferSize");
+    bufferMaxSize = par("bufferSize"); //todo: cancel buffersize
 
     buffer = std::queue<PacketMsg*>();
 
@@ -46,7 +46,7 @@ void Transmitter::initialize()
 }
 
 void Transmitter::scheduleNextPacket(){
-    simtime_t interArrivalTime = exponential(meanInterarrivalTime,0);
+    simtime_t interArrivalTime = exponential(meanInterarrivalTime,0); 
     if(par("deterministicInterarrivalTime"))
         interArrivalTime = meanInterarrivalTime;
 
@@ -89,7 +89,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     /*
      * if the buffer is full then the packets is discard
      */
-    if(buffer.size() == bufferMaxSize)
+    if(buffer.size() == bufferMaxSize) //todo: cancel buffersize
     {
         EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
         emit(numPacketDiscardedSignal_, 1);

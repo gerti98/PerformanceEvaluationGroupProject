@@ -26,7 +26,7 @@ network slottedNetwork
         int numTransmitters;
         int numChannels;
 
-        int bufferSize;
+        int bufferSize; //todo: cancel buffersize
 
         double sendProbability;
 
@@ -39,7 +39,7 @@ network slottedNetwork
         transmitters[numTransmitters]: Transmitter {
             parameters:
                 numChannels = numChannels;
-                bufferSize = bufferSize;
+                bufferSize = bufferSize; //todo: cancel buffersize
                 sendProbability = sendProbability;
                 meanInterarrivalTime = expMean;
         }
