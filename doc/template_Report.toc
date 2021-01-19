@@ -3,27 +3,28 @@
 \contentsline {subsection}{\numberline {1.1}Problem Description}{2}%
 \contentsline {subsection}{\numberline {1.2}Objectives}{2}%
 \contentsline {subsection}{\numberline {1.3}Performance Indexes}{2}%
-\contentsline {section}{\numberline {2}Modeling}{4}%
-\contentsline {subsection}{\numberline {2.1}Introduction}{4}%
-\contentsline {subsection}{\numberline {2.2}General Assumptions}{4}%
-\contentsline {subsection}{\numberline {2.3}Preliminar Validation}{5}%
-\contentsline {subsection}{\numberline {2.4}Factors}{5}%
-\contentsline {section}{\numberline {3}Implementation}{7}%
-\contentsline {subsection}{\numberline {3.1}Modules}{7}%
-\contentsline {subsection}{\numberline {3.2}Messages}{7}%
-\contentsline {subsection}{\numberline {3.3}Modules Behaviour}{7}%
-\contentsline {subsubsection}{\numberline {3.3.1}\textit {Transmitter} Module Behaviour in the implementation}{7}%
-\contentsline {subsubsection}{\numberline {3.3.2}\textit {Channel} Module Behaviour in the implementation}{8}%
-\contentsline {subsubsection}{\numberline {3.3.3}\textit {Receiver} Module Behaviour in the implementation:}{9}%
-\contentsline {section}{\numberline {4}Verification}{10}%
-\contentsline {subsection}{\numberline {4.1}Degeneracy Tests}{10}%
-\contentsline {subsection}{\numberline {4.2}Consistency Test}{10}%
-\contentsline {paragraph}{Test 1}{10}%
-\contentsline {paragraph}{Test 2}{11}%
-\contentsline {subsection}{\numberline {4.3}Continuity Test}{12}%
-\contentsline {subsection}{\numberline {4.4}Test Simulations}{12}%
-\contentsline {section}{\numberline {5}Simulations Experiments}{13}%
-\contentsline {subsection}{\numberline {5.1}Calibration of Warm-Up Period and Simulation duration}{13}%
-\contentsline {subsection}{\numberline {5.2}Design of Experiments}{13}%
-\contentsline {subsection}{\numberline {5.3}Result Analysis}{13}%
-\contentsline {section}{\numberline {6}Conclusions}{14}%
+\contentsline {section}{\numberline {2}Modeling}{3}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{3}%
+\contentsline {subsection}{\numberline {2.2}General Assumptions}{3}%
+\contentsline {subsection}{\numberline {2.3}Preliminar Validation}{3}%
+\contentsline {subsection}{\numberline {2.4}Factors}{4}%
+\contentsline {section}{\numberline {3}Implementation}{5}%
+\contentsline {subsection}{\numberline {3.1}Modules}{5}%
+\contentsline {subsection}{\numberline {3.2}Messages}{5}%
+\contentsline {subsection}{\numberline {3.3}Modules Behaviour}{5}%
+\contentsline {subsubsection}{\numberline {3.3.1}\textit {Transmitter} Module Behaviour in the implementation}{5}%
+\contentsline {subsubsection}{\numberline {3.3.2}\textit {Channel} Module Behaviour in the implementation}{6}%
+\contentsline {subsubsection}{\numberline {3.3.3}\textit {Receiver} Module Behaviour in the implementation:}{6}%
+\contentsline {section}{\numberline {4}Verification}{7}%
+\contentsline {subsection}{\numberline {4.1}Degeneracy Tests}{7}%
+\contentsline {subsection}{\numberline {4.2}Consistency Test}{7}%
+\contentsline {paragraph}{Test 1}{7}%
+\contentsline {paragraph}{Test 2: Two couple TX-RX with half packets arrival rate}{7}%
+\contentsline {subsection}{\numberline {4.3}Continuity Test}{8}%
+\contentsline {subsection}{\numberline {4.4}Test Simulations with Binomial Model (1)}{8}%
+\contentsline {paragraph}{Parameters}{8}%
+\contentsline {section}{\numberline {5}Simulations Experiments}{10}%
+\contentsline {subsection}{\numberline {5.1}Calibration of Warm-Up Period and Simulation duration}{10}%
+\contentsline {subsection}{\numberline {5.2}Design of Experiments}{10}%
+\contentsline {subsection}{\numberline {5.3}Result Analysis}{10}%
+\contentsline {section}{\numberline {6}Conclusions}{11}%

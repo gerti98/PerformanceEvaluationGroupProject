@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_GB
 \section{Verification}
-In this section we present tests performed in order to verify our implementation.
+In this section we present tests performed in order to verify that our implementation reflects correctly our model.
 
 \subsection{Degeneracy Tests}
 In the degeneracy tests we verify the behaviour of our simulator with parameters set to 0 values. In all tests the simulator works properly. In particular the following observations can be inferred:
@@ -14,16 +14,16 @@ In the degeneracy tests we verify the behaviour of our simulator with parameters
 The consistency test verifies that the system react consistently with the output. In order to test this we perform two tests with the following parameters.
 \paragraph{Test 1}
 \begin{itemize}
-	\item Number of transmitters: 1
+	\item Number of couple tx-rx: 1
 	\item Number of channels: 500
 	\item Send probability: 1
 	\item Mean inter-arrival time: 10s (deterministic)
 	\item Time slot size: 5s
 \end{itemize}
 
-\paragraph{Test 2}
+\paragraph{Test 2: Two couple TX-RX with half packets arrival rate}
 \begin{itemize}
-	\item Number of transmitters: 2
+	\item Number of couple tx-rx: 2
 	\item Number of channels: 500
 	\item Send probability: 1
 	\item Mean inter-arrival time: 20s (deterministic)
@@ -32,18 +32,18 @@ The consistency test verifies that the system react consistently with the output
 
 \noindent We expect that the result of the two tests are more or less equal because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the number of channels at 500 in order to neglect the effect of collisions (in any case it is possible that a collision occur, but in the following tests no collisions have been detected).
 
-\noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect.
+\noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect. In fact the Mean Throughput per slot tend in both cases to 0.50 packets per slot.
 
-\begin{figure}[htpb]
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.28]{img/ConsistencyTest1a.png}
+	\includegraphics[width=0.9\textwidth]{img/consistencyTest1aWithAxis.png}
 	\caption{Consistency Test 1}
 	\label {img: consistencyTest1a}
 \end{figure}
 
-\begin{figure}[htpb]
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.28]{img/ConsistencyTest1b.png}
+	\includegraphics[width=0.9\textwidth]{img/consistencyTest1bWithAxis.png}
 	\caption{Consistency Test 2}
 	\label {img: consistencyTest1b}
 \end{figure}
@@ -52,4 +52,39 @@ The consistency test verifies that the system react consistently with the output
 \subsection{Continuity Test}
 
 
-\subsection{Test Simulations}
+\subsection{Test Simulations with Binomial Model (1)}
+This test simulation has been performed with the following parameters:
+\paragraph{Parameters}
+\begin{itemize}
+	\item Number of couple tx-rx: 1
+	\item Number of channels: 1
+	\item Send probability: 0.5 ($p$)
+	\item Mean inter-arrival time: 1s (deterministic) ($lambda$)
+	\item Time slot size: 2s ($T_{slot}$)
+	\item simulation-duration: 3600s ($T_{sim}$)
+	\item repeat: 100
+	\item seed-set: \$\{repetition\}
+\end{itemize}
+In this simplified context there are no collisions (only one couple) and the transmitter will have, for every slot, at least one packet to sent ($lambda < T_{slot}$). We can model this particular case as a repeated Bernoullian Experiment, in which a success event correspond to a successful packet sent. In this simplified model the number of successes are distributed as a binomial distribution:
+\begin{equation}
+	p(i) = P\{X = i\} = \binom{n}{i} p^{i} (1-p)^{n-i}
+\end{equation}
+Where $n$ represents the number of repeated trials and $i$ the number of successes in those trials. With this distribution the mean and the variance are:
+\begin{align*}
+	E[X] = np \qquad     
+	Var(X) = np(1-p)
+\end{align*}
+In our context we can state the following:
+\begin{equation}
+	n = \left \lfloor{\dfrac{T_{slot}}{T_{sim}}}\right \rfloor = 1800
+\end{equation}
+We would expect in this case:
+\begin{equation}
+	E[X] = np = 900
+\end{equation}
+And the results after the run of 100 test simulation with different seeds, the following results are returned (with 95\% CI):
+\begin{equation}
+	\overline{X} \in [893.08, 901.94]
+\end{equation}
+Which is in line with our expectations.
+

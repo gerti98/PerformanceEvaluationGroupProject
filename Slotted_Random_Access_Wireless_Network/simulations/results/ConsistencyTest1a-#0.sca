@@ -1,14 +1,14 @@
 version 2
-run ConsistencyTest1a-0-20210119-11:18:37-6664
+run ConsistencyTest1a-0-20210119-16:44:18-26429
 attr configname ConsistencyTest1a
-attr datetime 20210119-11:18:37
+attr datetime 20210119-16:44:18
 attr experiment ConsistencyTest1a
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 6664
+attr processid 26429
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -58,4 +58,6 @@ field sqrsum 0
 attr source thresholdSignal
 scalar slottedNetwork.ch throughput:sum 359
 attr source throughputSignal
+scalar slottedNetwork.ch collisions:sum 0
+attr source collisionSignal
 

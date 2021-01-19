@@ -20,11 +20,15 @@ The aim of the project report is the \textit{Assessment of the Effectiveness of 
 \subsection{Performance Indexes}
 In order to define a metric of performance of the objective, the following Performance Indexes are defined:
 \begin{itemize}
-	\item \textbf{Throughput}: let $Tp$ be the Throughput to be measured, $N_{p}$ the number of packets successfully sent to the corrisponding receiver, $N_{t}$ the number of timeslot considered in the count of $N_{p}$, the Throughput can be measured as:
+	\item \textbf{Throughput}: let $Tp$ be the Throughput to be measured, $N_{p}$ the number of packets successfully sent to the corrisponding receiver, $N_{t}$ the number of timeslot considered in the count of $N_{p}$, $T_{slot}$ the period (in seconds) of a time slot, the Throughput(per slot) can be measured as:
+	\begin{align*}
+	Tp(slot) = \frac{N_{p}}{N_{t}} \quad [packets/slot]
+	\end{align*}
+	We can also convert this performance metric in a more standard form, dealing with packets per second:
+	\begin{align*}
+	Tp = Tp(slot) * T_{slot} \quad [packets/s]
+	\end{align*}
 	
-	\begin{equation}
-	Tp = \frac{N_{p}}{N_{t}}
-	\end{equation}
 	
 	\item \textbf{Response Time}: defined as the time that occurs from the first appearance of one packet at the Transmitter up to the reception of the packet at the Receiver.
 	

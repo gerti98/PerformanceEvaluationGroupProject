@@ -1,14 +1,14 @@
 version 2
-run ConsistencyTest1b-0-20210119-11:18:54-6718
+run ConsistencyTest1b-0-20210119-16:56:24-27880
 attr configname ConsistencyTest1b
-attr datetime 20210119-11:18:54
+attr datetime 20210119-16:56:24
 attr experiment ConsistencyTest1b
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 6718
+attr processid 27880
 attr repetition 0
 attr replication #0
 attr resultdir results
