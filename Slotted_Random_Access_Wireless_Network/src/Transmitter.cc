@@ -20,6 +20,7 @@ void Transmitter::initialize()
 {
     //numPacketDiscardedSignal_ = registerSignal("numPacketDiscardedSignal");
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
+    numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
 
     /*
      * buffer related variable initialization
@@ -73,6 +74,8 @@ void Transmitter::handleMessage(cMessage *msg)
         handleChannelPacket(msg);
         delete(msg);
     }
+
+    computeModuleStatistics();
 }
 
 /*
@@ -162,6 +165,9 @@ void Transmitter::handleChannelPacket(cMessage* msg){
     }
 }
 
+void Transmitter::computeModuleStatistics(){
+    emit(numPacketOnBufferSignal_, buffer.size());
+}
 
 void Transmitter::finish(){
     while(buffer.empty() == false){

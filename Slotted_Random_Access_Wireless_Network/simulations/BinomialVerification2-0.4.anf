@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
   <inputs>
     <inputs name="/Slotted_Random_Access_Wireless_Network/simulations/results/BinomialVerification2-0.4-*.vec"/>
     <inputs name="/Slotted_Random_Access_Wireless_Network/simulations/results/BinomialVerification2-0.4-*.sca"/>
   </inputs>
-  <datasets/>
+  <datasets>
+    <datasets name="04">
+      <items xsi:type="scave:Add" filterPattern="module(slottedNetwork.ch) AND name(throughput:sum)"/>
+    </datasets>
+  </datasets>
   <chartSheets/>
 </scave:Analysis>

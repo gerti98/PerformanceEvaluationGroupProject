@@ -29,6 +29,8 @@ class Transmitter : public cSimpleModule
 private:
     //simsignal_t numPacketDiscardedSignal_; //todo: cancel buffersize
     simsignal_t numPacketCreatedSignal_;
+    simsignal_t numPacketOnBufferSignal_;
+
     std::queue<PacketMsg*> buffer;
     //int bufferMaxSize; //todo: cancel buffersize
 
@@ -45,6 +47,7 @@ protected:
     virtual void handleMessage(cMessage *msg);
     virtual void handleArrivedPacket(cMessage *msg);
     virtual void handleChannelPacket(cMessage* msg);
+    virtual void computeModuleStatistics();
     virtual void finish();
 };
 
