@@ -10,6 +10,45 @@ In the degeneracy tests we verify the behaviour of our simulator with parameters
 	\item If the exponential mean is 0 then the simulation doesn't stop and continues to infinite because packets arrive at time 0 continuously.
 \end{itemize}
 
-\subsection{Consistency Tests}
+\subsection{Consistency Test}
+The consistency test verifies that the system react consistently with the output. In order to test this we perform two tests with the following parameters.
+\paragraph{Test 1}
+\begin{itemize}
+	\item Number of transmitters: 1
+	\item Number of channels: 500
+	\item Send probability: 1
+	\item Mean inter-arrival time: 10s (deterministic)
+	\item Time slot size: 5s
+\end{itemize}
+
+\paragraph{Test 2}
+\begin{itemize}
+	\item Number of transmitters: 2
+	\item Number of channels: 500
+	\item Send probability: 1
+	\item Mean inter-arrival time: 20s (deterministic)
+	\item Time slot size: 5s
+\end{itemize}
+
+\noindent We expect that the result of the two tests are more or less equal because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the number of channels at 500 in order to neglect the effect of collisions.
+
+\noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.32]{img/ConsistencyTest1a.png}
+	\caption{Consistency Test 1}
+	\label {img: consistencyTest1a}
+\end{figure}
+\newpage
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[scale=0.32]{img/ConsistencyTest1b.png}
+	\caption{Consistency Test 2}
+	\label {img: consistencyTest1b}
+\end{figure}
+
+\subsection{Continuity Test}
+
 
 \subsection{Test Simulations}
