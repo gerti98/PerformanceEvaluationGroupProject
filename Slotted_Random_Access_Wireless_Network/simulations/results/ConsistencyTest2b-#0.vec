@@ -1,14 +1,14 @@
 version 2
-run ConsistencyTest2b-0-20210119-12:21:57-5198
+run ConsistencyTest2b-0-20210119-12:35:39-5700
 attr configname ConsistencyTest2b
-attr datetime 20210119-12:21:57
+attr datetime 20210119-12:35:39
 attr experiment ConsistencyTest2b
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 5198
+attr processid 5700
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -63,6 +63,8 @@ vector 15 slottedNetwork.receivers[3] responseTime:vector ETV
 attr source responseTimeSignal
 vector 16 slottedNetwork.receivers[3] threshold:vector ETV
 attr source thresholdSignal
+vector 17 slottedNetwork.ch collisions:vector ETV
+attr source collisionSignal
 0	1	5	0
 0	6	10	0
 0	11	15	0
@@ -3651,4 +3653,6 @@ attr source thresholdSignal
 16	5673	3545	0
 16	5705	3565	0
 16	5737	3585	0
+17	3805	2385	1
+17	4223	2645	1
 

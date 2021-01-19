@@ -24,6 +24,9 @@ simple Channel
 
         double timeSlotSize @unit(s);
 
+		@signal[collisionSignal](type="long");
+        @statistic[collisions](source="collisionSignal"; record=vector,sum);
+        
         @signal[throughputSignal](type="long");
         @statistic[throughput](source="throughputSignal"; record=vector,sum);
 

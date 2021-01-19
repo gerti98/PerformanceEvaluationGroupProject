@@ -21,6 +21,7 @@ Define_Module(Channel);
 void Channel::initialize()
 {
     throughputSignal_ = registerSignal("throughputSignal");
+    collisionSignal_ = registerSignal("collisionSignal");
 
 
     // Array Initialization
@@ -87,7 +88,10 @@ void Channel::findCollisions()
         int ch = packetsOfSlot_[i]->getIdChannel();
 
         if(n_collisions[ch] == 1)
+        {
             isCollided_[ch] = true;
+            emit(collisionSignal_, 1);
+        }
         n_collisions[ch]++;
     }
 }

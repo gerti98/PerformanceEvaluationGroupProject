@@ -30,24 +30,25 @@ The consistency test verifies that the system react consistently with the output
 	\item Time slot size: 5s
 \end{itemize}
 
-\noindent We expect that the result of the two tests are more or less equal because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the number of channels at 500 in order to neglect the effect of collisions.
+\noindent We expect that the result of the two tests are more or less equal because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the number of channels at 500 in order to neglect the effect of collisions (in any case it is possible that a collision occur, but in the following tests no collisions have been detected).
 
 \noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect.
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.32]{img/ConsistencyTest1a.png}
+	\includegraphics[scale=0.28]{img/ConsistencyTest1a.png}
 	\caption{Consistency Test 1}
 	\label {img: consistencyTest1a}
 \end{figure}
-\newpage
+
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=0.32]{img/ConsistencyTest1b.png}
+	\includegraphics[scale=0.28]{img/ConsistencyTest1b.png}
 	\caption{Consistency Test 2}
 	\label {img: consistencyTest1b}
 \end{figure}
 
+\noindent The oscillations at the beginning are due to the fact that the mean inter-arrival time is bigger with respect to the time slot size. In fact we can observe that in the second test there are larger oscillations because the difference between the mean inter-arrival time and the time slot size is bigger than the one of the first test.
 \subsection{Continuity Test}
 
 
