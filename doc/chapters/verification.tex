@@ -58,7 +58,7 @@ This test simulation has been performed with the following parameters:
 \begin{itemize}
 	\item Number of couple tx-rx: 1
 	\item Number of channels: 1
-	\item Send probability: 0.5 ($p$)
+	\item Send probability: \$\{0.2, 0.4, 0.5, 0.6, 0.8\} ($p$)
 	\item Mean inter-arrival time: 1s (deterministic) ($lambda$)
 	\item Time slot size: 2s ($T_{slot}$)
 	\item simulation-duration: 3600s ($T_{sim}$)
@@ -78,7 +78,7 @@ In our context we can state the following:
 \begin{equation}
 	n = \left \lfloor{\dfrac{T_{slot}}{T_{sim}}}\right \rfloor = 1800
 \end{equation}
-We would expect in this case:
+We would expect in the case of $p = 0.5$:
 \begin{equation}
 	E[X] = np = 900
 \end{equation}
@@ -86,5 +86,14 @@ And the results after the run of 100 test simulation with different seeds, the f
 \begin{equation}
 	\overline{X} \in [893.08, 901.94]
 \end{equation}
-Which is in line with our expectations.
+Which is in line with our expectations. The latter computations have been repeated for different values of p and the following plot can sum up the results:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/plotTheoreticalMeanBinomial.png}
+	\caption{Test Binomial Model}
+	\label {img: consistencyTest1b}
+\end{figure}
+
+As we can see it is difficult to recognize the theoretical results with the results obtained with the test simulations and the Confidence Interval can be barely seen.
 
