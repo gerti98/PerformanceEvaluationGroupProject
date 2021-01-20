@@ -166,7 +166,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
 }
 
 void Transmitter::computeModuleStatistics(){
-    emit(numPacketOnBufferSignal_, buffer.size());
+    emit(numPacketOnBufferSignal_, (long)buffer.size());
 }
 
 void Transmitter::finish(){

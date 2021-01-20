@@ -1,0 +1,186 @@
+file 386761 1611140753                                          
+version 2
+run ContinuityTest1b-0-20210120-12:05:48-7236
+attr configname ContinuityTest1b
+attr datetime 20210120-12:05:48
+attr experiment ContinuityTest1b
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 7236
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 10
+param **.numChannels 20000
+param **.sendProbability 1
+param **.expMean 10s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 1 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 2 slottedNetwork.transmitters[1] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 3 slottedNetwork.transmitters[2] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 4 slottedNetwork.transmitters[3] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 5 slottedNetwork.transmitters[4] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 6 slottedNetwork.transmitters[5] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 7 slottedNetwork.transmitters[6] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 8 slottedNetwork.transmitters[7] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 9 slottedNetwork.transmitters[8] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 10 slottedNetwork.transmitters[9] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 11 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 12 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 13 slottedNetwork.transmitters[2] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 14 slottedNetwork.transmitters[3] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 15 slottedNetwork.transmitters[4] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 16 slottedNetwork.transmitters[5] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 17 slottedNetwork.transmitters[6] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 18 slottedNetwork.transmitters[7] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 19 slottedNetwork.transmitters[8] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 20 slottedNetwork.transmitters[9] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 21 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 22 slottedNetwork.receivers[0] responseTime:vector ETV
+attr source responseTimeSignal
+vector 23 slottedNetwork.receivers[0] threshold:vector ETV
+attr source thresholdSignal
+vector 24 slottedNetwork.receivers[1] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 25 slottedNetwork.receivers[1] responseTime:vector ETV
+attr source responseTimeSignal
+vector 26 slottedNetwork.receivers[1] threshold:vector ETV
+attr source thresholdSignal
+vector 27 slottedNetwork.receivers[2] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 28 slottedNetwork.receivers[2] responseTime:vector ETV
+attr source responseTimeSignal
+vector 29 slottedNetwork.receivers[2] threshold:vector ETV
+attr source thresholdSignal
+vector 30 slottedNetwork.receivers[3] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 31 slottedNetwork.receivers[3] responseTime:vector ETV
+attr source responseTimeSignal
+vector 32 slottedNetwork.receivers[3] threshold:vector ETV
+attr source thresholdSignal
+vector 33 slottedNetwork.receivers[4] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 34 slottedNetwork.receivers[4] responseTime:vector ETV
+attr source responseTimeSignal
+vector 35 slottedNetwork.receivers[4] threshold:vector ETV
+attr source thresholdSignal
+vector 36 slottedNetwork.receivers[5] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 37 slottedNetwork.receivers[5] responseTime:vector ETV
+attr source responseTimeSignal
+vector 38 slottedNetwork.receivers[5] threshold:vector ETV
+attr source thresholdSignal
+vector 39 slottedNetwork.receivers[6] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 40 slottedNetwork.receivers[6] responseTime:vector ETV
+attr source responseTimeSignal
+vector 41 slottedNetwork.receivers[6] threshold:vector ETV
+attr source thresholdSignal
+vector 42 slottedNetwork.receivers[7] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 43 slottedNetwork.receivers[7] responseTime:vector ETV
+attr source responseTimeSignal
+vector 44 slottedNetwork.receivers[7] threshold:vector ETV
+attr source thresholdSignal
+vector 45 slottedNetwork.receivers[8] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 46 slottedNetwork.receivers[8] responseTime:vector ETV
+attr source responseTimeSignal
+vector 47 slottedNetwork.receivers[8] threshold:vector ETV
+attr source thresholdSignal
+vector 48 slottedNetwork.receivers[9] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 49 slottedNetwork.receivers[9] responseTime:vector ETV
+attr source responseTimeSignal
+vector 50 slottedNetwork.receivers[9] threshold:vector ETV
+attr source thresholdSignal
+0	5764 10510 1 18690 5 3600 720 0 10 3590 35900
+1	16274 15229 2 18691 5 3600 1080 0 1 720 720
+2	31503 15229 3 18692 5 3600 1080 0 1 720 720
+3	46732 15230 4 18693 5 3600 1080 0 1 720 720
+4	61962 15230 5 18694 5 3600 1080 0 1 720 720
+5	77192 15231 6 18695 5 3600 1080 0 1 720 720
+6	92423 15231 7 18696 5 3600 1080 0 1 720 720
+7	107654 15231 8 18697 5 3600 1080 0 1 720 720
+8	122885 15231 9 18698 5 3600 1080 0 1 720 720
+9	138116 15232 10 18699 5 3600 1080 0 1 720 720
+10	153348 16312 11 18700 5 3600 1080 0 1 720 720
+11	169660 5438 12 18680 10 3600 360 1 1 360 360
+12	175098 5438 13 18681 10 3600 360 1 1 360 360
+13	180536 5438 14 18682 10 3600 360 1 1 360 360
+14	185974 5438 15 18683 10 3600 360 1 1 360 360
+15	191412 5439 16 18684 10 3600 360 1 1 360 360
+16	196851 5439 17 18685 10 3600 360 1 1 360 360
+17	202290 5439 18 18686 10 3600 360 1 1 360 360
+18	207729 5439 19 18687 10 3600 360 1 1 360 360
+19	213168 5439 20 18688 10 3600 360 1 1 360 360
+20	218607 5439 21 18689 10 3600 360 1 1 360 360
+21	224046 5423 45 18661 15 3595 359 1 1 359 359
+22	229469 5423 45 18661 15 3595 359 5 5 1795 8975
+23	234892 5423 45 18661 15 3595 359 0 0 0 0
+24	240315 5423 47 18663 15 3595 359 1 1 359 359
+25	245738 5423 47 18663 15 3595 359 5 5 1795 8975
+26	251161 5423 47 18663 15 3595 359 0 0 0 0
+27	256584 5424 49 18665 15 3595 359 1 1 359 359
+28	262008 5424 49 18665 15 3595 359 5 5 1795 8975
+29	267432 5424 49 18665 15 3595 359 0 0 0 0
+30	272856 5424 51 18667 15 3595 359 1 1 359 359
+31	278280 5424 51 18667 15 3595 359 5 5 1795 8975
+32	283704 5424 51 18667 15 3595 359 0 0 0 0
+33	289128 5424 53 18669 15 3595 359 1 1 359 359
+34	294552 5424 53 18669 15 3595 359 5 5 1795 8975
+35	299976 5424 53 18669 15 3595 359 0 0 0 0
+36	305400 5424 55 18671 15 3595 359 1 1 359 359
+37	310824 5424 55 18671 15 3595 359 5 5 1795 8975
+38	316248 5424 55 18671 15 3595 359 0 0 0 0
+39	321672 5424 57 18673 15 3595 359 1 1 359 359
+40	327096 5424 57 18673 15 3595 359 5 5 1795 8975
+41	332520 5424 57 18673 15 3595 359 0 0 0 0
+42	337944 5424 59 18675 15 3595 359 1 1 359 359
+43	343368 5424 59 18675 15 3595 359 5 5 1795 8975
+44	348792 5424 59 18675 15 3595 359 0 0 0 0
+45	354216 5424 61 18677 15 3595 359 1 1 359 359
+46	359640 5424 61 18677 15 3595 359 5 5 1795 8975
+47	365064 5424 61 18677 15 3595 359 0 0 0 0
+48	370488 5424 63 18679 15 3595 359 1 1 359 359
+49	375912 5424 63 18679 15 3595 359 5 5 1795 8975
+50	381336 5424 63 18679 15 3595 359 0 0 0 0
+
