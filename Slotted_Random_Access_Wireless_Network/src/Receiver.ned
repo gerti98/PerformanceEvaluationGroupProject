@@ -33,8 +33,7 @@ simple Receiver
 
 		@signal[numPacketReceivedSignal](type="long");
 		@statistic[numPacketReceived](source="numPacketReceivedSignal"; record=vector, stats);
-		
-		
+			
         @display("i=block/rx");
     gates:
         input in;

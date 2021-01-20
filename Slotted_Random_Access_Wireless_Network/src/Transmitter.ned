@@ -30,9 +30,6 @@ simple Transmitter
 		
         bool deterministicInterarrivalTime = default(false);
         
-        //@signal[numPacketDiscardedSignal](type="long"); //todo: cancel buffersize
-        //@statistic[numPacketDiscarded](source="numPacketDiscardedSignal"; record=vector, stats); //todo: cancel buffersize
-        
         @signal[numPacketCreatedSignal](type="long");
 		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=vector, stats);
         

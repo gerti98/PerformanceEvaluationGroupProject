@@ -31,6 +31,10 @@ private:
     simsignal_t throughputSignal_;
     // signal to record collisions number
     simsignal_t collisionSignal_;
+
+    // signal to record response time for all the couple tx-rx
+    simsignal_t wholeResponseTimeSignal_;
+
     // isCollided_[i] is true if there is a collision on channel i, otherwise is false
     std::vector<bool> isCollided_;
     // packetsOfslot_ contains all the packet for a specific slot

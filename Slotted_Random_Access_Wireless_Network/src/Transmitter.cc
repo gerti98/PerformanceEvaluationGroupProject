@@ -89,22 +89,10 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     //Register creation of the packet
     emit(numPacketCreatedSignal_, 1);
 
-    /*
-     * if the buffer is full then the packets is discard
-     */
-//    if(buffer.size() == bufferMaxSize) //todo: cancel buffersize
-//    {
-//        EV << "transmitter " << id << ": arrival packet discarded because the buffer is full" << endl;
-//        emit(numPacketDiscardedSignal_, 1);
-//        delete(msg);
-//    }
-    //else
-    //{
+
     EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
     pkt->setIdTransmitter(id);
     buffer.push(pkt);
-
-    //}
 
     scheduleNextPacket();
 }
@@ -122,6 +110,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
     if(backoffTime > 0)
     {
         backoffTime--;
+        EV << "Backoff remained: " << backoffTime << endl;
     }
     else
     {

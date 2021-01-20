@@ -23,7 +23,11 @@ simple Channel
     parameters:
 
         double timeSlotSize @unit(s);
-
+		
+		//For Utility to consider all packets
+		@signal[wholeResponseTimeSignal](type="double");
+		@statistic[wholeResponseTime](source="wholeResponseTimeSignal"; record=vector);
+		
 		@signal[collisionSignal](type="long");
         @statistic[collisions](source="collisionSignal"; record=vector,sum);
         

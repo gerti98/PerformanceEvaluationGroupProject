@@ -1,0 +1,141 @@
+version 2
+run DebugChangeOfChannelInCaseOfCollision-0-20210120-18:02:07-32794
+attr configname DebugChangeOfChannelInCaseOfCollision
+attr datetime 20210120-18:02:07
+attr experiment DebugChangeOfChannelInCaseOfCollision
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network slottedNetwork
+attr processid 32794
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 4
+param **.numChannels 2
+param **.sendProbability 1
+param **.expMean 5ms
+param **.timeSlotSize 5ms
+param **.thresh 20ms
+param **.deterministicInterarrivalTime true
+param **.numTransmitters 1
+param **.numChannels 1
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 1 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+0	1	0.005	1
+1	1	0.005	1
+vector 2 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 3 slottedNetwork.transmitters[1] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+2	2	0.005	1
+3	2	0.005	1
+vector 4 slottedNetwork.transmitters[2] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 5 slottedNetwork.transmitters[2] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+4	3	0.005	1
+5	3	0.005	1
+vector 6 slottedNetwork.transmitters[3] numPacketCreated:vector ETV
+attr source numPacketCreatedSignal
+vector 7 slottedNetwork.transmitters[3] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+6	4	0.005	1
+7	4	0.005	1
+vector 8 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+1	6	0.005	1
+8	5	0.005	0
+3	7	0.005	1
+5	8	0.005	1
+7	9	0.005	1
+0	14	0.01	1
+1	14	0.01	2
+2	15	0.01	1
+3	15	0.01	2
+4	16	0.01	1
+5	16	0.01	2
+6	17	0.01	1
+7	17	0.01	2
+vector 9 slottedNetwork.ch collisions:vector ETV
+attr source collisionSignal
+1	19	0.01	2
+8	18	0.01	0
+9	18	0.01	1
+9	18	0.01	1
+3	20	0.01	2
+5	21	0.01	2
+7	22	0.01	2
+0	23	0.015	1
+1	23	0.015	3
+2	24	0.015	1
+3	24	0.015	3
+4	25	0.015	1
+5	25	0.015	3
+6	26	0.015	1
+7	26	0.015	3
+1	28	0.015	3
+8	27	0.015	0
+3	29	0.015	3
+5	30	0.015	3
+7	31	0.015	3
+0	32	0.02	1
+1	32	0.02	4
+2	33	0.02	1
+3	33	0.02	4
+4	34	0.02	1
+5	34	0.02	4
+6	35	0.02	1
+7	35	0.02	4
+1	37	0.02	4
+8	36	0.02	0
+3	38	0.02	4
+5	39	0.02	4
+7	40	0.02	4
+0	43	0.025	1
+1	43	0.025	5
+2	44	0.025	1
+3	44	0.025	5
+4	45	0.025	1
+5	45	0.025	5
+6	46	0.025	1
+7	46	0.025	5
+vector 10 slottedNetwork.ch wholeResponseTime:vector ETV
+attr source wholeResponseTimeSignal
+5	48	0.025	4
+8	47	0.025	2
+10	47	0.025	0.02
+10	47	0.025	0.02
+vector 11 slottedNetwork.receivers[2] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 12 slottedNetwork.receivers[2] responseTime:vector ETV
+attr source responseTimeSignal
+vector 13 slottedNetwork.receivers[2] threshold:vector ETV
+attr source thresholdSignal
+11	49	0.025	1
+12	49	0.025	0.02
+13	49	0.025	1
+7	50	0.025	4
+vector 14 slottedNetwork.receivers[3] numPacketReceived:vector ETV
+attr source numPacketReceivedSignal
+vector 15 slottedNetwork.receivers[3] responseTime:vector ETV
+attr source responseTimeSignal
+vector 16 slottedNetwork.receivers[3] threshold:vector ETV
+attr source thresholdSignal
+14	51	0.025	1
+15	51	0.025	0.02
+16	51	0.025	1
+1	52	0.025	5
+3	53	0.025	5
+

@@ -1,4 +1,4 @@
-file 369688 1611137616                                          
+file 369688 1611148449                                          
 version 2
 run ContinuityTest2b-0-20210120-11:13:32-5905
 attr configname ContinuityTest2b
@@ -32,158 +32,157 @@ param **.deterministicInterarrivalTime false
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
+0	5839 10131 1 17854 5 3600 720 0 8 2767 12283
 vector 1 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+1	15970 16060 2 17857 5 3600 1080 0 60 37367 1678093
 vector 2 slottedNetwork.transmitters[1] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+2	32030 16497 3 17861 5 3600 1080 0 121 76012 6629768
 vector 3 slottedNetwork.transmitters[2] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+3	48527 16382 4 17862 5 3600 1080 0 175 65140 6206714
 vector 4 slottedNetwork.transmitters[3] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+4	64909 16100 5 17863 5 3600 1080 0 73 38283 1965353
 vector 5 slottedNetwork.transmitters[4] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+5	81009 16121 6 17859 5 3600 1080 0 75 38522 1897550
 vector 6 slottedNetwork.transmitters[5] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+6	97130 16019 7 17864 5 3600 1080 0 43 17070 405588
 vector 7 slottedNetwork.transmitters[6] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+7	113149 16222 8 17855 5 3600 1080 0 83 54694 3391464
 vector 8 slottedNetwork.transmitters[7] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+8	129371 16257 9 17865 5 3600 1080 0 109 60374 4292798
 vector 9 slottedNetwork.transmitters[8] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+9	145628 16162 10 17860 5 3600 1080 0 73 47119 2582701
 vector 10 slottedNetwork.transmitters[9] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+10	161790 17295 11 17866 5 3600 1080 0 54 29672 1032984
 vector 11 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+11	179085 5429 12 17844 10 3600 360 1 1 360 360
 vector 12 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+12	184514 5429 13 17845 10 3600 360 1 1 360 360
 vector 13 slottedNetwork.transmitters[2] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+13	189943 5429 14 17846 10 3600 360 1 1 360 360
 vector 14 slottedNetwork.transmitters[3] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+14	195372 5429 15 17847 10 3600 360 1 1 360 360
 vector 15 slottedNetwork.transmitters[4] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+15	200801 5429 16 17848 10 3600 360 1 1 360 360
 vector 16 slottedNetwork.transmitters[5] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+16	206230 5429 17 17849 10 3600 360 1 1 360 360
 vector 17 slottedNetwork.transmitters[6] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+17	211659 5429 18 17850 10 3600 360 1 1 360 360
 vector 18 slottedNetwork.transmitters[7] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+18	217088 5429 19 17851 10 3600 360 1 1 360 360
 vector 19 slottedNetwork.transmitters[8] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+19	222517 5429 20 17852 10 3600 360 1 1 360 360
 vector 20 slottedNetwork.transmitters[9] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+20	227946 5429 21 17853 10 3600 360 1 1 360 360
 vector 21 slottedNetwork.ch collisions:vector ETV
 attr source collisionSignal
+21	233375 5850 43 17854 15 3600 389 1 1 389 389
 vector 22 slottedNetwork.receivers[1] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+22	239225 3629 46 17784 15 3585 239 1 1 239 239
 vector 23 slottedNetwork.receivers[1] responseTime:vector ETV
 attr source responseTimeSignal
+23	242854 4163 46 17784 15 3585 239 5 1200 179370 160787100
 vector 24 slottedNetwork.receivers[1] threshold:vector ETV
 attr source thresholdSignal
+24	247017 3629 46 17784 15 3585 239 0 1 233 233
 vector 25 slottedNetwork.receivers[2] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+25	250646 2709 48 11424 15 2295 185 1 1 185 185
 vector 26 slottedNetwork.receivers[2] responseTime:vector ETV
 attr source responseTimeSignal
+26	253355 3039 48 11424 15 2295 185 5 550 63260 27411700
 vector 27 slottedNetwork.receivers[2] threshold:vector ETV
 attr source thresholdSignal
+27	256394 2709 48 11424 15 2295 185 0 1 173 173
 vector 28 slottedNetwork.receivers[7] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+28	259103 3790 54 17732 15 3575 251 1 1 251 251
 vector 29 slottedNetwork.receivers[7] responseTime:vector ETV
 attr source responseTimeSignal
+29	262893 4278 54 17732 15 3575 251 5 1080 141030 99008200
 vector 30 slottedNetwork.receivers[7] threshold:vector ETV
 attr source thresholdSignal
+30	267171 3790 54 17732 15 3575 251 0 1 244 244
 vector 31 slottedNetwork.receivers[8] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+31	270961 4457 56 17833 15 3595 294 1 1 294 294
 vector 32 slottedNetwork.receivers[8] responseTime:vector ETV
 attr source responseTimeSignal
+32	275418 5000 56 17833 15 3595 294 5 720 134450 75752850
 vector 33 slottedNetwork.receivers[8] threshold:vector ETV
 attr source thresholdSignal
+33	280418 4457 56 17833 15 3595 294 0 1 273 273
 vector 34 slottedNetwork.receivers[9] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+34	284875 4664 58 17778 15 3585 308 1 1 308 308
 vector 35 slottedNetwork.receivers[9] responseTime:vector ETV
 attr source responseTimeSignal
+35	289539 5261 58 17778 15 3585 308 5 530 84525 29266475
 vector 36 slottedNetwork.receivers[9] threshold:vector ETV
 attr source thresholdSignal
+36	294800 4664 58 17778 15 3585 308 0 1 303 303
 vector 37 slottedNetwork.receivers[4] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+37	299464 4310 115 17831 30 3595 286 1 1 286 286
 vector 38 slottedNetwork.receivers[4] responseTime:vector ETV
 attr source responseTimeSignal
+38	303774 4827 115 17831 30 3595 286 5 745 100185 49139425
 vector 39 slottedNetwork.receivers[4] threshold:vector ETV
 attr source thresholdSignal
+39	308601 4310 115 17831 30 3595 286 0 1 281 281
 vector 40 slottedNetwork.receivers[5] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+40	312911 4831 117 17704 30 3570 321 1 1 321 321
 vector 41 slottedNetwork.receivers[5] responseTime:vector ETV
 attr source responseTimeSignal
+41	317742 5373 117 17704 30 3570 321 5 420 48430 11262750
 vector 42 slottedNetwork.receivers[5] threshold:vector ETV
 attr source thresholdSignal
+42	323115 4831 117 17704 30 3570 321 0 1 295 295
 vector 43 slottedNetwork.receivers[0] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+43	327946 4583 139 17858 35 3600 303 1 1 303 303
 vector 44 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
+44	332529 5114 139 17858 35 3600 303 5 595 107465 49159775
 vector 45 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
+45	337643 4583 139 17858 35 3600 303 0 1 285 285
 vector 46 slottedNetwork.receivers[3] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+46	342226 4332 192 17730 45 3575 288 1 1 288 288
 vector 47 slottedNetwork.receivers[3] responseTime:vector ETV
 attr source responseTimeSignal
+47	346558 4853 192 17730 45 3575 288 5 725 100855 52477975
 vector 48 slottedNetwork.receivers[3] threshold:vector ETV
 attr source thresholdSignal
+48	351411 4332 192 17730 45 3575 288 0 1 281 281
 vector 49 slottedNetwork.receivers[6] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+49	355743 4457 194 17856 45 3600 292 1 1 292 292
 vector 50 slottedNetwork.receivers[6] responseTime:vector ETV
 attr source responseTimeSignal
+50	360200 5030 194 17856 45 3600 292 30 825 158350 101685050
 vector 51 slottedNetwork.receivers[6] threshold:vector ETV
 attr source thresholdSignal
-0	5839 10131 1 17854 5 3600 720 0 8 2767 12283
-1	15970 16060 2 17857 5 3600 1080 0 60 37367 1678093
-2	32030 16497 3 17861 5 3600 1080 0 121 76012 6629768
-3	48527 16382 4 17862 5 3600 1080 0 175 65140 6206714
-4	64909 16100 5 17863 5 3600 1080 0 73 38283 1965353
-5	81009 16121 6 17859 5 3600 1080 0 75 38522 1897550
-6	97130 16019 7 17864 5 3600 1080 0 43 17070 405588
-7	113149 16222 8 17855 5 3600 1080 0 83 54694 3391464
-8	129371 16257 9 17865 5 3600 1080 0 109 60374 4292798
-9	145628 16162 10 17860 5 3600 1080 0 73 47119 2582701
-10	161790 17295 11 17866 5 3600 1080 0 54 29672 1032984
-11	179085 5429 12 17844 10 3600 360 1 1 360 360
-12	184514 5429 13 17845 10 3600 360 1 1 360 360
-13	189943 5429 14 17846 10 3600 360 1 1 360 360
-14	195372 5429 15 17847 10 3600 360 1 1 360 360
-15	200801 5429 16 17848 10 3600 360 1 1 360 360
-16	206230 5429 17 17849 10 3600 360 1 1 360 360
-17	211659 5429 18 17850 10 3600 360 1 1 360 360
-18	217088 5429 19 17851 10 3600 360 1 1 360 360
-19	222517 5429 20 17852 10 3600 360 1 1 360 360
-20	227946 5429 21 17853 10 3600 360 1 1 360 360
-21	233375 5850 43 17854 15 3600 389 1 1 389 389
-22	239225 3629 46 17784 15 3585 239 1 1 239 239
-23	242854 4163 46 17784 15 3585 239 5 1200 179370 160787100
-24	247017 3629 46 17784 15 3585 239 0 1 233 233
-25	250646 2709 48 11424 15 2295 185 1 1 185 185
-26	253355 3039 48 11424 15 2295 185 5 550 63260 27411700
-27	256394 2709 48 11424 15 2295 185 0 1 173 173
-28	259103 3790 54 17732 15 3575 251 1 1 251 251
-29	262893 4278 54 17732 15 3575 251 5 1080 141030 99008200
-30	267171 3790 54 17732 15 3575 251 0 1 244 244
-31	270961 4457 56 17833 15 3595 294 1 1 294 294
-32	275418 5000 56 17833 15 3595 294 5 720 134450 75752850
-33	280418 4457 56 17833 15 3595 294 0 1 273 273
-34	284875 4664 58 17778 15 3585 308 1 1 308 308
-35	289539 5261 58 17778 15 3585 308 5 530 84525 29266475
-36	294800 4664 58 17778 15 3585 308 0 1 303 303
-37	299464 4310 115 17831 30 3595 286 1 1 286 286
-38	303774 4827 115 17831 30 3595 286 5 745 100185 49139425
-39	308601 4310 115 17831 30 3595 286 0 1 281 281
-40	312911 4831 117 17704 30 3570 321 1 1 321 321
-41	317742 5373 117 17704 30 3570 321 5 420 48430 11262750
-42	323115 4831 117 17704 30 3570 321 0 1 295 295
-43	327946 4583 139 17858 35 3600 303 1 1 303 303
-44	332529 5114 139 17858 35 3600 303 5 595 107465 49159775
-45	337643 4583 139 17858 35 3600 303 0 1 285 285
-46	342226 4332 192 17730 45 3575 288 1 1 288 288
-47	346558 4853 192 17730 45 3575 288 5 725 100855 52477975
-48	351411 4332 192 17730 45 3575 288 0 1 281 281
-49	355743 4457 194 17856 45 3600 292 1 1 292 292
-50	360200 5030 194 17856 45 3600 292 30 825 158350 101685050
-51	365230 4457 194 17856 45 3600 292 1 1 292 292
-
+51	365230 4458 194 17856 45 3600 292 1 1 292 292

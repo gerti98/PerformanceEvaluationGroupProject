@@ -22,7 +22,7 @@ void Channel::initialize()
 {
     throughputSignal_ = registerSignal("throughputSignal");
     collisionSignal_ = registerSignal("collisionSignal");
-
+    wholeResponseTimeSignal_ = registerSignal("wholeResponseTimeSignal");
 
     // Array Initialization
     int numOfChannels = getAncestorPar("numChannels");
@@ -71,7 +71,7 @@ void Channel::handleMessage(cMessage *msg)
          * for this slot*/
         PacketMsg* newPkt = check_and_cast<PacketMsg*>(msg);
         newPkt->setIndexTx(newPkt->getArrivalGate()->getIndex());
-        EV << "Packet from tx " << newPkt->getIdTransmitter() << " arrived" << endl;
+        EV << "Packet from tx " << newPkt->getIdTransmitter() << " arrived at Sub-Channel" << newPkt->getIdChannel() << endl;
         packetsOfSlot_.push_back(newPkt);
     }
 }
@@ -136,6 +136,11 @@ void Channel::transmission()
             //Reused indexTx to get the id of the port
             EV << "Sended packet to Receiver " << indexTx<< endl;
             send(packetsOfSlot_[i],"out_rx",indexTx);
+
+            //Utility: computation of response time
+            simtime_t respTime = simTime() - packetsOfSlot_[i]->getCreationTime();
+            EV << "Channel: response Time = " << respTime << endl;
+            emit(wholeResponseTimeSignal_, respTime.dbl());
 
             //Count packet sent to the receiver
             packetSent++;
