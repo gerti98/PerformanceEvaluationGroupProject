@@ -101,14 +101,14 @@ In this test the aim is to prove that the output changes slightly if the input c
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/continuityTest1a.png}
-	\caption{Continuity Test 1 - Collisions detected: 272}
+	\caption{Continuity Test 1 - Mean Throughput per Slot - Collisions detected: 272}
 	\label {img: continuityTest1a}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/continuityTest1b.png}
-	\caption{Continuity Test 2 - Collisions detected: 390}
+	\caption{Continuity Test 2 - Mean Throughput per Slot - Collisions detected: 390}
 	\label {img: continuityTest1b}
 \end{figure}
 
@@ -116,9 +116,25 @@ In this test the aim is to prove that the output changes slightly if the input c
 
 \noindent At the end of the day we can see that in the first case the mean throughput is assested to a value about 3.6 and in the second case about 4. So changing slightly the input changes slightly the output.
 
-\noindent \underline{controllare:} If we analyse the response time we can see that the difference is bigger because the response time is sensible to the variation of transmitter and channel, and this is something that must be taken into account. In fact, as we have seen previously, there are a lot of collisions in the second case and this is the main reason for the increasing of response time in the second case w.r.t the first one.
+\noindent If we analyse the response time we can see that the difference is bigger between the two cases because the response time is sensible to the variation of transmitters and channels, and this is something that must be taken into account. In fact, as we have seen previously, there are a lot of collisions in the second case and this is the main reason for the increasing of response time in the second test w.r.t the first one.
 
-\textbf{aggiungere grafici}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/continuityTest1a_responsetime.png}
+	\caption{Continuity Test 1 - Response Time - Collisions detected: 272}
+	\label {img: continuityTest1a_responsetime}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{img/continuityTest1b_responsetime.png}
+	\caption{Continuity Test 2 - Response Time - Collisions detected: 390}
+	\label {img: continuityTest1b_responsetime}
+\end{figure}
+
+\noindent It's possible to see the response time measured in the two tests in the figure \ref{img: continuityTest1a_responsetime} and \ref{img: continuityTest1b_responsetime}. In any case we can see that the continuity test is correct because the system works as we expect: channels fixed, the more the transmitters, the more the collisions, the more the response time.
 
 \vspace{5mm}
 In addition to this, some simulation were taken in order to \textbf{assess the monotonicity} of some KPI by changing some factors:
