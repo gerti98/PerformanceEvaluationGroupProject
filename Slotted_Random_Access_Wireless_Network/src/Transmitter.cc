@@ -25,9 +25,6 @@ void Transmitter::initialize()
     /*
      * buffer related variable initialization
      */
-
-    //bufferMaxSize = par("bufferSize"); //todo: cancel buffersize
-
     buffer = std::queue<PacketMsg*>();
 
     /*

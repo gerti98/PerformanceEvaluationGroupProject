@@ -1,4 +1,4 @@
-file 59880 1611221900                                           
+file 59880 1611237203                                           
 version 2
 run ConsistencyTest1b-0-20210121-10:38:17-6601
 attr configname ConsistencyTest1b
@@ -32,38 +32,37 @@ param **.deterministicInterarrivalTime false
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
+0	1913 9612 1 3234 5 3600 720 0 2 358 716
 vector 1 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+1	11525 12019 2 3235 5 3600 900 0 1 360 360
 vector 2 slottedNetwork.transmitters[1] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
+2	23544 12019 3 3236 5 3600 900 0 1 360 360
 vector 3 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+3	35563 2407 10 3232 20 3600 180 1 1 180 180
 vector 4 slottedNetwork.transmitters[1] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
+4	37970 2407 11 3233 20 3600 180 1 1 180 180
 vector 5 slottedNetwork.ch wholeResponseTime:vector ETV
 attr source wholeResponseTimeSignal
+5	40377 4786 17 3221 25 3585 358 5 5 1790 8950
 vector 6 slottedNetwork.receivers[0] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+6	45163 2393 19 3223 25 3585 179 1 1 179 179
 vector 7 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
+7	47556 2393 19 3223 25 3585 179 5 5 895 4475
 vector 8 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
+8	49949 2393 19 3223 25 3585 179 0 0 0 0
 vector 9 slottedNetwork.receivers[1] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
+9	52342 2393 21 3225 25 3585 179 1 1 179 179
 vector 10 slottedNetwork.receivers[1] responseTime:vector ETV
 attr source responseTimeSignal
+10	54735 2572 21 3225 25 3585 179 5 5 895 4475
 vector 11 slottedNetwork.receivers[1] threshold:vector ETV
 attr source thresholdSignal
-0	1913 9612 1 3234 5 3600 720 0 2 358 716
-1	11525 12019 2 3235 5 3600 900 0 1 360 360
-2	23544 12019 3 3236 5 3600 900 0 1 360 360
-3	35563 2407 10 3232 20 3600 180 1 1 180 180
-4	37970 2407 11 3233 20 3600 180 1 1 180 180
-5	40377 4786 17 3221 25 3585 358 5 5 1790 8950
-6	45163 2393 19 3223 25 3585 179 1 1 179 179
-7	47556 2393 19 3223 25 3585 179 5 5 895 4475
-8	49949 2393 19 3223 25 3585 179 0 0 0 0
-9	52342 2393 21 3225 25 3585 179 1 1 179 179
-10	54735 2572 21 3225 25 3585 179 5 5 895 4475
-11	57307 2572 21 3225 25 3585 179 0 0 0 0
-
+11	57307 2573 21 3225 25 3585 179 0 0 0 0

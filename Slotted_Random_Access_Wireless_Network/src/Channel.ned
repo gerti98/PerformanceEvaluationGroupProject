@@ -26,13 +26,13 @@ simple Channel
 		
 		//For Utility to consider all packets
 		@signal[wholeResponseTimeSignal](type="double");
-		@statistic[wholeResponseTime](source="wholeResponseTimeSignal"; record=vector);
+		@statistic[wholeResponseTime](source="wholeResponseTimeSignal"; record=vector,mean);
 		
 		@signal[collisionSignal](type="long");
         @statistic[collisions](source="collisionSignal"; record=vector,sum);
         
         @signal[throughputSignal](type="long");
-        @statistic[throughput](source="throughputSignal"; record=vector,sum);
+        @statistic[throughput](source="throughputSignal"; record=vector,sum,mean);
 
         @display("i=block/table");
     gates:

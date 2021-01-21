@@ -1,4 +1,4 @@
-file 951311 1611220033                                          
+file 951311 1611237203                                          
 version 2
 run DegeneracyTest_NoTx-0-20210121-10:07:01-4789
 attr configname DegeneracyTest_NoTx
@@ -27,7 +27,4 @@ param **.deterministicInterarrivalTime false
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-0	712 382110 1 32768 0 0 32768 0 0 0 0
-0	382822 393216 32769 65536 0 0 32768 0 0 0 0
-0	776038 175272 65537 80142 0 0 14606 0 0 0 0
-
+0	712 950599 1 80142 0 0 80142 0 0 0 0
