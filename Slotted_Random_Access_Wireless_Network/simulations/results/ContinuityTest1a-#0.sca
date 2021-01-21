@@ -1,14 +1,14 @@
 version 2
-run ContinuityTest1a-0-20210120-12:32:07-7668
+run ContinuityTest1a-0-20210121-10:47:30-6881
 attr configname ContinuityTest1a
-attr datetime 20210120-12:32:07
+attr datetime 20210121-10:47:30
 attr experiment ContinuityTest1a
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 7668
+attr processid 6881
 attr repetition 0
 attr replication #0
 attr resultdir results

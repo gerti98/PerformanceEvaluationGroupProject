@@ -49,6 +49,30 @@ The consistency test verifies that the system react consistently with the output
 \end{figure}
 
 \noindent The oscillations at the beginning are due to the fact that the mean inter-arrival time is bigger with respect to the time slot size. In fact we can observe that in the second test there are larger oscillations because the difference between the mean inter-arrival time and the time slot size is bigger than the one of the first test.
+
+\noindent Now let analyse the response time, we can see its measure in both tests in figure \ref{img: consistencyTest1a_responsetime} and \ref{img: consistencyTest1b_responsetime}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/consistencytest1a_responsetime.png}
+	\caption{Consistency Test 2 - Response Time}
+	\label {img: consistencyTest1a_responsetime}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/consistencytest1b_responsetime.png}
+	\caption{Consistency Test 2 - Response Time}
+	\label {img: consistencyTest1b_responsetime}
+\end{figure}
+
+
+\noindent The mean response time in both cases is 5 seconds, this is a lower bound for the response time because in both tests 5 seconds is the size of the slot time so it's impossible to have a response time lower than the slot size.
+
+\noindent We can see that in the second test we have a less continue plot, this is due to the fact that the mean interarrival time is bigger in the second case and so the packet are more distant in time.
+
+\noindent We can conclude that also for what concerns the response time the consistency is ensured because it is the same in the case in which we have a source transmitting each 10 seconds and in the case in which we have two sources transmitting each 20 seconds. 
+
 \subsection{Continuity Test}
 In this test the aim is to prove that the output changes slightly if the input changes a bit. In order to do prove this, 2 simulations have been performed with the parameters shown in table \ref{tab: continuity test}. With this parameters we have changed slightly the input, and so we expect that the outputs don't show particular differences. Obviusly some differences will be present (in particular due to collisions and the increasing in the number of transmitters) but they shouldn't affect a lot the results.
 
@@ -91,6 +115,10 @@ In this test the aim is to prove that the output changes slightly if the input c
 \noindent We can observe that the output changes slightly between the two cases. In particular it's possible to infer that if the number of transmitter increases then the throughput increases too, but this increasing is reduced by the collisions, in fact if the number of channels is fixed, the more the transmitter the more the collisions.
 
 \noindent At the end of the day we can see that in the first case the mean throughput is assested to a value about 3.6 and in the second case about 4. So changing slightly the input changes slightly the output.
+
+\noindent \underline{controllare:} If we analyse the response time we can see that the difference is bigger because the response time is sensible to the variation of transmitter and channel, and this is something that must be taken into account. In fact, as we have seen previously, there are a lot of collisions in the second case and this is the main reason for the increasing of response time in the second case w.r.t the first one.
+
+\textbf{aggiungere grafici}
 
 \subsection{Test Simulations with Binomial Model (1)}
 This test simulation has been performed with the following parameters:

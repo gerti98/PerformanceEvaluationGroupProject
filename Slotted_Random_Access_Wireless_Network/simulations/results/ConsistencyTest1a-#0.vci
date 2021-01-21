@@ -1,15 +1,15 @@
-file 44254 1611088021                                           
+file 49105 1611220967                                           
 version 2
-run ConsistencyTest1a-0-20210119-21:26:57-48946
+run ConsistencyTest1a-0-20210121-10:22:41-5258
 attr configname ConsistencyTest1a
-attr datetime 20210119-21:26:57
+attr datetime 20210121-10:22:41
 attr experiment ConsistencyTest1a
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network slottedNetwork
-attr processid 48946
+attr processid 5258
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -32,19 +32,23 @@ param **.deterministicInterarrivalTime false
 
 vector 0 slottedNetwork.ch throughput:vector ETV
 attr source throughputSignal
-0	1333 9543 1 2517 5 3600 720 0 1 359 359
 vector 1 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
 attr source numPacketOnBufferSignal
-1	10876 14317 2 2518 5 3600 1080 0 1 720 720
 vector 2 slottedNetwork.transmitters[0] numPacketCreated:vector ETV
 attr source numPacketCreatedSignal
-2	25193 4774 3 2516 10 3600 360 1 1 360 360
-vector 3 slottedNetwork.receivers[0] numPacketReceived:vector ETV
+vector 3 slottedNetwork.ch wholeResponseTime:vector ETV
+attr source wholeResponseTimeSignal
+vector 4 slottedNetwork.receivers[0] numPacketReceived:vector ETV
 attr source numPacketReceivedSignal
-3	29967 4762 9 2515 15 3595 359 1 1 359 359
-vector 4 slottedNetwork.receivers[0] responseTime:vector ETV
+vector 5 slottedNetwork.receivers[0] responseTime:vector ETV
 attr source responseTimeSignal
-4	34729 4762 9 2515 15 3595 359 5 5 1795 8975
-vector 5 slottedNetwork.receivers[0] threshold:vector ETV
+vector 6 slottedNetwork.receivers[0] threshold:vector ETV
 attr source thresholdSignal
-5	39491 4763 9 2515 15 3595 359 0 0 0 0
+0	1423 9543 1 2517 5 3600 720 0 1 359 359
+1	10966 14317 2 2518 5 3600 1080 0 1 720 720
+2	25283 4774 3 2516 10 3600 360 1 1 360 360
+3	30057 4761 7 2513 15 3595 359 5 5 1795 8975
+4	34818 4762 9 2515 15 3595 359 1 1 359 359
+5	39580 4762 9 2515 15 3595 359 5 5 1795 8975
+6	44342 4762 9 2515 15 3595 359 0 0 0 0
+
