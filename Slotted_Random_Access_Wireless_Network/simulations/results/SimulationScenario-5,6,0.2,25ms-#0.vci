@@ -1,0 +1,56 @@
+file 1276068 1611333249                                         
+version 2
+run SimulationScenario-0-20210122-17:34:09-18824
+attr configname SimulationScenario
+attr datetime 20210122-17:34:09
+attr experiment SimulationScenario
+attr inifile omnetpp.ini
+attr iterationvars "$0=5, $1=6, $2=0.2, $3=25ms"
+attr iterationvarsf 5,6,0.2,25ms-
+attr measurement "$0=5, $1=6, $2=0.2, $3=25ms"
+attr network slottedNetwork
+attr processid 18824
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numTransmitters 5
+param **.numChannels 6
+param **.sendProbability 0.2
+param **.expMean 25ms
+param **.timeSlotSize 5ms
+param **.thresh 50ms
+param **.numTransmitters 1
+param **.numChannels 1
+param **.sendProbability 1
+param **.expMean 5s
+param **.timeSlotSize 5s
+param **.thresh 20s
+param **.deterministicInterarrivalTime false
+
+vector 0 slottedNetwork.ch wholeResponseTime:vector ETV
+attr source wholeResponseTimeSignal
+vector 1 slottedNetwork.ch throughput:vector ETV
+attr source throughputSignal
+vector 2 slottedNetwork.transmitters[0] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 3 slottedNetwork.transmitters[4] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 4 slottedNetwork.ch collisions:vector ETV
+attr source collisionSignal
+vector 5 slottedNetwork.transmitters[2] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 6 slottedNetwork.transmitters[3] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+vector 7 slottedNetwork.transmitters[1] numPacketOnBuffer:vector ETV
+attr source numPacketOnBufferSignal
+0	1566 439676 17312 174347 10 99.995 14479 1.145982530925 22.350702360531 162278.10370062 2254635.410875
+1	441242 304421 17312 174358 10 100 18001 0 4 14479 22651
+2	745663 103263 17322 174335 10.004355626631 99.987764738518 3647 64 877 1921984 1219325696
+3	848926 102332 17323 174355 10.004473974899 99.997886292754 3608 86 844 1712545 1009483475
+4	951258 16316 17324 174222 10.005 99.925 967 1 1 967 967
+5	967574 104927 17331 174357 10.005500723661 99.998711855039 3709 38 864 1682946 973215118
+6	1072501 101998 17345 174346 10.018202750031 99.992310963909 3595 97 725 1376796 655202314
+7	1174499 101568 17401 174356 10.04605804528 99.998154659873 3578 118 798 1551983 804191255
+

@@ -4,7 +4,7 @@ The following modules have been defined:
 \begin{itemize}
 	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $lambda$, $p$, packetsInQueue Signal (for the queue)
 	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Parameters: $T_{timeslot}$, Throughput Signal
-	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$, Response Time Signal, Threshold Signal
+	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$ \textbf{TODO CANCELLA}, Response Time Signal, Threshold Signal
 \end{itemize}
 
 \begin{figure}[H]
@@ -17,10 +17,10 @@ The following modules have been defined:
 \subsection{Messages}
 A new format of message has been defined, in order to store all packet information,with the following fields:
 \begin{itemize}
-	\item \textit{simtime-t creationTime}: time in which the packet arrives for the first time at the Transmitter
-	\item \textit{int idChannel}: Channel choosed for the current transmission, may change in case of collision
-	\item \textit{int idTransmitter}: Index of the module Trasmitter related to the message
-	\item \textit{int indexTx}: Index of the gate in which the Trasmitter is linked to the Channel
+	\item \textit{simtime$\_$t creationTime}: time in which the packet arrives for the first time at the Transmitter
+	\item \textit{int idChannel}: Channel chosen for the current transmission, may change in case of collision
+	\item \textit{int idTransmitter}: Index of the module Transmitter related to the message
+	\item \textit{int indexTx}: Index of the gate in which the Transmitter is linked to the Channel
 \end{itemize}
 
 \subsection{Modules Behaviour}
@@ -41,15 +41,15 @@ A new format of message has been defined, in order to store all packet informati
 \end{enumerate}
 \subsubsection{\textit{Channel} Module Behaviour in the implementation}
 \begin{enumerate}
-	\item The \textit{Channel} wakes up at the beginning of each timeslot and checks his channels status.
+	\item The \textit{Channel} wakes up at the beginning of each time.slot and checks his channels status.
 	\begin{itemize}
 		\item \textbf{IF} two or more packets have arrived in the same channel, the \textit{Channel} will send a NACK to the \textit{Transmitters} that have forwarded the packets in that specific channel.
 		\item \textbf{ELSE IF} one and only one packet has arrived in a channel, the \textit{Channel} will send an ACK to the relative \textit{Transmitter} and will forward the packet to the relative \textit{Receiver}.
 		\item \textbf{ELSE} the \textit{Transmitters} that did not send a packet will receive from the Channel a \textit{Synchronization Message}
 	\end{itemize}
-	\item The \textit{Channel} will gather of the packets for the current timeslot, to be processed in the next one.
+	\item The \textit{Channel} will gather of the packets for the current time.slot, to be processed in the next one.
 	
-	\noindent So this means that if the channel receives packets in timeslot \emph{j}, then the informations about collisions are provided to transmitters in timeslot \emph{j+1}. Hence, from the point of view of the transmitter, the information received at \emph{j+1} are referred to events took place in \emph{j}
+	\noindent So this means that if the channel receives packets in time-slot \emph{j}, then the information about collisions are provided to transmitters in time-slot \emph{j+1}. Hence, from the point of view of the transmitter, the information received at \emph{j+1} are referred to events took place in \emph{j}
 \end{enumerate}
 \subsubsection{\textit{Receiver} Module Behaviour in the implementation:}
 \begin{enumerate}

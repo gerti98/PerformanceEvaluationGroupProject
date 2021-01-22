@@ -64,7 +64,7 @@ void Transmitter::handleMessage(cMessage *msg)
     if(msg->isSelfMessage())
     {
         handleArrivedPacket(msg);
-
+        computeModuleStatistics();
     }
     else
     {
@@ -72,7 +72,7 @@ void Transmitter::handleMessage(cMessage *msg)
         delete(msg);
     }
 
-    computeModuleStatistics();
+
 }
 
 /*

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  21 JAN 2021 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  22 JAN 2021 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,12 +204,16 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 \bbl@readstream=\read2
 \bbl@dirlevel=\count269
 )
+Package babel Info: \l@british = using hyphenrules for english
+(babel)             (\language0) on input line 82.
+Package babel Info: \l@UKenglish = using hyphenrules for english
+(babel)             (\language0) on input line 83.
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 108.
+Package babel Info: \l@australian = using hyphenrules for english
+(babel)             (\language0) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for english
+(babel)             (\language0) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -256,12 +260,6 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 )
 (./template_Report.aux (./chapters/introduction.aux) (./chapters/modeling.aux)
 (./chapters/implementation.aux) (./chapters/verification.aux
-
-LaTeX Warning: Label `img: continuityTestThLambda' multiply defined.
-
-
-LaTeX Warning: Label `img: continuityTestThLambda' multiply defined.
-
 
 LaTeX Warning: Label `img: consistencyTest1b' multiply defined.
 
@@ -522,18 +520,23 @@ e 213.
  [15]) [16 <./img/plotTheoreticalMeanBinomial.png>]
 \openout2 = `chapters/simulation_experiments.aux'.
 
- (./chapters/simulation_experiments.tex) [17
+ (./chapters/simulation_experiments.tex
+<img/WorstCaseWarmUp.png, id=107, 1498.59875pt x 863.225pt>
+File: img/WorstCaseWarmUp.png Graphic file (type png)
+<use img/WorstCaseWarmUp.png>
+Package pdftex.def Info: img/WorstCaseWarmUp.png  used on input line 18.
+(pdftex.def)             Requested size: 452.9679pt x 260.91891pt.
+) [17
+
+
+ <./img/WorstCaseWarmUp.png>] [18]
+\openout2 = `chapters/conclusions.aux'.
+
+ (./chapters/conclusions.tex) [19
 
 
 ]
-\openout2 = `chapters/conclusions.aux'.
-
-
-(./chapters/conclusions.tex) [18
-
-
-] (./template_Report.aux
-(./chapters/introduction.aux) (./chapters/modeling.aux)
+(./template_Report.aux (./chapters/introduction.aux) (./chapters/modeling.aux)
 (./chapters/implementation.aux) (./chapters/verification.aux)
 (./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
 
@@ -541,30 +544,30 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6693 strings out of 481239
- 101816 string characters out of 5920376
- 367538 words of memory out of 5000000
- 21840 multiletter control sequences out of 15000+600000
- 539386 words of font info for 48 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,9n,43p,590b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on template_Report.pdf (19 pages, 741490 bytes).
+ 6709 strings out of 483183
+ 102121 string characters out of 5966291
+ 362609 words of memory out of 5000000
+ 21602 multiletter control sequences out of 15000+600000
+ 540087 words of font info for 50 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 41i,9n,43p,591b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/gerti98/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.6
+00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb>
+Output written on template_Report.pdf (20 pages, 811301 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 163 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

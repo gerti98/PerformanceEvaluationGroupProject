@@ -22,16 +22,16 @@ simple Transmitter
 {
     parameters:
         double meanInterarrivalTime @unit(s) = default(1s);
-        //int bufferSize = default(10); //todo: cancel buffersize
-
+		
         int numChannels = default(1);
+        
         //Probability of sending a packet in the current timeslot
         double sendProbability = default(0.5);
 		
         bool deterministicInterarrivalTime = default(false);
         
         @signal[numPacketCreatedSignal](type="long");
-		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=vector, stats);
+		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=sum);
         
         @signal[numPacketOnBufferSignal](type="long");
 		@statistic[numPacketOnBuffer](source="numPacketOnBufferSignal"; record=vector, stats);

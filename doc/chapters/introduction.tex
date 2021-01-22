@@ -7,20 +7,20 @@ From the group project assignment:
 medium, which consists of \textbf{C separate channels}. Multiple attempts to use the same channel in the
 same slot by different transmissions will lead to collision, hence no receiver listening on that
 channel will be able to decode the message.
-Assume that each of the N transmitters generate packets according to an \textbf{exponential interarrival
+Assume that each of the N transmitters generate packets according to an \textbf{exponential inter-arrival
 distribution}, and picks its channel at random on every new transmission. Before sending a packet, it
 keeps extracting a value from a \textbf{Bernoullian RV with success probability p} on every slot, until it
 achieves success. Then it transmits the packet and starts over. If a collision occurs, then the
 transmitter backs off for a random number of slots (see later), and then starts over the whole
 Bernoullian experiment.
-The number of backoff slots is extracted as $U(1, 2^{x+1})$, where x is the number of collisions
+The number of back-off slots is extracted as $U(1, 2^{x+1})$, where x is the number of collisions
 experienced by the packet being transmitted.}
 \subsection{Objectives}
 The aim of the project report is the \textit{Assessment of the Effectiveness of the Slotted Random-Access Network Protocol} described in the latter paragraph.
 \subsection{Performance Indexes}
 In order to define a metric of performance of the objective, the following Performance Indexes are defined:
 \begin{itemize}
-	\item \textbf{Throughput}: let $Tp$ be the Throughput to be measured, $N_{p}$ the number of packets successfully sent to the corrisponding receiver, $N_{t}$ the number of timeslot considered in the count of $N_{p}$, $T_{slot}$ the period (in seconds) of a time slot, the Throughput(per slot) can be measured as:
+	\item \textbf{Throughput}: let $Tp$ be the Throughput to be measured, $N_{p}$ the number of packets successfully sent to the corresponding receiver, $N_{t}$ the number of time-slot considered in the count of $N_{p}$, $T_{slot}$ the period (in seconds) of a time slot, the Throughput(per slot) can be measured as:
 	\begin{align*}
 	Tp(slot) = \frac{N_{p}}{N_{t}} \quad [packets/slot]
 	\end{align*}
