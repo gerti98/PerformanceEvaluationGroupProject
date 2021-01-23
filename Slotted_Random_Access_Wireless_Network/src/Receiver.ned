@@ -21,15 +21,15 @@ package slotted_random_access_wireless_network;
 simple Receiver
 {
     parameters:
-        double timeThreshold @unit(s);
+        //double timeThreshold @unit(s);
 
         //From the first arrival at the transmitter to the receiver
         @signal[responseTimeSignal](type="double");
         @statistic[responseTime](source="responseTimeSignal"; record=mean);
 
         //Maintains info of the percentage of the respected time threshold
-        @signal[thresholdSignal](type"long");
-        @statistic[threshold](source="thresholdSignal"; record=stats);
+        //@signal[thresholdSignal](type"long");
+        //@statistic[threshold](source="thresholdSignal"; record=stats);
 
 		@signal[numPacketReceivedSignal](type="long");
 		@statistic[numPacketReceived](source="numPacketReceivedSignal"; record=sum);

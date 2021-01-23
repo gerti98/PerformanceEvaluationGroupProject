@@ -34,7 +34,7 @@ network slottedNetwork
 
         double timeSlotSize @unit(s);
 
-        double thresh @unit(s);
+        //double thresh @unit(s);
     submodules:
         transmitters[numTransmitters]: Transmitter {
             parameters:
@@ -45,7 +45,7 @@ network slottedNetwork
         }
         receivers[numTransmitters]: Receiver {
             parameters:
-                timeThreshold = thresh;
+                //timeThreshold = thresh;
                 @display("p=121,106");
         }
         ch: Channel {

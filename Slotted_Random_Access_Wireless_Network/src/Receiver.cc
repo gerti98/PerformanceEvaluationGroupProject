@@ -20,7 +20,7 @@ Define_Module(Receiver);
 void Receiver::initialize()
 {
     responseTimeSignal_ = registerSignal("responseTimeSignal");
-    thresholdSignal_ = registerSignal("thresholdSignal");
+    //thresholdSignal_ = registerSignal("thresholdSignal");
     numPacketReceivedSignal_ = registerSignal("numPacketReceivedSignal");
 }
 
@@ -33,7 +33,7 @@ void Receiver::handleMessage(cMessage *msg)
     emit(numPacketReceivedSignal_, 1);
 
     handleResponseTime(pkt);
-    handleThreshold(pkt);
+    //handleThreshold(pkt);
     delete(msg);
 }
 

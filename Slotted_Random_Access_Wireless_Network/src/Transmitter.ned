@@ -29,6 +29,7 @@ simple Transmitter
         double sendProbability = default(0.5);
 		
         bool deterministicInterarrivalTime = default(false);
+        bool isBackoff = default(true);
         
         @signal[numPacketCreatedSignal](type="long");
 		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=sum);

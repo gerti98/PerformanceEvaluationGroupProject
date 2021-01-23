@@ -104,7 +104,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
      * if the back off time is greater than 0 then the transmitter must
      * do nothing and wait
      */
-    if(backoffTime > 0)
+    if(backoffTime > 0 && par("isBackoff"))
     {
         backoffTime--;
         EV << "Backoff remained: " << backoffTime << endl;
@@ -115,7 +115,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
          * when a NACK is received a collision occurred, so the transmitter
          * double his back off time from the previous collision and start counting
          */
-        if(strcmp(msg->getName(), "NACK") == 0)
+        if(strcmp(msg->getName(), "NACK") == 0 && par("isBackoff"))
         {
             maxBackoffTime *= 2;
             backoffTime = intuniform(1, maxBackoffTime, 1);
