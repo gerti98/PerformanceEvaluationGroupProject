@@ -23,10 +23,12 @@
 \contentsline {subsection}{\numberline {4.3}Continuity Test}{9}%
 \contentsline {subsection}{\numberline {4.4}Test Simulations with Binomial Model (1)}{14}%
 \contentsline {paragraph}{Parameters}{14}%
-\contentsline {section}{\numberline {5}Simulations Experiments}{17}%
-\contentsline {subsection}{\numberline {5.1}Scenario Calibration}{17}%
-\contentsline {subsection}{\numberline {5.2}Calibration of Warm-Up Period and Simulation duration}{17}%
-\contentsline {subsection}{\numberline {5.3}Design of Experiments}{18}%
-\contentsline {subsubsection}{\numberline {5.3.1}Factorial Analysis $r2^k$ on Throughput}{18}%
-\contentsline {subsection}{\numberline {5.4}Result Analysis}{20}%
-\contentsline {section}{\numberline {6}Conclusions}{21}%
+\contentsline {subsection}{\numberline {4.5}Test Simulations with Collisions(2)}{16}%
+\contentsline {paragraph}{Parameters}{16}%
+\contentsline {section}{\numberline {5}Simulations Experiments}{19}%
+\contentsline {subsection}{\numberline {5.1}Scenario Calibration}{19}%
+\contentsline {subsection}{\numberline {5.2}Calibration of Warm-Up Period and Simulation duration}{19}%
+\contentsline {subsection}{\numberline {5.3}Design of Experiments}{20}%
+\contentsline {subsubsection}{\numberline {5.3.1}Factorial Analysis $r2^k$ on Throughput}{20}%
+\contentsline {subsection}{\numberline {5.4}Result Analysis}{22}%
+\contentsline {section}{\numberline {6}Conclusions}{23}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  24 JAN 2021 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  24 JAN 2021 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,12 +204,16 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 \bbl@readstream=\read2
 \bbl@dirlevel=\count269
 )
+Package babel Info: \l@british = using hyphenrules for english
+(babel)             (\language0) on input line 82.
+Package babel Info: \l@UKenglish = using hyphenrules for english
+(babel)             (\language0) on input line 83.
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 108.
+Package babel Info: \l@australian = using hyphenrules for english
+(babel)             (\language0) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for english
+(babel)             (\language0) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -255,11 +259,8 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__pdf_internal_box=\box54
 )
 (./template_Report.aux (./chapters/introduction.aux) (./chapters/modeling.aux)
-(./chapters/implementation.aux) (./chapters/verification.aux
-
-LaTeX Warning: Label `img: consistencyTest1b' multiply defined.
-
-) (./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
+(./chapters/implementation.aux) (./chapters/verification.aux)
+(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
 \openout1 = `template_Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -513,79 +514,104 @@ File: img/plotTheoreticalMeanBinomial.png Graphic file (type png)
 Package pdftex.def Info: img/plotTheoreticalMeanBinomial.png  used on input lin
 e 213.
 (pdftex.def)             Requested size: 407.66833pt x 277.01093pt.
- [15]) [16 <./img/plotTheoreticalMeanBinomial.png>]
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+<img/SecondVerificationN2.png, id=103, 850.17625pt x 569.12625pt>
+File: img/SecondVerificationN2.png Graphic file (type png)
+<use img/SecondVerificationN2.png>
+Package pdftex.def Info: img/SecondVerificationN2.png  used on input line 246.
+(pdftex.def)             Requested size: 452.9679pt x 303.22467pt.
+[16 <./img/plotTheoreticalMeanBinomial.png>]
+<img/SecondVerificationN5.png, id=108, 864.22874pt x 553.06625pt>
+File: img/SecondVerificationN5.png Graphic file (type png)
+<use img/SecondVerificationN5.png>
+Package pdftex.def Info: img/SecondVerificationN5.png  used on input line 250.
+(pdftex.def)             Requested size: 452.9679pt x 289.87466pt.
+<img/SecondVerificationN10.png, id=109, 842.14626pt x 559.08875pt>
+File: img/SecondVerificationN10.png Graphic file (type png)
+<use img/SecondVerificationN10.png>
+Package pdftex.def Info: img/SecondVerificationN10.png  used on input line 254.
+
+(pdftex.def)             Requested size: 452.9679pt x 300.7176pt.
+<img/SecondVerificationN30.png, id=110, 846.16125pt x 558.085pt>
+File: img/SecondVerificationN30.png Graphic file (type png)
+<use img/SecondVerificationN30.png>
+Package pdftex.def Info: img/SecondVerificationN30.png  used on input line 258.
+
+(pdftex.def)             Requested size: 452.9679pt x 298.75562pt.
+ [17 <./img/SecondVerificationN2.png> <./img/SecondVerificationN5.png>]) [18 <.
+/img/SecondVerificationN10.png> <./img/SecondVerificationN30.png>]
 \openout2 = `chapters/simulation_experiments.aux'.
 
  (./chapters/simulation_experiments.tex
-<img/WorstCaseWarmUp.png, id=107, 1498.59875pt x 863.225pt>
+<img/WorstCaseWarmUp.png, id=122, 1498.59875pt x 863.225pt>
 File: img/WorstCaseWarmUp.png Graphic file (type png)
 <use img/WorstCaseWarmUp.png>
 Package pdftex.def Info: img/WorstCaseWarmUp.png  used on input line 19.
 (pdftex.def)             Requested size: 452.9679pt x 260.91891pt.
-<img/WorstResponseTime.png, id=108, 1502.61375pt x 879.285pt>
+<img/WorstResponseTime.png, id=123, 1502.61375pt x 879.285pt>
 File: img/WorstResponseTime.png Graphic file (type png)
 <use img/WorstResponseTime.png>
 Package pdftex.def Info: img/WorstResponseTime.png  used on input line 26.
 (pdftex.def)             Requested size: 452.9679pt x 265.06213pt.
- [17
+ [19
 
 
  <./img/WorstCaseWarmUp.png>]
-<img/QQplot_2kr_throughput.png, id=113, 568.37344pt x 356.0803pt>
+<img/QQplot_2kr_throughput.png, id=128, 568.37344pt x 356.0803pt>
 File: img/QQplot_2kr_throughput.png Graphic file (type png)
 <use img/QQplot_2kr_throughput.png>
 Package pdftex.def Info: img/QQplot_2kr_throughput.png  used on input line 49.
 (pdftex.def)             Requested size: 362.37569pt x 227.03215pt.
- [18 <./img/WorstResponseTime.png>]
-<img/homoskedasticity_2kr_throughput.png, id=119, 581.17125pt x 321.45094pt>
+ [20 <./img/WorstResponseTime.png>]
+<img/homoskedasticity_2kr_throughput.png, id=133, 581.17125pt x 321.45094pt>
 File: img/homoskedasticity_2kr_throughput.png Graphic file (type png)
 <use img/homoskedasticity_2kr_throughput.png>
 Package pdftex.def Info: img/homoskedasticity_2kr_throughput.png  used on input
  line 56.
 (pdftex.def)             Requested size: 362.37569pt x 200.43546pt.
- [19 <./img/QQplot_2kr_throughput.png> <./img/homoskedasticity_2kr_throughput.p
-ng>]) [20]
+ [21 <./img/QQplot_2kr_throughput.png> <./img/homoskedasticity_2kr_throughput.p
+ng>]) [22]
 \openout2 = `chapters/conclusions.aux'.
 
 
-(./chapters/conclusions.tex) [21
+(./chapters/conclusions.tex) [23
 
 
 ] (./template_Report.aux
 (./chapters/introduction.aux) (./chapters/modeling.aux)
 (./chapters/implementation.aux) (./chapters/verification.aux)
-(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux)) ) 
 Here is how much of TeX's memory you used:
- 6737 strings out of 481239
- 102871 string characters out of 5920376
- 367599 words of memory out of 5000000
- 21874 multiletter control sequences out of 15000+600000
+ 6763 strings out of 483183
+ 103635 string characters out of 5966291
+ 362598 words of memory out of 5000000
+ 21645 multiletter control sequences out of 15000+600000
  541451 words of font info for 55 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,9n,43p,670b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfrm1095.pfb>
-Output written on template_Report.pdf (22 pages, 933385 bytes).
+ 14 hyphenation exceptions out of 8191
+ 41i,9n,43p,671b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/
+gerti98/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on template_Report.pdf (24 pages, 1053841 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -212,8 +212,50 @@ Which is in line with our expectations. The latter computations have been repeat
 	\centering
 	\includegraphics[width=0.9\textwidth]{img/plotTheoreticalMeanBinomial.png}
 	\caption{Test Binomial Model}
-	\label {img: consistencyTest1b}
 \end{figure}
 
 As we can see it is difficult to recognize the theoretical results with the results obtained with the test simulations and the Confidence Interval can be barely seen.
 
+\subsection{Test Simulations with Collisions(2)}
+This test simulation has been performed with the following parameters:
+\paragraph{Parameters}
+\begin{itemize}
+	\item Number of couple tx-rx (N): \$\{2, 5, 10, 30\}
+	\item Number of channels (C): 1
+	\item Send probability: \$\{0.2, 0.4, 0.6, 0.8\} ($p$)
+	\item Mean inter-arrival time: 1s (deterministic) ($lambda$)
+	\item Time slot size: 2s ($T_{slot}$)
+	\item simulation-duration: 3600s ($T_{sim}$)
+	\item repeat: 40
+	\item seed-set: \$\{repetition\}
+	\item No Backoff in case of collision
+\end{itemize}
+
+\noindent The aim of this verification is to assess if the mean throughput is comparable with some equations that will be found even in the case of presence of collisions. \\
+
+\noindent The probability of a successful sent in a particular timeslot, in this case, is the following:
+\begin{equation}
+	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmit"\} = Np(1-p)^{N-1}
+\end{equation}
+
+Note that the above case is equal to the case without collisions.
+
+By comparing the above formula with the results of the simulation the following results are obtained (95\% CI too small to be seen)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/SecondVerificationN2.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/SecondVerificationN5.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/SecondVerificationN10.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/SecondVerificationN30.png}
+\end{figure}
+
+At this point we can state that a proper amount of verification of the implementation of the model has been carried out to make some simulation and gather some insight. Before doing so, an observation of the result can be carried out at this point: with a good number of couple tx-rx a huge sending probability (i.e. greater than 0.5) is pointless to obtain a high throughput. This result will be considered during the scenario calibration in the next chapter. 
