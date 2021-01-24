@@ -233,13 +233,16 @@ This test simulation has been performed with the following parameters:
 
 \noindent The aim of this verification is to assess if the mean throughput is comparable with some equations that will be found even in the case of presence of collisions. \\
 
+
 \noindent The probability of a successful sent in a particular timeslot, in this case, is the following:
 \begin{equation}
-	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmit"\} = Np(1-p)^{N-1}
+	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmit"\} = N\cdot p \cdot(1-p)^{N-1}
 \end{equation}
 
-Note that the above case is equal to the case without collisions.
-
+This probability of successful transmission can be seen as the mean throughput of the system in the single channel case. In fact, let $N_{p}$ the number of packets successfully sent to the corresponding receiver, $N_{t}$ the number of time-slot considered in the count:
+\begin{align*}
+Tp\ (slot) = \frac{N_{p}}{N_{t}} = \frac{N_{t}\cdot P\{"successful\ transmission"\}}{N_{t}} = N\cdot p\cdot (1-p)^{N-1}
+\end{align*}
 By comparing the above formula with the results of the simulation the following results are obtained (95\% CI too small to be seen)
 \begin{figure}[H]
 	\centering
