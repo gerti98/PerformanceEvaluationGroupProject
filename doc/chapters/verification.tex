@@ -178,7 +178,7 @@ This test simulation has been performed with the following parameters:
 \begin{itemize}
 	\item Number of couple tx-rx: 1
 	\item Number of channels: 1
-	\item Send probability: \$\{0.2, 0.4, 0.5, 0.6, 0.8\} ($p$)
+	\item Send probability: \$\{0.05, 0.1, 0.15, 0.2, 0.4, 0.5, 0.6, 0.8\} ($p$)
 	\item Mean inter-arrival time: 1s (deterministic) ($lambda$)
 	\item Time slot size: 2s ($T_{slot}$)
 	\item simulation-duration: 3600s ($T_{sim}$)
@@ -238,7 +238,6 @@ This test simulation has been performed with the following parameters:
 \begin{equation}
 	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmit"\} = N\cdot p \cdot(1-p)^{N-1}
 \end{equation}
-
 This probability of successful transmission can be seen as the mean throughput of the system in the single channel case. In fact, let $N_{p}$ the number of packets successfully sent to the corresponding receiver, $N_{t}$ the number of time-slot considered in the count:
 \begin{align*}
 Tp\ (slot) = \frac{N_{p}}{N_{t}} = \frac{N_{t}\cdot P\{"successful\ transmission"\}}{N_{t}} = N\cdot p\cdot (1-p)^{N-1}

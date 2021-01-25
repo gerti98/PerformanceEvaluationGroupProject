@@ -32,6 +32,9 @@ In order to define a metric of performance of the objective, the following Perfo
 	
 	\item \textbf{Response Time}: defined as the time that occurs from the first appearance of one packet at the Transmitter up to the reception of the packet at the Receiver.
 	
-	% \item (textbf{Network Traffic}: (?)
-	\item \textbf{Percentage of Deadlines not respected}: if we consider running this type of communication protocol of a real-time system with his own deadlines, there is a need to consider even this variable as a performance index.
+	\item \textbf{Mean Number of Packets in the queues}: due to the fact that the this metric is time dependent, will be computed as:
+	\begin{align*}
+	E[N] = \frac{\sum_{i = 0}^{N}N_{i}*(t_{i+1} - t_{i})}{t_{N} - t_{0}} \quad 
+	\end{align*}
+	  
 \end{itemize}

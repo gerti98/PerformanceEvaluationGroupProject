@@ -1,18 +1,18 @@
 \section{Modeling}
 \subsection{Introduction}
-We model the system as N couples of transmitter and receiver which communicate through C Channels. A collision can occur on a channel if more than one transmitters want to transmit a packet in that channel. The transmitter stores in a queue the packets that it wants to transmit and, then, it sends them; the channels "knows" if a collision occurs and handle it; the receiver only receive packets.  
+We model the system as N couples of transmitter and receiver which communicate through C Channels. A collision can occur on a channel if more than one transmitters want to transmit a packet in that channel. The transmitter stores in a queue the packets that it wants to transmit and, then, it sends them; the channels "knows" if a collision occurs and handles it; the receiver only receive packets.  
 \subsection{General Assumptions}
 The following general assumptions have been made:
 \begin{itemize}
 	\item \textbf{Slotted}: packets are attempted to be transmitter by the Transmitter only at the \textbf{beginning of the time-slot}
-	\item \textbf{Constant Packet Size and Transmission Rate}: each packet has a constant packet size and each transmitter has a constant and equal transmission rate for which to transmit a packet (without collision) from the receiver to the transmitter will last \textbf{one time-slot}.
+	\item \textbf{Constant Packet Size and Transmission Rate}: each packet has a \textbf{constant packet size} and each transmitter has a constant and equal transmission rate for which to transmit a packet (without collision) from the receiver to the transmitter will last \textbf{one time-slot}.
 	\item \textbf{No Propagation Error in the channel}: the only cause of a failed transmission has to be considered as the packet collision. Other causes, (i.e. path-loss, shadowing, small-scale fading), are neglected. 
 	\item \textbf{FIFO Queues of unlimited Capacity at the Transmitter} 
 	\item \textbf{Transmitters and Receivers always synchronized with the time-slot period}: in addition the receiver knows in which channel the transmitter will try to send his packet in each time-slot and the receiver will be ready to listen in the correct channel.
 	\item \textbf{After an eventual collision the packet will change his channel choice}
 \end{itemize}
 
-\subsection{Preliminar Validation}
+\subsection{Preliminar Validation TODO Forse cancella}
 Before the implementation a preliminar validation phase is necessary to ensure that the model is correct. Let analyze if the assumptions made in the previous section are reasonable:
 \begin{itemize}
 	\item The pure slotted assumption is reasonable due to the fact that exist some network protocols which work under this assumption, see for instance Slotted Aloha that is the most famous one.
@@ -28,7 +28,6 @@ The following factors have been defined which may affect the performance of the 
 	\item \textbf{C}: numbers of Channels.
 	\item \textbf{p}: probability of success for sending a packet in the current time-slot for a Transmitter.
 	\item \textbf{$\lambda$}: exponential distribution rate of packets arrival at the Transmitter.
-	\item $T_{deadline}$: deadline in case of communication with a real-time system. \textbf{TODO CANCELLA}
 	\item $T_{slot}$: time-slot duration.
 	
 \end{itemize}

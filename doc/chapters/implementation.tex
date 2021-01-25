@@ -4,7 +4,7 @@ The following modules have been defined:
 \begin{itemize}
 	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Parameters: $lambda$, $p$, packetsInQueue Signal (for the queue)
 	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Parameters: $T_{timeslot}$, Throughput Signal
-	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: $T_{threshold}$ \textbf{TODO CANCELLA}, Response Time Signal, Threshold Signal
+	\item \textbf{Receiver}: duty of receiving a packet from the channel. Parameters: Response Time Signal
 \end{itemize}
 
 \begin{figure}[H]
@@ -53,5 +53,5 @@ A new format of message has been defined, in order to store all packet informati
 \end{enumerate}
 \subsubsection{\textit{Receiver} Module Behaviour in the implementation:}
 \begin{enumerate}
-	\item The \textit{Receiver} wakes up when a packet arrives. Then are computed some statistics (concerning Response Time and Threshold).
+	\item The \textit{Receiver} wakes up when a packet arrives. Then are computed some statistics (concerning Response Time).
 \end{enumerate}

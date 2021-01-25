@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Modeling}{3}%
 \contentsline {subsection}{\numberline {2.1}Introduction}{3}%
 \contentsline {subsection}{\numberline {2.2}General Assumptions}{3}%
-\contentsline {subsection}{\numberline {2.3}Preliminar Validation}{3}%
+\contentsline {subsection}{\numberline {2.3}Preliminar Validation TODO Forse cancella}{3}%
 \contentsline {subsection}{\numberline {2.4}Factors}{4}%
 \contentsline {section}{\numberline {3}Implementation}{5}%
 \contentsline {subsection}{\numberline {3.1}Modules}{5}%
