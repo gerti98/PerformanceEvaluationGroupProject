@@ -22,6 +22,9 @@ void Transmitter::initialize()
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
     numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
 
+    meanPacketSignal_ = registerSignal("meanPacketSignal");
+    meanPktInBuffer_ = 0;
+
     /*
      * buffer related variable initialization
      */
@@ -129,6 +132,12 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              */
             if(strcmp(msg->getName(), "ACK") == 0)
             {
+                /*
+                 * Computation of the mean number of packet in the queue (here sum, division in finish)
+                 */
+                simtime_t howManyTimeInQueue = simTime() - buffer.front()->getCreationTime();
+                meanPktInBuffer_ = meanPktInBuffer_ + howManyTimeInQueue;
+
                 delete(buffer.front());
                 buffer.pop();
 
@@ -156,6 +165,18 @@ void Transmitter::computeModuleStatistics(){
 }
 
 void Transmitter::finish(){
+    // Retrieve warmup period
+    double warmup = getSimulation()->getWarmupPeriod().dbl();
+    // Retrieve simulation time limit
+    cConfigOption simTimeConfig("sim-time-limit", true,cConfigOption::Type::CFG_DOUBLE, "s", "300", "");
+    double simLimit = getSimulation()->getEnvir()->getConfig()->getAsDouble(&simTimeConfig);
+    // Computation of simulation duration
+    long simDuration = simLimit-warmup;
+    // Computation of the mean number of packet in the buffer
+    long toEmit = (long)meanPktInBuffer_.dbl()/simDuration;
+    // Emission of the value
+    emit(meanPacketSignal_, toEmit);
+
     while(buffer.empty() == false){
         delete(buffer.front());
         buffer.pop();

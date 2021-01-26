@@ -30,6 +30,8 @@ private:
     //simsignal_t numPacketDiscardedSignal_; //todo: cancel buffersize
     simsignal_t numPacketCreatedSignal_;
     simsignal_t numPacketOnBufferSignal_;
+    simsignal_t meanPacketSignal_;
+    simtime_t meanPktInBuffer_;
 
     std::queue<PacketMsg*> buffer;
     //int bufferMaxSize; //todo: cancel buffersize
