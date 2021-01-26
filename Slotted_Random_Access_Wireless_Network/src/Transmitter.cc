@@ -76,8 +76,8 @@ void Transmitter::handleMessage(cMessage *msg)
 }
 
 /*
- * Handle the arrival of a new packet by trying to store it into
- * the buffer. If not possible, the packet is discarded;
+ * Handle the arrival of a new packet and store it into
+ * the buffer.
  */
 void Transmitter::handleArrivedPacket(cMessage* msg){
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
@@ -87,7 +87,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     emit(numPacketCreatedSignal_, 1);
 
 
-    EV << "transmitter " << id << ": arrival packet inserted into the buffer " << endl;
+    EV << "TX-" << id << ": arrival packet inserted into the buffer " << endl;
     pkt->setIdTransmitter(id);
     buffer.push(pkt);
 
@@ -107,7 +107,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
     if(backoffTime > 0 && par("isBackoff"))
     {
         backoffTime--;
-        EV << "Backoff remained: " << backoffTime << endl;
+        EV << "TX-" << id << ": Backoff remained: " << backoffTime << endl;
     }
     else
     {
@@ -119,7 +119,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
         {
             maxBackoffTime *= 2;
             backoffTime = intuniform(1, maxBackoffTime, 1);
-            EV << "transmitter " << id << ": NACK received, back-off time = " << backoffTime << endl;
+            EV << "TX-" << id << ": NACK received, back-off time = " << backoffTime << endl;
         }
         else
         {
@@ -139,7 +139,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
                 buffer.pop();
 
                 maxBackoffTime = 2;
-                EV << "transmitter " << id << ": ACK received " << endl;
+                EV << "TX-" << id << ": ACK received " << endl;
             }
 
             /*
@@ -151,7 +151,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
                 PacketMsg* pkt = buffer.front();
                 pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
                 send(pkt->dup(), "out");
-                EV << "transmitter " << id << ": packet sent, waiting for answer " << endl;
+                EV << "TX-" << id << ": packet sent, waiting for answer " << endl;
             }
         }
     }
@@ -172,7 +172,7 @@ void Transmitter::finish(){
     // Computation of the mean number of packet in the buffer
     double toEmit = meanPktInBuffer_/simDuration;
     // Emission of the value
-    EV << toEmit << "warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
+    EV <<  toEmit << " warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
     emit(meanPacketSignal_, toEmit);
 
     while(buffer.empty() == false){
