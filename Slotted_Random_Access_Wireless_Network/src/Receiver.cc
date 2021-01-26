@@ -41,24 +41,3 @@ void Receiver::handleResponseTime(PacketMsg* pkt){
     emit(responseTimeSignal_, respTime.dbl());
 }
 
-
-/**
- * To handle the threshold parameter will be emitted a '0'
- * if the threshold is respected, '1' if not respected
- *//*
-void Receiver::handleThreshold(PacketMsg* pkt){
-    simtime_t threshold = par("timeThreshold");
-    simtime_t respTime = simTime() - pkt->getCreationTime();
-    int emit_value;
-
-
-    if(respTime < threshold){
-        EV << "Receiver " << this->getId() << ": threshold(" << threshold << "s) respected" << endl;
-        emit_value = 0;
-    } else {
-        EV << "Receiver " << this->getId() << ":threshold(" << threshold << "s) not respected" << endl;
-        emit_value = 1;
-    }
-    emit(thresholdSignal_, emit_value);
-}
-*/

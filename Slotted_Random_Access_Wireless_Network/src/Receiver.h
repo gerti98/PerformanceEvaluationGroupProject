@@ -34,7 +34,6 @@ private:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
     virtual void handleResponseTime(PacketMsg* pkt);
-    virtual void handleThreshold(PacketMsg* pkt);
 };
 
 #endif
