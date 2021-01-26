@@ -170,9 +170,18 @@ void Transmitter::computeModuleStatistics(){
 
 
 void Transmitter::updateBufferCount(){
-    olgertiMeanPktInBuffer_ = olgertiMeanPktInBuffer_ + buffer.size()*(simTime().dbl()-olgertiLastSimtime_.dbl());
-    EV << "Buffer size:  " << buffer.size() << ", duration: " << (simTime().dbl()-olgertiLastSimtime_.dbl()) << ", sum: " << olgertiMeanPktInBuffer_ << endl;
-    olgertiLastSimtime_ = simTime();
+    double warmup = getSimulation()->getWarmupPeriod().dbl();
+
+    if(simTime().dbl() >= warmup){
+        // Handle start of count in case of warmup between
+        // current simtime and last simtime registered
+        if(olgertiLastSimtime_ < warmup)
+            olgertiLastSimtime_ = warmup;
+
+        olgertiMeanPktInBuffer_ = olgertiMeanPktInBuffer_ + buffer.size()*(simTime().dbl()-olgertiLastSimtime_.dbl());
+        EV << "Buffer size:  " << buffer.size() << ", duration: " << (simTime().dbl()-olgertiLastSimtime_.dbl()) << ", sum: " << olgertiMeanPktInBuffer_ << endl;
+        olgertiLastSimtime_ = simTime();
+    }
 }
 
 void Transmitter::finish(){
