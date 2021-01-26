@@ -175,6 +175,7 @@ void Transmitter::finish(){
     // Computation of the mean number of packet in the buffer
     long toEmit = (long)meanPktInBuffer_.dbl()/simDuration;
     // Emission of the value
+    EV << toEmit << endl;
     emit(meanPacketSignal_, toEmit);
 
     while(buffer.empty() == false){

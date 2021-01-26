@@ -38,7 +38,7 @@ simple Transmitter
 		@statistic[numPacketOnBuffer](source="numPacketOnBufferSignal"; record=vector, stats);
         
         @signal[meanPacketSignal](type="long");
-        @statistic[meanPacket](source="meanPacketSignal";record=sum);
+        @statistic[meanPacket](source="meanPacketSignal";record=stats);
         
         @display("i=block/tx");
     gates:
