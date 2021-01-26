@@ -18,7 +18,6 @@ Define_Module(Transmitter);
 
 void Transmitter::initialize()
 {
-    //numPacketDiscardedSignal_ = registerSignal("numPacketDiscardedSignal");
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
     numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
 
@@ -74,8 +73,6 @@ void Transmitter::handleMessage(cMessage *msg)
         handleChannelPacket(msg);
         delete(msg);
     }
-
-
 }
 
 /*
@@ -133,10 +130,10 @@ void Transmitter::handleChannelPacket(cMessage* msg){
             if(strcmp(msg->getName(), "ACK") == 0)
             {
                 /*
-                 * Computation of the mean number of packet in the queue (here sum, division in finish)
+                 * Computation of the mean number of packet in the queue (here sum, division in finish())
                  */
                 simtime_t howManyTimeInQueue = simTime() - buffer.front()->getCreationTime();
-                meanPktInBuffer_ = meanPktInBuffer_ + howManyTimeInQueue;
+                meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(howManyTimeInQueue.dbl());
 
                 delete(buffer.front());
                 buffer.pop();
@@ -173,9 +170,9 @@ void Transmitter::finish(){
     // Computation of simulation duration
     long simDuration = simLimit-warmup;
     // Computation of the mean number of packet in the buffer
-    long toEmit = (long)meanPktInBuffer_.dbl()/simDuration;
+    double toEmit = meanPktInBuffer_/simDuration;
     // Emission of the value
-    EV << toEmit << endl;
+    EV << toEmit << "warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
     emit(meanPacketSignal_, toEmit);
 
     while(buffer.empty() == false){

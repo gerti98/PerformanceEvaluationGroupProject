@@ -20,7 +20,6 @@ Define_Module(Receiver);
 void Receiver::initialize()
 {
     responseTimeSignal_ = registerSignal("responseTimeSignal");
-    //thresholdSignal_ = registerSignal("thresholdSignal");
     numPacketReceivedSignal_ = registerSignal("numPacketReceivedSignal");
 }
 
@@ -33,7 +32,6 @@ void Receiver::handleMessage(cMessage *msg)
     emit(numPacketReceivedSignal_, 1);
 
     handleResponseTime(pkt);
-    //handleThreshold(pkt);
     delete(msg);
 }
 
@@ -47,7 +45,7 @@ void Receiver::handleResponseTime(PacketMsg* pkt){
 /**
  * To handle the threshold parameter will be emitted a '0'
  * if the threshold is respected, '1' if not respected
- */
+ *//*
 void Receiver::handleThreshold(PacketMsg* pkt){
     simtime_t threshold = par("timeThreshold");
     simtime_t respTime = simTime() - pkt->getCreationTime();
@@ -63,3 +61,4 @@ void Receiver::handleThreshold(PacketMsg* pkt){
     }
     emit(thresholdSignal_, emit_value);
 }
+*/

@@ -200,16 +200,6 @@ void Channel::scheduleTimeSlot()
     simtime_t timeSlot = par("timeSlotSize");
     cMessage* timeSlotTrigger = new cMessage("timeSlotTrigger");
 
-    /* Set the schedule priority in a way that allow us to
-     * handle this message when the channel has received
-     * all the packets of the transmitters. So I put
-     * priority 1 (0 is the highest priority)*/
-    //timeSlotTrigger->setSchedulingPriority(1);
-    /* Not needed because the channel trigger txs
-     * and control their packet in the at the end of this timeSlot
-     * (so the beginning of the next)*/
-
-
     /*Schedule the sending*/
     scheduleAt(simTime()+timeSlot,timeSlotTrigger);
 }

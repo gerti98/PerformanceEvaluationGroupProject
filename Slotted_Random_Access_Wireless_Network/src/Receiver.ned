@@ -27,10 +27,6 @@ simple Receiver
         @signal[responseTimeSignal](type="double");
         @statistic[responseTime](source="responseTimeSignal"; record=mean);
 
-        //Maintains info of the percentage of the respected time threshold
-        //@signal[thresholdSignal](type"long");
-        //@statistic[threshold](source="thresholdSignal"; record=stats);
-
 		@signal[numPacketReceivedSignal](type="long");
 		@statistic[numPacketReceived](source="numPacketReceivedSignal"; record=sum);
 			
