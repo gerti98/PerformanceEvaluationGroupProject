@@ -70,8 +70,8 @@ void Channel::handleMessage(cMessage *msg)
          * So I have to push it in the vector of packets
          * for this slot*/
         PacketMsg* newPkt = check_and_cast<PacketMsg*>(msg);
-        newPkt->setIndexTx(newPkt->getArrivalGate()->getIndex());
-        EV << "Packet from tx " << newPkt->getIdTransmitter() << " arrived at Sub-Channel" << newPkt->getIdChannel() << endl;
+        newPkt->setIdGate(newPkt->getArrivalGate()->getIndex());
+        EV << "CH: Packet from tx " << newPkt->getIdTransmitter() << " arrived at Sub-Channel" << newPkt->getIdChannel() << endl;
         packetsOfSlot_.push_back(newPkt);
     }
 }
@@ -108,18 +108,18 @@ void Channel::transmission()
     {
 
         int idTx = packetsOfSlot_[i]->getIdTransmitter();
-        int indexTx = packetsOfSlot_[i]->getIndexTx();
+        int idGate = packetsOfSlot_[i]->getIdGate();
 
         // this transmitter doesn't need to be triggered with a TRIGGER message
-        triggeredTx[indexTx] = true;
+        triggeredTx[idGate] = true;
 
         if(isCollided_[packetsOfSlot_[i]->getIdChannel()])
         {
             // A collision occur for this packet
             // send a NACK to the transmitter
-            EV << "NACK sended to Transmitter " << idTx<< endl;
+            EV << "CH: NACK sended to Transmitter " << idTx<< endl;
             cMessage* nack = new cMessage("NACK");
-            send(nack,"out_tx",indexTx);
+            send(nack,"out_tx",idGate);
 
             delete(packetsOfSlot_[i]);
         }
@@ -127,19 +127,19 @@ void Channel::transmission()
         {
             // No collision
             // Send a ACK to the transmitter
-            EV << "ACK sended to Transmitter " << idTx<< endl;
+            EV << "CH: ACK sended to Transmitter " << idTx<< endl;
             cMessage* ack = new cMessage("ACK");
-            send(ack,"out_tx",indexTx);
+            send(ack,"out_tx",idGate);
 
             // Send the pkt to the receiver
             //int idRx = packetsOfSlot_[i]->getIdReceiver();
             //Reused indexTx to get the id of the port
-            EV << "Sended packet to Receiver " << indexTx<< endl;
-            send(packetsOfSlot_[i],"out_rx",indexTx);
+            EV << "Sended packet to Receiver " << idGate<< endl;
+            send(packetsOfSlot_[i],"out_rx",idGate);
 
             //Utility: computation of response time
             simtime_t respTime = simTime() - packetsOfSlot_[i]->getCreationTime();
-            EV << "Channel: response Time = " << respTime << endl;
+            EV << "CH: response Time = " << respTime << endl;
             emit(wholeResponseTimeSignal_, respTime.dbl());
 
             //Count packet sent to the receiver
@@ -148,7 +148,7 @@ void Channel::transmission()
     }
 
     // Emit throughput (num channel with packets sent in the current timeslot)
-    EV << "Channel: sent " << packetSent << " packets" << endl;
+    EV << "CH: sent " << packetSent << " packets" << endl;
 
     if(isCollided_.size() > 0)
         emit(throughputSignal_, (long)(packetSent));
@@ -186,7 +186,7 @@ void Channel::triggerOthers(std::vector<bool> triggeredTx)
         if(triggeredTx[i] == false)
         {
             cMessage* trigger = new cMessage("TRIGGER");
-            EV << "Trigger sent to tx at gate" << i << endl;
+            EV << "CH: Trigger sent to tx at gate" << i << endl;
             send(trigger,"out_tx",i);
         }
     }

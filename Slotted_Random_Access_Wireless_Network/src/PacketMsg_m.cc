@@ -183,7 +183,7 @@ PacketMsg::PacketMsg(const char *name, short kind) : ::omnetpp::cPacket(name,kin
 {
     this->idChannel = 0;
     this->idTransmitter = 0;
-    this->indexTx = 0;
+    this->idGate = 0;
     this->creationTime = 0;
 }
 
@@ -208,7 +208,7 @@ void PacketMsg::copy(const PacketMsg& other)
 {
     this->idChannel = other.idChannel;
     this->idTransmitter = other.idTransmitter;
-    this->indexTx = other.indexTx;
+    this->idGate = other.idGate;
     this->creationTime = other.creationTime;
 }
 
@@ -217,7 +217,7 @@ void PacketMsg::parsimPack(omnetpp::cCommBuffer *b) const
     ::omnetpp::cPacket::parsimPack(b);
     doParsimPacking(b,this->idChannel);
     doParsimPacking(b,this->idTransmitter);
-    doParsimPacking(b,this->indexTx);
+    doParsimPacking(b,this->idGate);
     doParsimPacking(b,this->creationTime);
 }
 
@@ -226,7 +226,7 @@ void PacketMsg::parsimUnpack(omnetpp::cCommBuffer *b)
     ::omnetpp::cPacket::parsimUnpack(b);
     doParsimUnpacking(b,this->idChannel);
     doParsimUnpacking(b,this->idTransmitter);
-    doParsimUnpacking(b,this->indexTx);
+    doParsimUnpacking(b,this->idGate);
     doParsimUnpacking(b,this->creationTime);
 }
 
@@ -250,14 +250,14 @@ void PacketMsg::setIdTransmitter(int idTransmitter)
     this->idTransmitter = idTransmitter;
 }
 
-int PacketMsg::getIndexTx() const
+int PacketMsg::getIdGate() const
 {
-    return this->indexTx;
+    return this->idGate;
 }
 
-void PacketMsg::setIndexTx(int indexTx)
+void PacketMsg::setIdGate(int idGate)
 {
-    this->indexTx = indexTx;
+    this->idGate = idGate;
 }
 
 ::omnetpp::simtime_t PacketMsg::getCreationTime() const
@@ -366,7 +366,7 @@ const char *PacketMsgDescriptor::getFieldName(int field) const
     static const char *fieldNames[] = {
         "idChannel",
         "idTransmitter",
-        "indexTx",
+        "idGate",
         "creationTime",
     };
     return (field>=0 && field<4) ? fieldNames[field] : nullptr;
@@ -378,7 +378,7 @@ int PacketMsgDescriptor::findField(const char *fieldName) const
     int base = basedesc ? basedesc->getFieldCount() : 0;
     if (fieldName[0]=='i' && strcmp(fieldName, "idChannel")==0) return base+0;
     if (fieldName[0]=='i' && strcmp(fieldName, "idTransmitter")==0) return base+1;
-    if (fieldName[0]=='i' && strcmp(fieldName, "indexTx")==0) return base+2;
+    if (fieldName[0]=='i' && strcmp(fieldName, "idGate")==0) return base+2;
     if (fieldName[0]=='c' && strcmp(fieldName, "creationTime")==0) return base+3;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
@@ -466,7 +466,7 @@ std::string PacketMsgDescriptor::getFieldValueAsString(void *object, int field, 
     switch (field) {
         case 0: return long2string(pp->getIdChannel());
         case 1: return long2string(pp->getIdTransmitter());
-        case 2: return long2string(pp->getIndexTx());
+        case 2: return long2string(pp->getIdGate());
         case 3: return simtime2string(pp->getCreationTime());
         default: return "";
     }
@@ -484,7 +484,7 @@ bool PacketMsgDescriptor::setFieldValueAsString(void *object, int field, int i, 
     switch (field) {
         case 0: pp->setIdChannel(string2long(value)); return true;
         case 1: pp->setIdTransmitter(string2long(value)); return true;
-        case 2: pp->setIndexTx(string2long(value)); return true;
+        case 2: pp->setIdGate(string2long(value)); return true;
         case 3: pp->setCreationTime(string2simtime(value)); return true;
         default: return false;
     }
