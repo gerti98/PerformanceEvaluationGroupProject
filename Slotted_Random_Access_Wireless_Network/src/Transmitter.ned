@@ -40,6 +40,9 @@ simple Transmitter
         @signal[meanPacketSignal](type="double");
         @statistic[meanPacket](source="meanPacketSignal";record=sum);
         
+        @signal[olgertiMeanPacketSignal](type="double");
+        @statistic[olgertiMeanPacket](source="olgertiMeanPacketSignal";record=sum);
+        
         @display("i=block/tx");
     gates:
         output out;

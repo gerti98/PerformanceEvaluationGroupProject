@@ -22,7 +22,12 @@ void Transmitter::initialize()
     numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
 
     meanPacketSignal_ = registerSignal("meanPacketSignal");
+    olgertiMeanPacketSignal_ = registerSignal("olgertiMeanPacketSignal");
+
     meanPktInBuffer_ = 0;
+
+    olgertiLastSimtime_ = 0;
+    olgertiMeanPktInBuffer_ = 0;
 
     /*
      * buffer related variable initialization
@@ -65,6 +70,7 @@ void Transmitter::handleMessage(cMessage *msg)
      */
     if(msg->isSelfMessage())
     {
+        this->updateBufferCount();
         handleArrivedPacket(msg);
         computeModuleStatistics();
     }
@@ -135,6 +141,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
                 simtime_t howManyTimeInQueue = simTime() - buffer.front()->getCreationTime();
                 meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(howManyTimeInQueue.dbl());
 
+                this->updateBufferCount();
                 delete(buffer.front());
                 buffer.pop();
 
@@ -161,6 +168,13 @@ void Transmitter::computeModuleStatistics(){
     emit(numPacketOnBufferSignal_, (long)buffer.size());
 }
 
+
+void Transmitter::updateBufferCount(){
+    olgertiMeanPktInBuffer_ = olgertiMeanPktInBuffer_ + buffer.size()*(simTime().dbl()-olgertiLastSimtime_.dbl());
+    EV << "Buffer size:  " << buffer.size() << ", duration: " << (simTime().dbl()-olgertiLastSimtime_.dbl()) << ", sum: " << olgertiMeanPktInBuffer_ << endl;
+    olgertiLastSimtime_ = simTime();
+}
+
 void Transmitter::finish(){
     // Retrieve warmup period
     double warmup = getSimulation()->getWarmupPeriod().dbl();
@@ -169,11 +183,19 @@ void Transmitter::finish(){
     double simLimit = getSimulation()->getEnvir()->getConfig()->getAsDouble(&simTimeConfig);
     // Computation of simulation duration
     long simDuration = simLimit-warmup;
+
+
+    //Last update
+    this->updateBufferCount();
+
     // Computation of the mean number of packet in the buffer
     double toEmit = meanPktInBuffer_/simDuration;
+    double olgertiToEmit = olgertiMeanPktInBuffer_/simDuration;
+
     // Emission of the value
     EV << toEmit << "warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
     emit(meanPacketSignal_, toEmit);
+    emit(olgertiMeanPacketSignal_, olgertiToEmit);
 
     while(buffer.empty() == false){
         delete(buffer.front());
