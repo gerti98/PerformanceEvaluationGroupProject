@@ -11,23 +11,18 @@ In order to calibrate the simulator parameters, the following range of values we
 \end{itemize}
 
 \subsection{Calibration of Warm-Up Period and Simulation duration}
-For calibrating the warm-up different simulation were made (with the factors range in the latter paragraph) with 10 repetition each. 
-The worst case in terms of convergence time was encountered with the \textbf{mean throughput} with N = 5, C = 6, $\dfrac{1}{\lambda}$ = 500ms, p = 0.5:
+For calibrating the warm-up different simulation were made (with the factors range in the latter paragraph). After various test is clear that the KPI that impacts heavily in the choose of the warmup time is the \textit{Response Time}. We can see the study about the response time in figure \ref{img: warmUp}.
+%The worst case in terms of convergence time was encountered with the \textbf{mean throughput} with N = 5, C = 6, $\dfrac{1}{\lambda}$ = 500ms, p = 0.5:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/WorstCaseWarmUp.png}
-	\caption{Worst Case Warm-up Throughput}
+	\includegraphics[width=\textwidth]{img/warmup.png}
+	\caption{Worst Case Warm-up Response Time}
 	\label {img: warmUp}
 \end{figure}  
-With the \textbf{mean response time} the worst case is the following with N = 5, C = 100, $\dfrac{1}{\lambda}$ = 25ms, p = 0.5:
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{img/WorstResponseTime.png}
-	\caption{Worst Case Warm-up Response Time}
-	\label {img: ResponsewarmUp}
-\end{figure}  
-\noindent\textbf{A warm-up period of 10s was chosen}.\\
-For what concerns the simulation duration was made a trade-off between the memory consumption and the length of the simulation itself. This was done because there are not stochastic elements in the model (like a particular error probability with a low percentage) that will need a particular amount of time to be shown. Obviously the duration has to be greater than the warm-up duration. All things considered, \textbf{a simulation-duration of 100s was chose}
+%With the \textbf{mean response time} the worst case is the following with N = 5, C = 100, $\dfrac{1}{\lambda}$ = 25ms, p = 0.5:
+
+\noindent\textbf{A warm-up period of 250s was chosen}.\\
+For what concerns the simulation duration was made a trade-off between the memory consumption for storing data and the length of the simulation itself. This was done because there are not stochastic elements in the model (like a particular error probability with a low percentage) that will need a particular amount of time to be shown. Obviously the duration has to be greater than the warm-up duration. All things considered, \textbf{a simulation-duration of 5000s was chosen}.
 
 \subsection{Design of Experiments}
 \subsubsection{Factorial Analysis $r2^k$ on Throughput}

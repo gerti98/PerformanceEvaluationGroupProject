@@ -158,13 +158,13 @@ In this test the aim is to prove that the output changes slightly if the input c
 	\item \textbf{Mean Response Time}: By \textbf{Increasing N} (the number of couples tx-rx), with low numbers of channels, an \textbf{increase on the mean response time is expected}. By increasing the transmission probability $p$ (with a low number of couples tx-rx) a decrease on the mean response time is expected due to more transmissions. The following results were obtained:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{img/ContinuityTest_ResponseTIme_TXRXVarying}
+		\includegraphics[width=0.9\textwidth]{img/ContinuityTest_ResponseTIme_TXRXVarying}
 		\caption{Continuity Test Mean Response Time- Increasing Number of TX-RX}
 		\label {img: continuityTestTXRXResponse}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{img/ContinuityTest_ResponseTIme_VaryingP.png}
+		\includegraphics[width=0.9\textwidth]{img/ContinuityTest_ResponseTIme_VaryingP.png}
 		\caption{Continuity Test Mean Response Time- Increasing Sending Probability P(Main factors: \textbf{N} = 5; \textbf{C} = 4; $\dfrac{1}{\lambda}$ = 200ms; $T_{slot}$ = 5ms; $p$ = 0.2, 0.4, 0.6, 0.8, 1)}
 		\label {img: continuityTestResponseLambda}
 	\end{figure}
@@ -172,9 +172,10 @@ In this test the aim is to prove that the output changes slightly if the input c
 \textbf{For the Mean Response Time was also checked the steady state reach} by just plotting that the relative vector stabilizes at some point (this was done in general to make conclusion with this KPI). Here an example for the varying of the Transmission Probability $p$:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/ContinuityTest_ResponseTime_VectorP.png}
+	\includegraphics[width=\textwidth]{img/ContinuityTest_ResponseTime_VectorP.png}
 	\label {img: responseTimeConvergence}
 \end{figure}
+\newpage
 \subsection{Test Simulations with Binomial Model (1)}
 This test simulation has been performed with the following parameters:
 \paragraph{Parameters}
@@ -248,19 +249,19 @@ Tp\ (slot) = \frac{N_{p}}{N_{t}} = \frac{N_{t}\cdot P\{"successful\ transmission
 By comparing the above formula with the results of the simulation the following results are obtained (95\% CI too small to be seen)
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/SecondVerificationN2.png}
+	\includegraphics[width=0.85\textwidth]{img/SecondVerificationN2.png}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/SecondVerificationN5.png}
+	\includegraphics[width=0.85\textwidth]{img/SecondVerificationN5.png}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/SecondVerificationN10.png}
+	\includegraphics[width=0.85\textwidth]{img/SecondVerificationN10.png}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/SecondVerificationN30.png}
+	\includegraphics[width=0.85\textwidth]{img/SecondVerificationN30.png}
 \end{figure}
 
 \noindent At this point we can state that a proper amount of verification of the implementation of the model has been carried out to make some simulation and gather some insight. Before doing so, an observation of the result can be carried out at this point: with a good number of couple tx-rx a huge sending probability (i.e. greater than 0.5) is pointless to obtain a high throughput. This result will be considered during the scenario calibration in the next chapter. 
