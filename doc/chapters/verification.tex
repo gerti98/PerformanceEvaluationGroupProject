@@ -2,6 +2,9 @@
 \section{Verification}
 In this section we present tests performed in order to verify that our implementation reflects correctly our model.
 
+\subsection{Deterministic and Simple Cases}
+In this scenarios we test the behaviour of the system in easy and deterministic cases in order to verify the model. In all of these tests the behaviour is the one expected and it has been verified using the graphical environment (Qtenv) and debugging prints.
+
 \subsection{Degeneracy Tests}
 In the degeneracy tests we verify the behaviour of our simulator with parameters set to 0 values. In all tests the simulator works properly. In particular the following observations can be inferred:
 \begin{itemize}
@@ -137,22 +140,22 @@ In this test the aim is to prove that the output changes slightly if the input c
 \noindent It's possible to see the response time measured in the two tests in the figure \ref{img: continuityTest1a_responsetime} and \ref{img: continuityTest1b_responsetime}. In any case we can see that the continuity test is correct because the system works as we expect: channels fixed, the more the transmitters, the more the collisions, the more the response time.
 
 \vspace{5mm}
-In addition to this, some simulation were taken in order to \textbf{assess the monotonicity} of some KPI by changing some factors:
+\noindent In addition to this, some simulation were taken in order to \textbf{assess the monotonicity} of some KPI by changing some factors:
 \begin{itemize}
 	\item \textbf{Mean Throughput}: By \textbf{increasing N} (the numbers of couples tx-rx), with a high number of channels to avoid collisions, an \textbf{increase on the mean throughput is expected}. On the contrary, by \textbf{increasing} $\dfrac{1}{\lambda}$ (the mean inter-arrival time) an \textbf{opposite result is expected}. The following results were obtained:
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{img/continuityTest_Throughput_TXRX_Varying.png}
+		\includegraphics[width=0.9\textwidth]{img/continuityTest_Throughput_TXRX_Varying.png}
 		\caption{Continuity Test - Increasing Number of TX-RX (Main factors: \textbf{N} = 1, 2, 5, 10, 20, 100; \textbf{C} = 20000; $\dfrac{1}{\lambda}$ = 20 ms; $T_{slot}$ = 5ms; $p$ = 1)}
 		\label {img: continuityTestThTXRX}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{img/continuityTest_Throughput_IntTimeVarying.png}
+		\includegraphics[width=0.9\textwidth]{img/continuityTest_Throughput_IntTimeVarying.png}
 		\caption{Continuity Test - Increasing Mean Inter-arrival Time (Main factors: \textbf{N} = 2; \textbf{C} = 20000; $\dfrac{1}{\lambda}$ = 5ms, 10ms, 20ms, 50ms, 100ms, 500ms; $T_{slot}$ = 5ms; $p$ = 1)}
 		\label {img: continuityTestThLambda}
 	\end{figure}
-	\item \textbf{Mean Response Time}: By \textbf{Increasing N} ()the number of couples tx-rx), with low numbers of channels, a \textbf{increase on the mean response time is expected}. By increasing the transmission probability $p$ (with a low number of couples tx-rx) a decrease on the mean response time is expected due to more transmissions. The following results were obtained:
+	\item \textbf{Mean Response Time}: By \textbf{Increasing N} (the number of couples tx-rx), with low numbers of channels, an \textbf{increase on the mean response time is expected}. By increasing the transmission probability $p$ (with a low number of couples tx-rx) a decrease on the mean response time is expected due to more transmissions. The following results were obtained:
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{img/ContinuityTest_ResponseTIme_TXRXVarying}
@@ -260,4 +263,4 @@ By comparing the above formula with the results of the simulation the following 
 	\includegraphics[width=\textwidth]{img/SecondVerificationN30.png}
 \end{figure}
 
-At this point we can state that a proper amount of verification of the implementation of the model has been carried out to make some simulation and gather some insight. Before doing so, an observation of the result can be carried out at this point: with a good number of couple tx-rx a huge sending probability (i.e. greater than 0.5) is pointless to obtain a high throughput. This result will be considered during the scenario calibration in the next chapter. 
+\noindent At this point we can state that a proper amount of verification of the implementation of the model has been carried out to make some simulation and gather some insight. Before doing so, an observation of the result can be carried out at this point: with a good number of couple tx-rx a huge sending probability (i.e. greater than 0.5) is pointless to obtain a high throughput. This result will be considered during the scenario calibration in the next chapter. 

@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_GB
 \section{Modeling}
 \subsection{Introduction}
 We model the system as N couples of transmitter and receiver which communicate through C Channels. A collision can occur on a channel if more than one transmitters want to transmit a packet in that channel. The transmitter stores in a queue the packets that it wants to transmit and, then, it sends them; the channels "knows" if a collision occurs and handles it; the receiver only receive packets.  
@@ -8,17 +9,19 @@ The following general assumptions have been made:
 	\item \textbf{Constant Packet Size and Transmission Rate}: each packet has a \textbf{constant packet size} and each transmitter has a constant and equal transmission rate for which to transmit a packet (without collision) from the receiver to the transmitter will last \textbf{one time-slot}.
 	\item \textbf{No Propagation Error in the channel}: the only cause of a failed transmission has to be considered as the packet collision. Other causes, (i.e. path-loss, shadowing, small-scale fading), are neglected. 
 	\item \textbf{FIFO Queues of unlimited Capacity at the Transmitter} 
-	\item \textbf{Transmitters and Receivers always synchronized with the time-slot period}: in addition the receiver knows in which channel the transmitter will try to send his packet in each time-slot and the receiver will be ready to listen in the correct channel.
-	\item \textbf{After an eventual collision the packet will change his channel choice}
+	\item \textbf{Transmitters and Receivers always synchronized with the time-slot period}: the receiver knows in which channel the transmitter will try to send his packet in each time-slot and the receiver will be ready to listen in the correct channel.
+	\item \textbf{After an eventual collision the transmitter will change his channel choice}
 \end{itemize}
 
-\subsection{Preliminar Validation TODO Forse cancella}
+\subsection{Preliminar Validation}
 Before the implementation a preliminar validation phase is necessary to ensure that the model is correct. Let analyze if the assumptions made in the previous section are reasonable:
 \begin{itemize}
 	\item The pure slotted assumption is reasonable due to the fact that exist some network protocols which work under this assumption, see for instance Slotted Aloha that is the most famous one.
-	\item We consider the packet size constant because, in a network, there are small packet and huge packet, but if we want to consider the performance, then we have to take a mean length, otherwise it's possible that we consider too small or too large packets. Furthermore if the packet length is so large that more than one slots are needed, we can consider, from the viewpoint of the model, that this unique packet send in two different slots is like two packets of fixed-length send each one in a slot.
+	\item We consider the packet size constant because if the packet length is so large that more than one slots are needed, we can consider, from the viewpoint of the model, that this unique packet send in two different slots is like two packets of fixed-length send each one in a slot. Taken this into account is reasonable to state that the packet size is constant and that one packet is transmitted within a slot (if no collisions occur).
+	
+	
 	\item The critical issue of every slotted network is the one related to the collisions: they have an huge impact on the general performance of the network, so it is reasonable to neglect the other propagation errors that are not network-specific or that depend from the environment (as path-loss).
-	\item It's reasonable that the transmitter and the receiver are synchronized with the time-slot period because otherwise it would be very difficult every type of communications between the two entities. Moreover also slotted ALOHA requires a synchronization of this type.
+	\item It's reasonable that the transmitter and the receiver are synchronized with the time-slot period, in fact other slotted-based network as slotted ALOHA requires a synchronization of this type.
 	\item When a packet collide it's reasonable to think that the transmitter will change the transmission channel in order to avoid another collision. Indeed this along with the back-off time are the techniques that should avoid another collision. 
 \end{itemize}
 \subsection{Factors}
