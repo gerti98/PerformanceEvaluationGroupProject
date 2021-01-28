@@ -30,6 +30,7 @@ simple Transmitter
 		
         bool deterministicInterarrivalTime = default(false);
         bool isBackoff = default(true);
+        bool changeOfChannelAfterCollision = default(true);
         
         @signal[numPacketCreatedSignal](type="long");
 		@statistic[numPacketCreated](source="numPacketCreatedSignal"; record=sum);

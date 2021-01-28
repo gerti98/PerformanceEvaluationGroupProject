@@ -95,6 +95,12 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
 
     EV << "TX-" << id << ": arrival packet inserted into the buffer " << endl;
     pkt->setIdTransmitter(id);
+
+    //Channel linking only at the beginning in case of not
+    //change of channel in case of collision
+    if(!par("changeOfChannelAfterCollision"))
+        pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
+
     buffer.push(pkt);
 
     scheduleNextPacket();
@@ -156,7 +162,9 @@ void Transmitter::handleChannelPacket(cMessage* msg){
             if(buffer.empty() == false && uniform(0.0, 1.0, 3) < sendProbability)
             {
                 PacketMsg* pkt = buffer.front();
-                pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
+                if(par("changeOfChannelAfterCollision"))
+                    pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
+
                 send(pkt->dup(), "out");
                 EV << "TX-" << id << ": packet sent, waiting for answer " << endl;
             }
