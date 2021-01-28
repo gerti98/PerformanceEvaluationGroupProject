@@ -35,5 +35,5 @@
 \contentsline {subsubsection}{\numberline {5.3.3}$r2^k$ Overall Results}{23}%
 \contentsline {subsection}{\numberline {5.4}Result Analysis}{23}%
 \contentsline {subsubsection}{\numberline {5.4.1}Throughput}{23}%
-\contentsline {subsubsection}{\numberline {5.4.2}Response Time}{23}%
-\contentsline {section}{\numberline {6}Conclusions}{27}%
+\contentsline {subsubsection}{\numberline {5.4.2}Response Time}{24}%
+\contentsline {section}{\numberline {6}Conclusions}{28}%
