@@ -1,1 +1,16 @@
+% !TeX spellcheck = en_GB
 \section{Conclusions}
+The final consequences of the report are shown in this section. Considering the join effect of the KPIs we can say that the Slotted Random-Access Wireless Network studied has good performance and the following observations about it can be done. 
+
+\noindent As first observation we can say that the system is fair. We can say this due to the Lorenz Curve (figure \ref{img: insight2_throughput}, \ref{img: insight2_respTime}, \ref{img: insight3_respTime}).
+
+\noindent Moreover the overall performance of the system depends heavily from the mean inter-arrival time. In fact if it is lower than 125 ms no observations can be done and no meaningful data can be obtained because the response time diverges. This means that the network protocol studied is good for applications in which the mean inter-arrival time is more or less defined, then if we want to use this type of network for application with mean inter-arrival time lower than 125 ms, this is discouraged. Instead, if for example we want to use the protocol in a network used by a factory to link several machines, and each machine transmits a packet each $x$ ms with $x\ge125$, then this network protocol can be suggested.
+
+\noindent In this context, the results obtained in the conditions previously explained and shown, are good and in particular we can infer the following:
+\begin{itemize}
+	\item The throughput maintains a good value for all values and it is greater when the traffic is higher as we expect.
+	
+	\item The response time is acceptable also in the worst case and it is good for the other cases, both in high traffic condition and in low traffic condition. In any case the performance in the worst case is poor because the mean response time is comparable with the mean inter-arrival time and so if we know that the probability of transmission is low (so in a time slot we may have a lot of transmitters that don't transmit) the network doesn't perform well.
+\end{itemize}
+
+\noindent At the end it is better to use this network in a not flexible environment in which the packets can arrive at the transmitter with very different inter-arrival time and in which the probability of sending a packet is very low. On the other hand it is well to use it in specific environments in which the good performance of the network and its relativity simplicity (this is something that may require more in-depth studies different from this one) can be a very good choice. 

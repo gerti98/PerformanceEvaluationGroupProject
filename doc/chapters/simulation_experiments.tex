@@ -110,23 +110,23 @@ In the table \ref{tab: 2kr_results} we can see the results obtained through the 
 		\hline
 		\textbf{} & \multicolumn{2}{c|}{\textit{\textbf{Throughput}}} & \multicolumn{2}{c|}{\textit{\textbf{Response Time}}} \\ \hline
 		Factors   & qi          & Impact on Variability (\%)          & qi            & Impact on Variability (\%)           \\ \hline
-		A    &  & 48,44 \%    & \textbf{} & 2,18\%  \\ \hline
-		B    &  & 9,35 x $10^{-11}$ \% & \textbf{} & 2,57 \%  \\ \hline
-		C    &  & 2,23 x $10^{-10}$ \% & \textbf{} & 65,67 \% \\ \hline
-		D    &  & 34,15\%    & \textbf{} & 9,57\%  \\ \hline
-		AB   &  & 1,03 x $10^{-11}$ \% & \textbf{} & 1,96 \%  \\ \hline
-		AC   &  & 4,08 x $10^{-10}$ \% & \textbf{} & 1,04 \%  \\ \hline
-		AD   &  & 17,39 \%    & \textbf{} & 1,71\%  \\ \hline
-		BC   &  & 1,58 x $10^{-10}$ & \textbf{} & 1,21 \%  \\ \hline
-		BD   &  & 9,35 x $10^{-11}$ \% & \textbf{} & 1,99 \%  \\ \hline
-		CD   &  & 1,93 x $10^{-11}$ \% & \textbf{} & 6,84 \%  \\ \hline
-		ABC  &  & 1,17 x $10^{-10}$ \% & \textbf{} & 0,93 \%  \\ \hline
-		ABD  &  & 1,03 x $10^{-11}$ \% & \textbf{} & 1,56 \%  \\ \hline
-		ACD  &  & 3,62 x $10^{-10}$ \% & \textbf{} & 0,88 \%  \\ \hline
-		BCD  &  & 2,23 x $10^{-10}$ \% & \textbf{} & 1,02 \%  \\ \hline
-		ABCD &  & 1,17 x $10^{-10}$ \% & \textbf{} & 0,80 \%  \\ \hline
+		A    & 0,312534      & 48,44\%    & 0,006183  & 2,18\%  \\ \hline
+		B    & -4,342100E-07 & 9,35E-11\% & -0,006719 & 2,57\%  \\ \hline
+		C    & -6,710519E-07 & 2,23E-10\% & -0,033927 & 65,67\% \\ \hline
+		D    & -0,262442     & 34,15\%    & -0,012954 & 9,57\%  \\ \hline
+		AB   & -1,447366E-07 & 1,03E-11\% & -0,005873 & 1,96\%  \\ \hline
+		AC   & -9,078937E-07 & 4,08E-10\% & -0,004269 & 1,04\%  \\ \hline
+		AD   & -0,187298     & 17,39\%    & -0,005481 & 1,71\%  \\ \hline
+		BC   & 5,657888E-07  & 1,58E-10\% & 0,004619  & 1,21\%  \\ \hline
+		BD   & 4,342100E-07  & 9,35E-11\% & 0,005906  & 1,99\%  \\ \hline
+		CD   & 1,973682E-07  & 1,93E-11\% & 0,010951  & 6,84\%  \\ \hline
+		ABC  & 4,868415E-07  & 1,17E-10\% & 0,004054  & 0,93\%  \\ \hline
+		ABD  & 1,447366E-07  & 1,03E-11\% & 0,005238  & 1,56\%  \\ \hline
+		ACD  & 8,552622E-07  & 3,62E-10\% & 0,003929  & 0,88\%  \\ \hline
+		BCD  & -6,710519E-07 & 2,23E-10\% & -0,004240 & 1,02\%  \\ \hline
+		ABCD & -4,868415E-07 & 1,17E-10\% & -0,003761 & 0,80\%  \\ \hline
 	\end{tabular}
-	\caption{Results of $r2^k$ analysis for Throughput and for Response Time}
+	\caption{Results of $r2^k$ analysis for Throughput and for Response Time. 95\% of confidence.}
 	\label{tab: 2kr_results}
 \end{table}
 																
@@ -150,14 +150,23 @@ For what concerns the throughput we set these two scenarios:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/insight1_throughput.png}
+	\includegraphics[width=0.9\textwidth]{img/insight1_throughput.png}
 	\caption{Insight 1}
 	\label{img: insight1_throughput}
 \end{figure}
 
 \noindent From the plot we can state that the throughput is higher in the high traffic scenario, because the more the traffic the more the packets. We can also see that the best results is obtained with the lower mean inter-arrival time, this because we have to consider the time slot duration that is 5 ms and it is a lot smaller than the mean inter-arrival time: if the mean inter-arrival time increases, then there are slots where no packets are transmitted (because transmitters have no packets in the queue) and this affect the mean throughput and this is the reason why the throughput decreases with the increase of the mean inter-arrival time. So the latter is another validation of what we obtain from the $r2^k$ analysis. So at the end we can say that the throughput depends mainly from the traffic and from the mean inter-arrival time, this is good because this means that the effect of collisions doesn't not affect so much the overall performance of the network protocol. In fact in the high traffic condition there are more collisions w.r.t. to the scenario with low traffic, but nevertheless the throughput it is not affected by this.
 
-\noindent Now let analyse the fairness of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{} and in figure \ref{}.
+\noindent Now let analyse the fairness of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{img: insight2_throughput}, we show one figure for both cases because they are indeed equals.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/lorenz_throughput.png}
+	\caption{Insight 2}
+	\label{img: insight2_throughput}
+\end{figure}
+
+\noindent As we can see in the plot in all cases the network protocol is fair for what regards the throughput.
 
 \subsubsection{Response Time}
 For what concerns the response time we set these two scenarios:
@@ -170,9 +179,9 @@ For what concerns the response time we set these two scenarios:
 	N = 5, C = 100, Mean Inter-Arrival Time = 125 ms
 \end{enumerate}
 
-\noindent In both scenarios we vary the send probability from 0.1 to 0.5 with a step of 0.1, in fact for the response time the latter is the most relevant factor (as we seen in the $r2^k$ analysis) and so it is the only that if changes causes a big difference.
+\noindent In both scenarios we vary the send probability from 0.1 to 1 with a step of 0.1, in fact for the response time the latter is the most relevant factor (as we seen in the $r2^k$ analysis) and so it is the only that if changes causes a big difference.
 
-\noindent The results obtained in the previously explained scenario when the send probability (p) varies from 0.1 to 0.5 is shown in figure \ref{img: insight1_respTime}.
+\noindent The results obtained in the previously explained scenario when the send probability (p) varies from 0.1 to 1 is shown in figure \ref{img: insight1_respTime}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{img/MeanResponseTimeInsight.png}
@@ -186,13 +195,13 @@ For what concerns the response time we set these two scenarios:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/LorenzHighTraffic.png}
+	\includegraphics[width=0.9\textwidth]{img/LorenzHighTraffic.png}
 	\caption{Insight 2}
 	\label{img: insight2_respTime}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{img/LorenzLowTraffic.png}
+	\includegraphics[width=0.9\textwidth]{img/LorenzLowTraffic.png}
 	\caption{Insight 3}
 	\label{img: insight3_respTime}
 \end{figure}
