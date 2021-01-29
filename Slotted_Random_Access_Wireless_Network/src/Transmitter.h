@@ -30,12 +30,12 @@ private:
     simsignal_t numPacketCreatedSignal_;
     simsignal_t numPacketOnBufferSignal_;
 
+//    simsignal_t meanPacketSignal_;
+//    double meanPktInBuffer_;
+
     simsignal_t meanPacketSignal_;
     double meanPktInBuffer_;
-
-    simsignal_t olgertiMeanPacketSignal_;
-    double olgertiMeanPktInBuffer_;
-    simtime_t olgertiLastSimtime_;
+    simtime_t lastSimtime_;
 
     std::queue<PacketMsg*> buffer;
 

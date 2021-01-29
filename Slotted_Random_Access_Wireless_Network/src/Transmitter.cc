@@ -21,13 +21,13 @@ void Transmitter::initialize()
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
     numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
 
-    meanPacketSignal_ = registerSignal("meanPacketSignal");
-    olgertiMeanPacketSignal_ = registerSignal("olgertiMeanPacketSignal");
+//    meanPacketSignal_ = registerSignal("meanPacketSignal");
+    meanPacketSignal_ = registerSignal("olgertiMeanPacketSignal");
 
+//    meanPktInBuffer_ = 0;
+
+    lastSimtime_ = 0;
     meanPktInBuffer_ = 0;
-
-    olgertiLastSimtime_ = 0;
-    olgertiMeanPktInBuffer_ = 0;
 
     /*
      * buffer related variable initialization
@@ -145,7 +145,7 @@ void Transmitter::handleChannelPacket(cMessage* msg){
                  * Computation of the mean number of packet in the queue (here sum, division in finish())
                  */
                 simtime_t howManyTimeInQueue = simTime() - buffer.front()->getCreationTime();
-                meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(howManyTimeInQueue.dbl());
+//                meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(howManyTimeInQueue.dbl());
 
                 this->updateBufferCount();
                 delete(buffer.front());
@@ -183,12 +183,12 @@ void Transmitter::updateBufferCount(){
     if(simTime().dbl() >= warmup){
         // Handle start of count in case of warmup between
         // current simtime and last simtime registered
-        if(olgertiLastSimtime_ < warmup)
-            olgertiLastSimtime_ = warmup;
+        if(lastSimtime_ < warmup)
+            lastSimtime_ = warmup;
 
-        olgertiMeanPktInBuffer_ = olgertiMeanPktInBuffer_ + buffer.size()*(simTime().dbl()-olgertiLastSimtime_.dbl());
-        EV << "Buffer size:  " << buffer.size() << ", duration: " << (simTime().dbl()-olgertiLastSimtime_.dbl()) << ", sum: " << olgertiMeanPktInBuffer_ << endl;
-        olgertiLastSimtime_ = simTime();
+        meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(simTime().dbl()-lastSimtime_.dbl());
+        EV << "Buffer size:  " << buffer.size() << ", duration: " << (simTime().dbl()-lastSimtime_.dbl()) << ", sum: " << meanPktInBuffer_ << endl;
+        lastSimtime_ = simTime();
     }
 }
 
@@ -206,13 +206,13 @@ void Transmitter::finish(){
     this->updateBufferCount();
 
     // Computation of the mean number of packet in the buffer
-    double toEmit = meanPktInBuffer_/simDuration;
-    double olgertiToEmit = olgertiMeanPktInBuffer_/simDuration;
+//    double toEmit = meanPktInBuffer_/simDuration;
+    double ToEmit = meanPktInBuffer_/simDuration;
 
     // Emission of the value
-    EV <<  toEmit << " warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
-    emit(meanPacketSignal_, toEmit);
-    emit(olgertiMeanPacketSignal_, olgertiToEmit);
+//    EV <<  toEmit << " warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
+//    emit(meanPacketSignal_, toEmit);
+    emit(meanPacketSignal_, ToEmit);
 
     while(buffer.empty() == false){
         delete(buffer.front());
