@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  28 JAN 2021 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  29 JAN 2021 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,12 +204,16 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 \bbl@readstream=\read2
 \bbl@dirlevel=\count269
 )
+Package babel Info: \l@british = using hyphenrules for english
+(babel)             (\language0) on input line 82.
+Package babel Info: \l@UKenglish = using hyphenrules for english
+(babel)             (\language0) on input line 83.
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language8) on input line 108.
+Package babel Info: \l@australian = using hyphenrules for english
+(babel)             (\language0) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for english
+(babel)             (\language0) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -400,119 +404,118 @@ Package pdftex.def Info: img/network.png  used on input line 12.
 \openout2 = `chapters/verification.aux'.
 
 
-(./chapters/verification.tex [7
-
-
-]
-<img/consistencyTest1aWithAxis.png, id=50, 1522.68875pt x 865.2325pt>
+(./chapters/verification.tex
+<img/consistencyTest1aWithAxis.png, id=47, 1522.68875pt x 865.2325pt>
 File: img/consistencyTest1aWithAxis.png Graphic file (type png)
 <use img/consistencyTest1aWithAxis.png>
 Package pdftex.def Info: img/consistencyTest1aWithAxis.png  used on input line 
-42.
+34.
 (pdftex.def)             Requested size: 407.66833pt x 231.64874pt.
+ [7
+
+
+]
 <img/consistencyTest1bWithAxis.png, id=51, 1525.7pt x 861.2175pt>
 File: img/consistencyTest1bWithAxis.png Graphic file (type png)
 <use img/consistencyTest1bWithAxis.png>
 Package pdftex.def Info: img/consistencyTest1bWithAxis.png  used on input line 
-49.
+41.
 (pdftex.def)             Requested size: 407.66833pt x 230.11386pt.
- [8 <./img/consistencyTest1aWithAxis.png> <./img/consistencyTest1bWithAxis.png>
-]
-<img/consistencytest1a_responsetime.png, id=57, 995.72pt x 510.90875pt>
+<img/consistencytest1a_responsetime.png, id=52, 995.72pt x 510.90875pt>
 File: img/consistencytest1a_responsetime.png Graphic file (type png)
 <use img/consistencytest1a_responsetime.png>
 Package pdftex.def Info: img/consistencytest1a_responsetime.png  used on input 
-line 60.
+line 52.
 (pdftex.def)             Requested size: 407.66833pt x 209.1777pt.
+ [8 <./img/consistencyTest1aWithAxis.png> <./img/consistencyTest1bWithAxis.png>
+]
 <img/consistencytest1b_responsetime.png, id=58, 991.705pt x 511.9125pt>
 File: img/consistencytest1b_responsetime.png Graphic file (type png)
 <use img/consistencytest1b_responsetime.png>
 Package pdftex.def Info: img/consistencytest1b_responsetime.png  used on input 
-line 67.
+line 59.
 (pdftex.def)             Requested size: 407.66833pt x 210.43227pt.
  [9 <./img/consistencytest1a_responsetime.png> <./img/consistencytest1b_respons
 etime.png>]
 <img/continuityTest1a.png, id=64, 991.705pt x 505.89pt>
 File: img/continuityTest1a.png Graphic file (type png)
 <use img/continuityTest1a.png>
-Package pdftex.def Info: img/continuityTest1a.png  used on input line 106.
+Package pdftex.def Info: img/continuityTest1a.png  used on input line 98.
 (pdftex.def)             Requested size: 362.37569pt x 184.85286pt.
 <img/continuityTest1b.png, id=65, 986.68625pt x 505.89pt>
 File: img/continuityTest1b.png Graphic file (type png)
 <use img/continuityTest1b.png>
-Package pdftex.def Info: img/continuityTest1b.png  used on input line 113.
+Package pdftex.def Info: img/continuityTest1b.png  used on input line 105.
 (pdftex.def)             Requested size: 362.37569pt x 185.79462pt.
- [10 <./img/ContinuityTest1a.png>]
-<img/continuityTest1a_responsetime.png, id=70, 990.70125pt x 510.90875pt>
+ [10 <./img/ContinuityTest1a.png> <./img/ContinuityTest1b.png>]
+<img/continuityTest1a_responsetime.png, id=71, 990.70125pt x 510.90875pt>
 File: img/continuityTest1a_responsetime.png Graphic file (type png)
 <use img/continuityTest1a_responsetime.png>
 Package pdftex.def Info: img/continuityTest1a_responsetime.png  used on input l
-ine 128.
+ine 120.
 (pdftex.def)             Requested size: 362.37569pt x 186.87383pt.
-<img/continuityTest1b_responsetime.png, id=71, 987.69pt x 510.90875pt>
+<img/continuityTest1b_responsetime.png, id=72, 987.69pt x 510.90875pt>
 File: img/continuityTest1b_responsetime.png Graphic file (type png)
 <use img/continuityTest1b_responsetime.png>
 Package pdftex.def Info: img/continuityTest1b_responsetime.png  used on input l
-ine 135.
+ine 127.
 (pdftex.def)             Requested size: 362.37569pt x 187.44292pt.
-
-[11 <./img/ContinuityTest1b.png> <./img/ContinuityTest1a_responsetime.png>]
-<img/continuityTest_Throughput_TXRX_Varying.png, id=77, 1475.5125pt x 864.22874
+ [11 <./img/ContinuityTest1a_responsetime.png> <./img/ContinuityTest1b_response
+time.png>]
+<img/continuityTest_Throughput_TXRX_Varying.png, id=78, 1475.5125pt x 864.22874
 pt>
 File: img/continuityTest_Throughput_TXRX_Varying.png Graphic file (type png)
 <use img/continuityTest_Throughput_TXRX_Varying.png>
 Package pdftex.def Info: img/continuityTest_Throughput_TXRX_Varying.png  used o
-n input line 148.
+n input line 140.
 (pdftex.def)             Requested size: 407.66833pt x 238.77794pt.
-<img/continuityTest_Throughput_IntTimeVarying.png, id=78, 1475.5125pt x 865.232
+<img/continuityTest_Throughput_IntTimeVarying.png, id=79, 1475.5125pt x 865.232
 5pt>
 File: img/continuityTest_Throughput_IntTimeVarying.png Graphic file (type png)
 <use img/continuityTest_Throughput_IntTimeVarying.png>
 Package pdftex.def Info: img/continuityTest_Throughput_IntTimeVarying.png  used
- on input line 154.
+ on input line 146.
 (pdftex.def)             Requested size: 407.66833pt x 239.05527pt.
-
-[12 <./img/ContinuityTest1b_responsetime.png> <./img/continuityTest_Throughput_
-TXRX_Varying.png>]
-<img/ContinuityTest_ResponseTIme_TXRXVarying.png, id=85, 1477.52pt x 858.20625p
+<img/ContinuityTest_ResponseTIme_TXRXVarying.png, id=80, 1477.52pt x 858.20625p
 t>
 File: img/ContinuityTest_ResponseTIme_TXRXVarying.png Graphic file (type png)
 <use img/ContinuityTest_ResponseTIme_TXRXVarying.png>
 Package pdftex.def Info: img/ContinuityTest_ResponseTIme_TXRXVarying.png  used 
-on input line 161.
+on input line 153.
 (pdftex.def)             Requested size: 407.66833pt x 236.7866pt.
-<img/ContinuityTest_ResponseTIme_VaryingP.png, id=86, 1467.4825pt x 859.21pt>
+ [12 <./img/continuityTest_Throughput_TXRX_Varying.png> <./img/continuityTest_T
+hroughput_IntTimeVarying.png>]
+<img/ContinuityTest_ResponseTIme_VaryingP.png, id=87, 1467.4825pt x 859.21pt>
 File: img/ContinuityTest_ResponseTIme_VaryingP.png Graphic file (type png)
 <use img/ContinuityTest_ResponseTIme_VaryingP.png>
 Package pdftex.def Info: img/ContinuityTest_ResponseTIme_VaryingP.png  used on 
-input line 167.
+input line 159.
 (pdftex.def)             Requested size: 407.66833pt x 238.68925pt.
- [13 <./img/continuityTest_Throughput_IntTimeVarying.png> <./img/ContinuityTest
-_ResponseTIme_TXRXVarying.png>]
-<img/ContinuityTest_ResponseTime_VectorP.png, id=92, 1475.5125pt x 863.225pt>
+<img/ContinuityTest_ResponseTime_VectorP.png, id=88, 1475.5125pt x 863.225pt>
 File: img/ContinuityTest_ResponseTime_VectorP.png Graphic file (type png)
 <use img/ContinuityTest_ResponseTime_VectorP.png>
 Package pdftex.def Info: img/ContinuityTest_ResponseTime_VectorP.png  used on i
-nput line 175.
+nput line 167.
 (pdftex.def)             Requested size: 452.9679pt x 265.00215pt.
- [14 <./img/ContinuityTest_ResponseTIme_VaryingP.png> <./img/ContinuityTest_Res
-ponseTime_VectorP.png>]
+ [13 <./img/ContinuityTest_ResponseTIme_TXRXVarying.png> <./img/ContinuityTest_
+ResponseTIme_VaryingP.png>] [14 <./img/ContinuityTest_ResponseTime_VectorP.png>
+]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-85.
+77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
 <img/plotTheoreticalMeanBinomial.png, id=98, 861.2175pt x 585.18625pt>
 File: img/plotTheoreticalMeanBinomial.png Graphic file (type png)
 <use img/plotTheoreticalMeanBinomial.png>
 Package pdftex.def Info: img/plotTheoreticalMeanBinomial.png  used on input lin
-e 217.
+e 209.
 (pdftex.def)             Requested size: 407.66833pt x 277.01093pt.
  [15]
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
@@ -520,23 +523,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--239
 <img/SecondVerificationN2.png, id=107, 845.1575pt x 564.1075pt>
 File: img/SecondVerificationN2.png Graphic file (type png)
 <use img/SecondVerificationN2.png>
-Package pdftex.def Info: img/SecondVerificationN2.png  used on input line 252.
+Package pdftex.def Info: img/SecondVerificationN2.png  used on input line 244.
 (pdftex.def)             Requested size: 385.02547pt x 256.9964pt.
 <img/SecondVerificationN5.png, id=108, 847.165pt x 564.1075pt>
 File: img/SecondVerificationN5.png Graphic file (type png)
 <use img/SecondVerificationN5.png>
-Package pdftex.def Info: img/SecondVerificationN5.png  used on input line 256.
+Package pdftex.def Info: img/SecondVerificationN5.png  used on input line 248.
 (pdftex.def)             Requested size: 385.02547pt x 256.37665pt.
 <img/SecondVerificationN10.png, id=109, 843.15pt x 567.11874pt>
 File: img/SecondVerificationN10.png Graphic file (type png)
 <use img/SecondVerificationN10.png>
-Package pdftex.def Info: img/SecondVerificationN10.png  used on input line 260.
+Package pdftex.def Info: img/SecondVerificationN10.png  used on input line 252.
 
 (pdftex.def)             Requested size: 385.02547pt x 258.97401pt.
 <img/SecondVerificationN30.png, id=110, 840.13875pt x 559.08875pt>
 File: img/SecondVerificationN30.png Graphic file (type png)
 <use img/SecondVerificationN30.png>
-Package pdftex.def Info: img/SecondVerificationN30.png  used on input line 264.
+Package pdftex.def Info: img/SecondVerificationN30.png  used on input line 256.
 
 (pdftex.def)             Requested size: 385.02547pt x 256.21994pt.
  [17 <./img/SecondVerificationN2.png> <./img/SecondVerificationN5.png>]) [18 <.
@@ -625,32 +628,31 @@ img/LorenzLowTraffic.png>]
 (./chapters/implementation.aux) (./chapters/verification.aux)
 (./chapters/simulation_experiments.aux) (./chapters/conclusions.aux)) ) 
 Here is how much of TeX's memory you used:
- 6805 strings out of 481239
- 104917 string characters out of 5920376
- 371627 words of memory out of 5000000
- 21932 multiletter control sequences out of 15000+600000
+ 6807 strings out of 483183
+ 104937 string characters out of 5966291
+ 366667 words of memory out of 5000000
+ 21683 multiletter control sequences out of 15000+600000
  541451 words of font info for 55 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  41i,10n,43p,1212b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/sh
-are/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm1095.pfb>
-Output written on template_Report.pdf (28 pages, 1260985 bytes).
+ </home/
+gerti98/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on template_Report.pdf (28 pages, 1254423 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 223 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)

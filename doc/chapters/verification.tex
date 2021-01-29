@@ -3,10 +3,10 @@
 In this section we present tests performed in order to verify that our implementation reflects correctly our model.
 
 \subsection{Deterministic and Simple Cases}
-In this scenarios we test the behaviour of the system in easy and deterministic cases in order to verify the model. In all of these tests the behaviour is the one expected and it has been verified using the graphical environment (Qtenv) and debugging prints.
+In this scenarios we test the behaviour of the system in \textbf{easy and completely deterministic cases} in order to verify the model. In all of these tests the behaviour is the one expected and it has been verified using the graphical environment (Qtenv) and debugging prints.
 
 \subsection{Degeneracy Tests}
-In the degeneracy tests we verify the behaviour of our simulator with parameters set to 0 values. In all tests the simulator works properly. In particular the following observations can be inferred:
+In the \textbf{degeneracy tests} we verify the behaviour of our simulator with parameters set to 0 values. In all tests the simulator works properly. In particular the following observations can be inferred:
 \begin{itemize}
 	\item If the number of channel is 0 then the simulation stops immediately because has no sense running a simulation with 0 channels.
 	\item If the time slot size is 0 then the simulation doesn't stop and goes to infinite because on instant 0  time slots are continuously triggered.
@@ -14,28 +14,20 @@ In the degeneracy tests we verify the behaviour of our simulator with parameters
 \end{itemize}
 
 \subsection{Consistency Test}
-The consistency test verifies that the system react consistently with the output. In order to test this we perform two tests with the following parameters.
+The \textbf{consistency test} verifies that the system react consistently with the output. In order to test this we perform two tests with the following parameters.
 \paragraph{Test 1}
 \begin{itemize}
-	\item Number of couple tx-rx: 1
-	\item Number of channels: 500
-	\item Send probability: 1
-	\item Mean inter-arrival time: 10s (deterministic)
-	\item Time slot size: 5s
+	\item \textbf{N} (couples t\textbf{}x-rx): \textbf{1}; \textbf{C} (channels): \textbf{500}; \textbf{p} (send probability): \textbf{1}; $\dfrac{1}{\lambda}$ (Mean inter-arrival time): \textbf{10s} (deterministic); Time slot size: \textbf{5s};
 \end{itemize}
 
 \paragraph{Test 2: Two couple TX-RX with half packets arrival rate}
 \begin{itemize}
-	\item Number of couple tx-rx: 2
-	\item Number of channels: 500
-	\item Send probability: 1
-	\item Mean inter-arrival time: 20s (deterministic)
-	\item Time slot size: 5s
+	\item \textbf{N: 2}; \textbf{C: 500}; \textbf{p: 1}; $\dfrac{1}{\lambda}$ = \textbf{20s} (deterministic); \textbf{$T_{slot}$: 5s}
 \end{itemize}
 
-\noindent We expect that the result of the two tests are more or less equal because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the number of channels at 500 in order to neglect the effect of collisions (in any case it is possible that a collision occur, but in the following tests no collisions have been detected).
+\noindent We \textbf{expect that the result of the two tests are more or less equal} because the behaviour of one source transmitting every 10 seconds must be similar to the behaviour of two sources transmitting every 20 seconds. We set the \textbf{number of channels at 500 in order to neglect the effect of collisions} (in any case it is possible that a collision occur, but in the following tests no collisions have been detected).
 
-\noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect. In fact the Mean Throughput per slot tend in both cases to 0.50 packets per slot.
+\noindent The graph in figure \ref{img: consistencyTest1a} and in figure \ref{img: consistencyTest1b} show the results of the tests previously explained. We can see that the behaviour is very similar in both cases and so that the systems works as we expect. In fact the Mean Throughput per slot tend in both cases to \textbf{0.50 packets per slot}.
 
 \begin{figure}[H]
 	\centering
@@ -53,7 +45,7 @@ The consistency test verifies that the system react consistently with the output
 
 \noindent The oscillations at the beginning are due to the fact that the mean inter-arrival time is bigger with respect to the time slot size. In fact we can observe that in the second test there are larger oscillations because the difference between the mean inter-arrival time and the time slot size is bigger than the one of the first test.
 
-\noindent Now let analyse the response time, we can see its measure in both tests in figure \ref{img: consistencyTest1a_responsetime} and \ref{img: consistencyTest1b_responsetime}.
+\noindent Now let analyse the \textbf{response time}, we can see its measure in both tests in figure \ref{img: consistencyTest1a_responsetime} and \ref{img: consistencyTest1b_responsetime}.
 
 \begin{figure}[H]
 	\centering
@@ -70,7 +62,7 @@ The consistency test verifies that the system react consistently with the output
 \end{figure}
 
 
-\noindent The mean response time in both cases is 5 seconds, this is a lower bound for the response time because in both tests 5 seconds is the size of the slot time so it's impossible to have a response time lower than the slot size.
+\noindent The \textbf{mean response time in both cases is 5 seconds}, this is a \textbf{lower bound} for the response time because in both tests 5 seconds is the size of the slot time so it's impossible to have a response time lower than the slot size.
 
 \noindent We can see that in the second test we have a less continue plot, this is due to the fact that the mean inter-arrival time is bigger in the second case and so the packet are more distant in time.
 

@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {4.3}Consistency Test}{7}%
 \contentsline {paragraph}{Test 1}{7}%
 \contentsline {paragraph}{Test 2: Two couple TX-RX with half packets arrival rate}{7}%
-\contentsline {subsection}{\numberline {4.4}Continuity Test}{10}%
+\contentsline {subsection}{\numberline {4.4}Continuity Test}{9}%
 \contentsline {subsection}{\numberline {4.5}Test Simulations with Binomial Model (1)}{15}%
 \contentsline {paragraph}{Parameters}{15}%
 \contentsline {subsection}{\numberline {4.6}Test Simulations with Collisions(2)}{16}%

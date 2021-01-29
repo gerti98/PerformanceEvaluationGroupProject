@@ -15,12 +15,12 @@ The following modules have been defined:
 \end{figure}
 
 \subsection{Messages}
-A new format of message has been defined, in order to store all packet information,with the following fields:
+A new format of message has been defined, in order to store all packet information, with the following fields:
 \begin{itemize}
-	\item \textit{simtime$\_$t creationTime}: time in which the packet arrives for the first time at the Transmitter
-	\item \textit{int idChannel}: Channel chosen for the current transmission, may change in case of collision
-	\item \textit{int idTransmitter}: Id of the module Transmitter that has sent the message
-	\item \textit{int idGate}: Id of the gate in which the Transmitter is linked to the Channel
+	\item \textit{simtime$\_$t creationTime}: time in which the packet arrives for the first time at the \textbf{Transmitter}
+	\item \textit{int idChannel}: \textbf{Channel} chosen for the current transmission, may change in case of collision
+	\item \textit{int idTransmitter}: Id of the module \textbf{Transmitter} that has sent the message
+	\item \textit{int idGate}: Id of the gate in which the \textbf{Transmitter} is linked to the \textbf{Channel}
 \end{itemize}
 
 \subsection{Modules Behaviour}
@@ -31,7 +31,7 @@ A new format of message has been defined, in order to store all packet informati
 		\item \textbf{IF} an \textit{ACK} has been received, the packet at the top of the queue can be removed. \textbf{GOTO (2)}
 		\item \textbf{ELSE IF} a \textit{NACK} has been received, then the \textit{Transmitter} starts his backoff time and \textbf{waits for another message}.
 		\item \textbf{ELSE IF} a \textit{Synchronization message} has been received \textbf{AND} the \textit{Transmitter} is not in backoff-time \textbf{GOTO (2)}
-		\item \textbf{ELSE IF} a packet arrives at the \textit{Transmitter}, the Transmitter stores the packet in the queue, make a reschedule of the arrival of the next packet and \textbf{waits for another message}
+		\item \textbf{ELSE IF} a \textit{packet} arrives at the \textit{Transmitter}, the \textit{Transmitter} stores the packet in the queue, make a reschedule of the arrival of the next packet and \textbf{waits for another message}
 	\end{itemize}
 	\item The \textit{Transmitter} tries to send the packet
 	\begin{itemize}
@@ -51,5 +51,5 @@ A new format of message has been defined, in order to store all packet informati
 \end{enumerate}
 \subsubsection{\textit{Receiver} Module Behaviour in the implementation:}
 \begin{enumerate}
-	\item The \textit{Receiver} wakes up when a packet arrives. Due to the fact that the receiver essentially has the only duty of receiving packets, in fact the i-th receiver doesn't perform different operations w.r.t. to the j-th, we model N receivers as one. It computes statistics on the number of packets received mainly for debugging purpose.
+	\item The \textit{Receiver} wakes up when a packet arrives. Due to the fact that the receiver essentially has the only duty of receiving packets. It computes statistics on the number of packets received mainly for debugging purpose.
 \end{enumerate}
