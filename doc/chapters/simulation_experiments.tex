@@ -1,7 +1,31 @@
 % !TeX spellcheck = en_GB
 \section{Simulations Experiments}
+\subsection{Study on Response Time Limits}
+Before choosing the extremes of the \textbf{mean inter-arrival time} factor, a study on the mean response time, by changing the latter, has been carried out. 
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=\textwidth]{img/BufferExplosion.pdf}
+ 	\caption{Buffer Explosion}
+ 	\label {img: warmUp}
+ \end{figure}
+\noindent Basically, two different zone of interest of the mean inter-arrival time were found: 
+\begin{itemize}
+	\item the first one between \textbf{[25ms, 55ms]}, for which the mean response time diverges for the majority of the combination of other factors limits. In this area \textbf{only information about the throughput} can be carried out, because the \textbf{mean response time}, as diverges, is \textbf{dependent on the simulation duration}.
+	\item the second one between \textbf{[125ms, 500ms]}, for which both information about the \textbf{throughput} and the \textbf{response time} can be carried out.
+	
+\end{itemize}
+
+For the second interval, the left bound was chosen when the mean-response time began to be comparable with the time-slot duration (which will be 5ms) and the variance of the 95\% CIs are small (basically when the standard deviation becomes very small).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{img/BufferExplosionZoom.png}
+	\caption{Buffer Explosion between 95ms and 145ms: the 95\% CI are too small to be seen on the right part of the plot}
+	\label {img: warmUp}
+\end{figure}
 \subsection{Scenario Calibration}
 In order to calibrate the simulator parameters, the following range of values were used:
+
+\paragraph{Limited Response Time Scenario}
 \begin{itemize}
 	\item \textbf{Number of Couples Tx-Rx (N)}: [5, 30]
 	\item \textbf{Number of Channels (C)} : [6, 100] (Resource Blocks in LTE for different Frequencies)
@@ -10,6 +34,14 @@ In order to calibrate the simulator parameters, the following range of values we
 	\item \textbf{Send Probability (p)}: [0.1, 0.5] 
 \end{itemize}
 
+\paragraph{Explosion of Response Time Scenario}
+\begin{itemize}
+	\item \textbf{Number of Couples Tx-Rx (N)}: [5, 30]
+	\item \textbf{Number of Channels (C)} : [6, 100]
+	\item \textbf{Mean Inter-arrival Time ($\frac{1}{\lambda}$)}: [25ms, 55ms] 
+	\item \textbf{Time-slot duration ($T_{slot}$)}: 5 ms
+	\item \textbf{Send Probability (p)}: [0.1, 1] 
+\end{itemize}
 \subsection{Calibration of Warm-Up Period and Simulation duration}
 For calibrating the warm-up different simulation were made (with the factors range in the latter paragraph). After various test is clear that the KPI that impacts heavily in the choose of the warmup time is the \textit{Response Time}. We can see the study about the response time in figure \ref{img: warmUp}.
 %The worst case in terms of convergence time was encountered with the \textbf{mean throughput} with N = 5, C = 6, $\dfrac{1}{\lambda}$ = 500ms, p = 0.5:
@@ -24,8 +56,9 @@ For calibrating the warm-up different simulation were made (with the factors ran
 \noindent\textbf{A warm-up period of 250s was chosen}.\\
 For what concerns the simulation duration was made a trade-off between the memory consumption for storing data and the length of the simulation itself. This was done because there are not stochastic elements in the model (like a particular error probability with a low percentage) that will need a particular amount of time to be shown. Obviously the duration has to be greater than the warm-up duration. All things considered, \textbf{a simulation-duration of 5000s was chosen}.
 
-\subsection{Design of Experiments}
-\subsubsection{Factorial Analysis $r2^k$ on Throughput}
+\subsection{Limited Response Time Scenario Study}
+In this chapter we will enter more in the deep to the limited response time scenario, in order to find insights about \textbf{throughput} and \textbf{response time} (we can due to the fact that in this interval it converges).
+\subsubsection{Factorial Analysis $2^kr$ on Throughput}
 In order to analyse the contribution of the factors on the throughput performance, we perform a $r2^k$ analysis with $r=5$ and $k=4$ (so we perform $5*2^4 = 80$ experiments). We take into account the following factors:
 \begin{itemize}
 	\item Number of Couples Tx-Rx: [5, 30] \textbf{(A)}
@@ -68,7 +101,7 @@ In order to analyse the contribution of the factors on the throughput performanc
 	\noindent The jointly effect of the above factors accounts for the 17,39\% of the variability and it has a negative impact ($qi = [-0,187301; -0,187296]$). This because the effect of the mean inter-arrival time is greater with respect to the one of the number of couples, so if both increase then the throughput decreases. Indeed, if we have an higher number of transmitters, but we have the most of them which have an empty buffer (due to the previously explained phenomenon caused by the increasing of the mean inter-arrival time), then the throughput decreases because there are too few packets to transmit.
 \end{itemize}
 
-\subsubsection{Factorial Analysis $r2^k$ on Response Time}
+\subsubsection{Factorial Analysis $2^kr$ on Response Time}
 Now let analyse the contribution of factors on the other KPI, the response time. Also in this case, as the previously, we perform a $r2^k$ analysis with $r=5$ and $k=4$ and so 80 experiments in total. The factors are the same of the previously analysis.
 
 \noindent We can see the plots to check the hypothesis in figure \ref{img: qqplot_responsetime} (for what concerns the normal hp) and in figure \ref{img: homoskedasticity_responsetime} (for what concerns the homoskedasticity).
@@ -102,7 +135,7 @@ Now let analyse the contribution of factors on the other KPI, the response time.
 \end{itemize}
 
 \newpage
-\subsubsection{$r2^k$ Overall Results}
+\subsubsection{$2^kr$ Overall Results}
 In the table \ref{tab: 2kr_results} we can see the results obtained through the $r2^k$ analysis.
 \begin{table}[H]
 	\centering
@@ -130,7 +163,7 @@ In the table \ref{tab: 2kr_results} we can see the results obtained through the 
 	\label{tab: 2kr_results}
 \end{table}
 																
-\subsection{Result Analysis}
+\subsection{Limited Response Time Scenario: Result Analysis}
 Our objective is (as we said at the beginning of the report) the \textit{Assessment of the Effectiveness of the Slotted Random-Access Network Protocol}. In order to do so we choose the mean response time and the mean throughput as Key Performance Indexes. For each KPI we set 2 scenarios: one for low traffic condition and the other one for high traffic condition. For each factor variation of each scenario of each KPI we perform 35 repetitions in order to obtain meaningful and statistically valid data. Data are computed with a confidence level of 95\% (to small to be seen) .Thanks to the analysis performed on this two scenarios and studying the evolution of the KPIs in them, we are able to reach our aim and give some final conclutions on the network protocol. 
 
 \subsubsection{Throughput}
@@ -208,3 +241,69 @@ For what concerns the response time we set these two scenarios:
 
 \noindent We can see that in both cases the curve related to the simulation scenarios are very close to the line of maximum fairness (in the case of low traffic they are overlapping). So we can say that the network protocol is absolutely fair for what regards the response time, whatsoever be the traffic condition.
 
+\subsection{Response Time Explosion Scenario Study}
+In this chapter we will study more deeply the case in which we have a low mean inter-arrival time which lead to the explosion of the response time. Due to the fact that a \textbf{huge number of collision is expected}, in order to obtain insights for the throughput we created two other sub-scenarios: 
+\begin{itemize}
+	\item \textbf{Change Of Channel in case of collision (default choice)}: in case of collision of a packet, when retrying the retransmission of that packet (after the back-off period) the channel assigned will be picket randomly another time
+	\item \textbf{Not Change of Channel in case of collision}
+\end{itemize}
+We repeated the $2^{k}r$ analysis on the throughput for both sub-scenarios and, after verifying the hypothesis (as we shown before) and checking that the $q_{i}$ of the most important factors does non include 0 in the relative 95\% CI scissor, we obtained the following result:
+\begin{itemize}
+	\item In both sub-scenarios the number of Couples TX-RX is the main factor in terms of impact on the \textbf{Throughput} (in both cases an impact greater than 50\%)
+	\item In both sub-scenarios the percentage of the Bernoullian experiment \textbf{p} had a low impact (4-5\%) on the \textbf{Throughput}
+	\item With respect of the limited response time scenario, the mean interarrival time has a low impact on the throughput (around 4\%) 
+\end{itemize}
+\subsubsection{$2^kr$ Overall Results}
+As a reference, in the following table \ref{tab: 2kr_results_explosion} we can see the results obtained through the $r2^k$ analysis.
+
+\begin{itemize}
+	\item Number of Couples Tx-Rx: [5, 30] \textbf{(A)}
+	\item Number of Channels C : [6, 100] \textbf{(B)}
+	\item Send Probability p: [0.1, 1] \textbf{(C)}
+	\item Mean Inter-arrival Time: [25ms, 55ms] \textbf{(D)}    
+\end{itemize}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{} & \multicolumn{2}{c|}{\textit{\textbf{Throughput Change}}} & \multicolumn{2}{c|}{\textit{\textbf{Throughput No-Change}}} \\ \hline
+		Factors   & qi          & Impact on Variability (\%)          & qi            & Impact on Variability (\%)           \\ \hline
+		A    & 1.064	& 55.928\% 	& 1.032 &	53.0041431330267\%  \\ \hline
+		B    & 0.432 &	9.218\% &	0.464034406279573 &	10.7154299060013\%  \\ \hline
+		C    & 0.308 & 4.684\% & 0.290 &	4.207\%  \\ \hline
+		D    & -0.285 &	4.033\% & -0.284 &	4.036\%  \\ \hline
+		AB   & 0.427 & 9.004\% & 0.458 &	10.47\%  \\ \hline
+		AC   & 0.177 & 1.551\% & 0.159 &	1.268\%  \\ \hline
+		AD   & -0.143 &	1.0225\% & -0.143 & 1.018\%  \\ \hline
+		BC   & 0.144 & 1.026\% &	0.162 &	1.309\%  \\ \hline
+		BD   & -0.216 &	2.314\% & -0.216 & 2.338\%  \\ \hline
+		CD   & -0.260 & 3.345\% & -0.260 & 3.372\%  \\ \hline
+		ABC  & 0.149 & 	1.099\% & 0.167 & 1.397\%  \\ \hline
+		ABD  & -0.211 &	2.210\% & -0.211 & 2.230\%  \\ \hline
+		ACD  & -0.129 &	0.830\% & -0.129 & 0.834\%  \\ \hline
+		BCD  & -0.191 &	1.817\% & -0.192 & 1.847\%  \\ \hline
+		ABCD & -0.196 &	1.912\% & -0.197 & 1.945\%  \\ \hline
+	
+	\end{tabular}
+	\caption{Results of $r2^k$ analysis for Throughput and for Response Time. 95\% of confidence.}
+	\label{tab: 2kr_results_explosion}
+\end{table}
+
+\subsection{Response Time Explosion Scenario: Result Analysis}
+Due to the fact that the $2^{k}r$ analysis underlined the importance of the Number of Couples Tx-Rx (\textbf{N}), in the following plot we can see more clearly the effects of changing N: the \textbf{throughput increase by increasing N}.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/MeanThroughputBufferExplosion.png}
+	\caption{Insight 4}
+	\label{img: insight4}
+\end{figure}
+The plot was also done with respect to different values of \textbf{p}, even if such factor does not have a really big impact. This was done because, thinking about the real world, the parameter \textbf{p} is the simplest thing to change, so, even if his impact is not huge, can be a good idea to show which values tunes the \textbf{throughput}. All things considered: \textbf{increasing p increases slighly the throughput}, however this increase becomes "smaller" with bigger values of p.\\
+For what concerns the comparison between the Change Channel sub-scenario with the No-Change one, the following plot can describe well the differences:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/MeanThroughputBufferExplosionChangeVSNoChange.png}
+	\caption{Insight 5}
+	\label{img: insight3_respTime}
+\end{figure}
+As we can notice, the dotted lines and the continuous lines represent the same simulation in terms of number N, but with different option of Changing or not the channel in case of collision. So, we can see clearly that for more higher number of N, there is a consistent difference between the two scenarios: \textbf{the sub-scenario without change of the channel is worst in terms of throughput}.

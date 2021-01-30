@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  29 JAN 2021 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  30 JAN 2021 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -260,7 +260,17 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 )
 (./template_Report.aux (./chapters/introduction.aux) (./chapters/modeling.aux)
 (./chapters/implementation.aux) (./chapters/verification.aux)
-(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
+(./chapters/simulation_experiments.aux
+
+LaTeX Warning: Label `img: warmUp' multiply defined.
+
+
+LaTeX Warning: Label `img: warmUp' multiply defined.
+
+
+LaTeX Warning: Label `img: insight3_respTime' multiply defined.
+
+) (./chapters/conclusions.aux))
 \openout1 = `template_Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -547,113 +557,149 @@ Package pdftex.def Info: img/SecondVerificationN30.png  used on input line 256.
 \openout2 = `chapters/simulation_experiments.aux'.
 
  (./chapters/simulation_experiments.tex
-<img/warmup.png, id=122, 1490.56876pt x 729.72626pt>
-File: img/warmup.png Graphic file (type png)
-<use img/warmup.png>
-Package pdftex.def Info: img/warmup.png  used on input line 18.
-(pdftex.def)             Requested size: 452.9679pt x 221.74779pt.
+<img/BufferExplosion.pdf, id=122, 391.4625pt x 232.9503pt>
+File: img/BufferExplosion.pdf Graphic file (type pdf)
+<use img/BufferExplosion.pdf>
+Package pdftex.def Info: img/BufferExplosion.pdf  used on input line 7.
+(pdftex.def)             Requested size: 452.9679pt x 269.56494pt.
+<img/BufferExplosionZoom.png, id=123, 1223.57124pt x 614.295pt>
+File: img/BufferExplosionZoom.png Graphic file (type png)
+<use img/BufferExplosionZoom.png>
+Package pdftex.def Info: img/BufferExplosionZoom.png  used on input line 21.
+(pdftex.def)             Requested size: 452.9679pt x 227.40744pt.
  [19
 
 
- <./img/WarmUp.png>]
-<img/QQplot_2kr_throughput.png, id=127, 720.6925pt x 403.5075pt>
+ <./img/BufferExplosion.pdf>]
+<img/warmup.png, id=139, 1490.56876pt x 729.72626pt>
+File: img/warmup.png Graphic file (type png)
+<use img/warmup.png>
+Package pdftex.def Info: img/warmup.png  used on input line 50.
+(pdftex.def)             Requested size: 452.9679pt x 221.74779pt.
+ [20 <./img/BufferExplosionZoom.png>]
+<img/QQplot_2kr_throughput.png, id=144, 720.6925pt x 403.5075pt>
 File: img/QQplot_2kr_throughput.png Graphic file (type png)
 <use img/QQplot_2kr_throughput.png>
-Package pdftex.def Info: img/QQplot_2kr_throughput.png  used on input line 43.
+Package pdftex.def Info: img/QQplot_2kr_throughput.png  used on input line 76.
 (pdftex.def)             Requested size: 362.37569pt x 202.88614pt.
-<img/homoskedasticity_2kr_throughput.png, id=128, 759.83875pt x 392.46625pt>
+ [21 <./img/WarmUp.png>]
+<img/homoskedasticity_2kr_throughput.png, id=149, 759.83875pt x 392.46625pt>
 File: img/homoskedasticity_2kr_throughput.png Graphic file (type png)
 <use img/homoskedasticity_2kr_throughput.png>
 Package pdftex.def Info: img/homoskedasticity_2kr_throughput.png  used on input
- line 50.
+ line 83.
 (pdftex.def)             Requested size: 362.37569pt x 187.17197pt.
- [20 <./img/QQplot_2kr_throughput.png> <./img/homoskedasticity_2kr_throughput.p
+ [22 <./img/QQplot_2kr_throughput.png> <./img/homoskedasticity_2kr_throughput.p
 ng>]
-<img/qqplot_2kr_responsetime.png, id=134, 661.47125pt x 365.365pt>
+<img/qqplot_2kr_responsetime.png, id=157, 661.47125pt x 365.365pt>
 File: img/qqplot_2kr_responsetime.png Graphic file (type png)
 <use img/qqplot_2kr_responsetime.png>
-Package pdftex.def Info: img/qqplot_2kr_responsetime.png  used on input line 78
-.
+Package pdftex.def Info: img/qqplot_2kr_responsetime.png  used on input line 11
+1.
 (pdftex.def)             Requested size: 362.37569pt x 200.15414pt.
-<img/homoskedasticity_2kr_responsetime.png, id=135, 793.96625pt x 598.235pt>
+<img/homoskedasticity_2kr_responsetime.png, id=158, 793.96625pt x 598.235pt>
 File: img/homoskedasticity_2kr_responsetime.png Graphic file (type png)
 <use img/homoskedasticity_2kr_responsetime.png>
 Package pdftex.def Info: img/homoskedasticity_2kr_responsetime.png  used on inp
-ut line 85.
+ut line 118.
 (pdftex.def)             Requested size: 362.37569pt x 273.04628pt.
- [21 <./img/qqplot_2kr_responsetime.png>] [22 <./img/homoskedasticity_2kr_respo
+ [23 <./img/qqplot_2kr_responsetime.png>] [24 <./img/homoskedasticity_2kr_respo
 nsetime.png>]
-Overfull \hbox (2.9055pt too wide) in paragraph at lines 109--129
+Overfull \hbox (2.9055pt too wide) in paragraph at lines 142--162
  [][] 
  []
 
-<img/insight1_throughput.png, id=146, 688.5725pt x 377.41pt>
+<img/insight1_throughput.png, id=168, 688.5725pt x 377.41pt>
 File: img/insight1_throughput.png Graphic file (type png)
 <use img/insight1_throughput.png>
-Package pdftex.def Info: img/insight1_throughput.png  used on input line 153.
+Package pdftex.def Info: img/insight1_throughput.png  used on input line 186.
 (pdftex.def)             Requested size: 407.66833pt x 223.4474pt.
-[23]
-<img/lorenz_throughput.png, id=150, 1129.21875pt x 570.13pt>
+[25]
+<img/lorenz_throughput.png, id=172, 1129.21875pt x 570.13pt>
 File: img/lorenz_throughput.png Graphic file (type png)
 <use img/lorenz_throughput.png>
-Package pdftex.def Info: img/lorenz_throughput.png  used on input line 164.
+Package pdftex.def Info: img/lorenz_throughput.png  used on input line 197.
 (pdftex.def)             Requested size: 317.07614pt x 160.08768pt.
- [24 <./img/insight1_throughput.png> <./img/lorenz_throughput.png>]
-<img/MeanResponseTimeInsight.png, id=157, 1034.86626pt x 546.04pt>
+ [26 <./img/insight1_throughput.png> <./img/lorenz_throughput.png>]
+<img/MeanResponseTimeInsight.png, id=178, 1034.86626pt x 546.04pt>
 File: img/MeanResponseTimeInsight.png Graphic file (type png)
 <use img/MeanResponseTimeInsight.png>
-Package pdftex.def Info: img/MeanResponseTimeInsight.png  used on input line 18
-7.
+Package pdftex.def Info: img/MeanResponseTimeInsight.png  used on input line 22
+0.
 (pdftex.def)             Requested size: 452.9679pt x 239.00856pt.
-<img/LorenzHighTraffic.png, id=158, 1230.5975pt x 765.86125pt>
+<img/LorenzHighTraffic.png, id=179, 1230.5975pt x 765.86125pt>
 File: img/LorenzHighTraffic.png Graphic file (type png)
 <use img/LorenzHighTraffic.png>
-Package pdftex.def Info: img/LorenzHighTraffic.png  used on input line 198.
+Package pdftex.def Info: img/LorenzHighTraffic.png  used on input line 231.
 (pdftex.def)             Requested size: 407.66833pt x 253.70494pt.
-<img/LorenzLowTraffic.png, id=159, 1100.11pt x 814.04124pt>
+<img/LorenzLowTraffic.png, id=180, 1100.11pt x 814.04124pt>
 File: img/LorenzLowTraffic.png Graphic file (type png)
 <use img/LorenzLowTraffic.png>
-Package pdftex.def Info: img/LorenzLowTraffic.png  used on input line 204.
+Package pdftex.def Info: img/LorenzLowTraffic.png  used on input line 237.
 (pdftex.def)             Requested size: 407.66833pt x 301.66255pt.
 
-[25 <./img/MeanResponseTimeInsight.png>]) [26 <./img/LorenzHighTraffic.png> <./
-img/LorenzLowTraffic.png>]
+[27 <./img/MeanResponseTimeInsight.png>] [28 <./img/LorenzHighTraffic.png> <./i
+mg/LorenzLowTraffic.png>]
+Overfull \hbox (10.05345pt too wide) in paragraph at lines 268--289
+ [][] 
+ []
+
+<img/MeanThroughputBufferExplosion.png, id=190, 895.345pt x 547.04375pt>
+File: img/MeanThroughputBufferExplosion.png Graphic file (type png)
+<use img/MeanThroughputBufferExplosion.png>
+Package pdftex.def Info: img/MeanThroughputBufferExplosion.png  used on input l
+ine 297.
+(pdftex.def)             Requested size: 407.66833pt x 249.08058pt.
+[29]
+<img/MeanThroughputBufferExplosionChangeVSNoChange.png, id=194, 897.3525pt x 56
+5.11125pt>
+File: img/MeanThroughputBufferExplosionChangeVSNoChange.png Graphic file (type 
+png)
+<use img/MeanThroughputBufferExplosionChangeVSNoChange.png>
+Package pdftex.def Info: img/MeanThroughputBufferExplosionChangeVSNoChange.png 
+ used on input line 305.
+(pdftex.def)             Requested size: 407.66833pt x 256.72935pt.
+ [30 <./img/MeanThroughputBufferExplosion.png>]) [31 <./img/MeanThroughputBuffe
+rExplosionChangeVSNoChange.png>]
 \openout2 = `chapters/conclusions.aux'.
 
- (./chapters/conclusions.tex) [27
+ (./chapters/conclusions.tex) [32
 
 
 ]
 (./template_Report.aux (./chapters/introduction.aux) (./chapters/modeling.aux)
 (./chapters/implementation.aux) (./chapters/verification.aux)
-(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux)) ) 
+(./chapters/simulation_experiments.aux) (./chapters/conclusions.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6807 strings out of 483183
- 104937 string characters out of 5966291
- 366667 words of memory out of 5000000
- 21683 multiletter control sequences out of 15000+600000
+ 6833 strings out of 483183
+ 105904 string characters out of 5966291
+ 367725 words of memory out of 5000000
+ 21705 multiletter control sequences out of 15000+600000
  541451 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,10n,43p,1212b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/
-gerti98/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on template_Report.pdf (28 pages, 1254423 bytes).
+ </home/gerti98/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.6
+00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on template_Report.pdf (33 pages, 1541281 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 258 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
