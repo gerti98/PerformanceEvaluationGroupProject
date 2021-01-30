@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_GB
 \section{Simulations Experiments}
 \subsection{Study on Response Time Limits}
-Before choosing the extremes of the \textbf{mean inter-arrival time} factor, a study on the mean response time, by changing the latter, has been carried out. 
+Before choosing the extremes of the \textbf{mean inter-arrival time} factor, a study on the mean response time, by changing the latter, has been carried out by comparing limit values of other factors (all the ranges will be shown in the next paragraph).  
  \begin{figure}[H]
  	\centering
  	\includegraphics[width=\textwidth]{img/BufferExplosion.pdf}
@@ -15,13 +15,15 @@ Before choosing the extremes of the \textbf{mean inter-arrival time} factor, a s
 	
 \end{itemize}
 
-For the second interval, the left bound was chosen when the mean-response time began to be comparable with the time-slot duration (which will be 5ms) and the variance of the 95\% CIs are small (basically when the standard deviation becomes very small).
+For the second interval, the left bound was chosen when the mean-response time began to be comparable with the time-slot duration (which will be 5ms) and the 95\% CI scissor is small in comparison with the scale of the response time (basically when the standard deviation becomes very small). Here a "zoom" on the rightmost part of the latter plot:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{img/BufferExplosionZoom.png}
 	\caption{Buffer Explosion between 95ms and 145ms: the 95\% CI are too small to be seen on the right part of the plot}
-	\label {img: warmUp}
+	\label {img: bufferExplosion}
 \end{figure}
+
+\noindent The 95\% CI were shown only where visible. 
 \subsection{Scenario Calibration}
 In order to calibrate the simulator parameters, the following range of values were used:
 
@@ -29,7 +31,7 @@ In order to calibrate the simulator parameters, the following range of values we
 \begin{itemize}
 	\item \textbf{Number of Couples Tx-Rx (N)}: [5, 30]
 	\item \textbf{Number of Channels (C)} : [6, 100] (Resource Blocks in LTE for different Frequencies)
-	\item \textbf{Mean Inter-arrival Time ($\frac{1}{\lambda}$)}: [125ms, 500ms] (a study was performed in order to choose the mean inter-arrival time that allow us to have meaningful data)   
+	\item \textbf{Mean Inter-arrival Time ($\frac{1}{\lambda}$)}: [125ms, 500ms]  
 	\item \textbf{Time-slot duration ($T_{slot}$)}: 5 ms
 	\item \textbf{Send Probability (p)}: [0.1, 0.5] 
 \end{itemize}
@@ -43,7 +45,8 @@ In order to calibrate the simulator parameters, the following range of values we
 	\item \textbf{Send Probability (p)}: [0.1, 1] 
 \end{itemize}
 \subsection{Calibration of Warm-Up Period and Simulation duration}
-For calibrating the warm-up different simulation were made (with the factors range in the latter paragraph). After various test is clear that the KPI that impacts heavily in the choose of the warmup time is the \textit{Response Time}. We can see the study about the response time in figure \ref{img: warmUp}.
+For calibrating the warm-up different simulation were made (with the factors range in the latter paragraph). After various test we found that the KPI that impacts heavily in the choose of the warmup time is the \textit{Response Time}. We can see the study about the response time in figure \ref{img: warmUp}.\\
+The worst case in terms of convergence time was encountered with \textbf{N = 30, C = 6, $\dfrac{1}{\lambda}$ = 125ms, p = 0.1 }
 %The worst case in terms of convergence time was encountered with the \textbf{mean throughput} with N = 5, C = 6, $\dfrac{1}{\lambda}$ = 500ms, p = 0.5:
 \begin{figure}[H]
 	\centering
@@ -54,22 +57,22 @@ For calibrating the warm-up different simulation were made (with the factors ran
 %With the \textbf{mean response time} the worst case is the following with N = 5, C = 100, $\dfrac{1}{\lambda}$ = 25ms, p = 0.5:
 
 \noindent\textbf{A warm-up period of 250s was chosen}.\\
-For what concerns the simulation duration was made a trade-off between the memory consumption for storing data and the length of the simulation itself. This was done because there are not stochastic elements in the model (like a particular error probability with a low percentage) that will need a particular amount of time to be shown. Obviously the duration has to be greater than the warm-up duration. All things considered, \textbf{a simulation-duration of 5000s was chosen}.
+For what concerns the simulation duration was made a trade-off between the \textbf{memory and time consumption} for storing data and performing simulation and the tendency of the KPIs to achieve a \textbf{more stable standard deviation}. This was done because there are not stochastic elements in the model (like a particular error probability with a low percentage) that will need a particular amount of time to be shown. Obviously the duration has to be greater than the warm-up duration. All things considered, \textbf{a simulation-duration of 5000s was chosen}.
 
 \subsection{Limited Response Time Scenario Study}
 In this chapter we will enter more in the deep to the limited response time scenario, in order to find insights about \textbf{throughput} and \textbf{response time} (we can due to the fact that in this interval it converges).
 \subsubsection{Factorial Analysis $2^kr$ on Throughput}
-In order to analyse the contribution of the factors on the throughput performance, we perform a $r2^k$ analysis with $r=5$ and $k=4$ (so we perform $5*2^4 = 80$ experiments). We take into account the following factors:
+In order to analyse the contribution of the factors on the throughput performance, we perform a $2^kr$ analysis with $r=5$ and $k=4$ (so we perform $5\cdot2^4 = 80$ experiments). We take into account the following factors:
 \begin{itemize}
-	\item Number of Couples Tx-Rx: [5, 30] \textbf{(A)}
-	\item Number of Channels C : [6, 100] \textbf{(B)}
-	\item Send Probability p: [0.1, 0.5] \textbf{(C)}
-	\item Mean Inter-arrival Time: [125ms, 500ms] \textbf{(D)}    
+	\item Number of Couples Tx-Rx (\textbf{N}): [5, 30] \textbf{(A)}
+	\item Number of Channels (\textbf{C}) : [6, 100] \textbf{(B)}
+	\item Send Probability (\textbf{p}): [0.1, 0.5] \textbf{(C)}
+	\item Mean Inter-arrival Time ($\dfrac{1}{\lambda}$): [125ms, 500ms] \textbf{(D)}    
 \end{itemize}
 
-\noindent The first step is to check the hypothesis, in particular we have to control that the residuals are normal and that its standard deviation is constant (a.k.a. homoskedasticity). For what concerns the normal hypothesis it's possible to see (Figure \ref{img: qqplot_throughput}) that the QQ plot of residuals vs normal show a linear tendency and so the hypothesis is verified.
+\noindent The first step is to \textbf{check the hypothesis}, in particular we have to control that the \textbf{residuals are normal} and that its \textbf{standard deviation is constant} (a.k.a. homoskedasticity). For what concerns the normal hypothesis it's possible to see (Figure \ref{img: qqplot_throughput}) that the QQ plot of residuals vs normal \textbf{show a linear tendency} and so the \textbf{hypothesis is verified}.
 
-\noindent For the homoskedasticity, we have a QQ plot residuals vs predicted response and we can see (Figure \ref{img: homoskedasticity_throughput}) that indeed there is a trend, however the errors (y axis) are two order of magnitude below the predicted response (x axis) and so we can ignore trends and state that the homoskedasticity hypothesis is respected.
+\noindent For the\textbf{homoskedasticity}, we have a QQ plot residuals vs predicted response and we can see (Figure \ref{img: homoskedasticity_throughput}) that indeed there is a trend, however the \textbf{errors} (y axis) \textbf{are two order of magnitude below the predicted response} (x axis) and so \textbf{we can ignore trends} and state that the \textbf{homoskedasticity hypothesis is respected}.
 
 \begin{figure}[H]
 	\centering
@@ -88,55 +91,55 @@ In order to analyse the contribution of the factors on the throughput performanc
 \noindent Now we can analyse the obtained results. The most relevant ones are the one in the following list, the other factors have an impact on the variability that is very low, ($<<1\%$) and so they are non relevant:
 
 \begin{itemize}
-	\item \textbf{Number of Couples}
+	\item \textbf{Number of Couples (N)}
 	
-	\noindent It has a positive impact on throughput, in particular $qi = [0,312532; 0,312537]$\footnote{This and the following are 95\% confidence interval} and it accounts for the 48,44\% of the variability. This means that the higher the number of couples the higher the throughput. In fact with more transmitters we have more packets and so we have an higher throughput.
+	\noindent It has a \textbf{positive impact} on throughput, in particular $qi = [0,312532; 0,312537]$\footnote{This and the following are 95\% confidence interval} and it accounts for the 48,44\% of the variability. This means that the \textbf{higher the number of couples the higher the throughput}. In fact with more transmitters we have more packets and so we have an higher throughput.
 	 
-	\item \textbf{Mean Inter-Arrival Time}
+	\item \textbf{Mean Inter-Arrival Time ($\dfrac{1}{\lambda}$)}
 	
-	\noindent It has a negative impact: $qi = [-0,262444; -0,262439]$ and it accounts for the 34,15\% of the variability. Thus we can say that the higher the mean inter-arrival time, the lower the throughput. This happens due to the fact that when we increase the mean inter-arrival time it's more likely that a transmitter have an empty buffer and so it has no packets to transmit, then the throughput decreases. 
+	\noindent It has a \textbf{negative impact}: $qi = [-0,262444; -0,262439]$ and it accounts for the 34,15\% of the variability. Thus we can say that the \textbf{higher the mean inter-arrival time, the lower the throughput}. This happens due to the fact that when we increase the mean inter-arrival time it's more likely that a transmitter have an empty buffer and so it has no packets to transmit, then the throughput decreases. 
 	
 	\item \textbf{Jointly Effect of Number of Couples and Mean Inter-Arrival Time}
 	
-	\noindent The jointly effect of the above factors accounts for the 17,39\% of the variability and it has a negative impact ($qi = [-0,187301; -0,187296]$). This because the effect of the mean inter-arrival time is greater with respect to the one of the number of couples, so if both increase then the throughput decreases. Indeed, if we have an higher number of transmitters, but we have the most of them which have an empty buffer (due to the previously explained phenomenon caused by the increasing of the mean inter-arrival time), then the throughput decreases because there are too few packets to transmit.
+	\noindent The \textbf{jointly effect of the above factors} accounts for the 17,39\% of the variability and it has a \textbf{negative impact} ($qi = [-0,187301; -0,187296]$). This because the effect of the mean inter-arrival time is greater with respect to the one of the number of couples, so if both increase then the throughput decreases. Indeed, if we have an higher number of transmitters, but we have the most of them which have an empty buffer (due to the previously explained phenomenon caused by the increasing of the mean inter-arrival time), then the throughput decreases because there are too few packets to transmit.
 \end{itemize}
 
 \subsubsection{Factorial Analysis $2^kr$ on Response Time}
 Now let analyse the contribution of factors on the other KPI, the response time. Also in this case, as the previously, we perform a $r2^k$ analysis with $r=5$ and $k=4$ and so 80 experiments in total. The factors are the same of the previously analysis.
 
-\noindent We can see the plots to check the hypothesis in figure \ref{img: qqplot_responsetime} (for what concerns the normal hp) and in figure \ref{img: homoskedasticity_responsetime} (for what concerns the homoskedasticity).
+\noindent \colorbox{yellow}{We can see the plots to check} the hypothesis in figure \ref{img: qqplot_responsetime} (for what concerns the normal hp) and in figure \ref{img: homoskedasticity_responsetime} (for what concerns the homoskedasticity).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/qqplot_2kr_responsetime.png}
-	\caption{QQ Plot for testing the normal hypothesis}
+	\caption{\colorbox{yellow}{QQ Plot for testing} the normal hypothesis}
 	\label {img: qqplot_responsetime}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/homoskedasticity_2kr_responsetime.png}
-	\caption{QQ Plot for testing homoskedasticity}
+	\caption{\colorbox{yellow}{QQ Plot for testing} homoskedasticity}
 	\label {img: homoskedasticity_responsetime}
 \end{figure}
 
-\noindent The plot about the normal hp is obtained through a logarithmic transformation and it shows an approximating linear trend. Instead for the homoskedasticity we can see that there is a trend but the errors are at least one order of magnitude below the predicted response, and so also this hypothesis is verified.
+\noindent \colorbox{yellow}{The plot about the normal hp} is obtained through a logarithmic transformation and it shows an approximating linear trend. Instead for the homoskedasticity we can see that there is a trend but the errors are at least one order of magnitude below the predicted response, and so also this hypothesis is verified.
 
 \noindent The most relevant contributions are the ones explained in the following lists, the others one have an impact in the variability that is negligible w.r.t. the following ones: 
 
 \begin{itemize}
-	\item \textbf{Send Probability}
+	\item \textbf{Send Probability p}
 	
-	\noindent It has a negative impact on the response time, in particular $qi = [-0,033928; -0,033926]$ and it accounts for the 65,67\% of the variability. This means that the higher the send probability the lower the response time. In fact with an high send probability it's more likely that a packet will sent (both in the case of first transmission and in the case of retransmission because of collision) and so it doesn't remain in the transmitter queue increasing its response.  
+	\noindent It has a \textbf{negative impact} on the response time, in particular $qi = [-0,033928; -0,033926]$ and it accounts for the \textbf{65,67\%} of the variability. This means that the h\textbf{igher the send probability the lower the response time}. In fact with an high send probability it's more likely that a packet will sent (both in the case of first transmission and in the case of retransmission because of collision) and so it doesn't remain in the transmitter queue increasing its response.  
 	
 	\item \textbf{Mean Inter-Arrival Time}
 	
-	\noindent It has a negative impact: $qi = [-0,012955; -0,012954]$ and it accounts for the 9,57\% of the variability. Thus we can say that the higher the mean inter-arrival time, the lower the response time. This happens due to the fact that when we increase the mean inter-arrival time it's more likely that transmitters send few packets in a slot time and so the probability of having collisions, and so the necessity of retransmitting a packet, is lesser. Moreover even if a collision occurs with an higher mean inter-arrival time there are not several packets in the transmitter queue and so the response time decreases. 
+	\noindent It has a \textbf{negative impact}: $qi = [-0,012955; -0,012954]$ and it accounts for the \textbf{9,57\%} of the variability. Thus we can say that the \textbf{higher the mean inter-arrival time, the lower the response time}. This happens due to the fact that when we increase the mean inter-arrival time it's more likely that transmitters send few packets in a slot time and so the probability of having collisions, and so the necessity of retransmitting a packet, is lesser. Moreover even if a collision occurs with an higher mean inter-arrival time there are not several packets in the transmitter queue and so the response time decreases. 
 \end{itemize}
 
 \newpage
 \subsubsection{$2^kr$ Overall Results}
-In the table \ref{tab: 2kr_results} we can see the results obtained through the $r2^k$ analysis.
+As a reference, in the table \ref{tab: 2kr_results} we can see the results obtained through the $r2^k$ analysis.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
@@ -164,7 +167,7 @@ In the table \ref{tab: 2kr_results} we can see the results obtained through the 
 \end{table}
 																
 \subsection{Limited Response Time Scenario: Result Analysis}
-Our objective is (as we said at the beginning of the report) the \textit{Assessment of the Effectiveness of the Slotted Random-Access Network Protocol}. In order to do so we choose the mean response time and the mean throughput as Key Performance Indexes. For each KPI we set 2 scenarios: one for low traffic condition and the other one for high traffic condition. For each factor variation of each scenario of each KPI we perform 35 repetitions in order to obtain meaningful and statistically valid data. Data are computed with a confidence level of 95\% (to small to be seen) .Thanks to the analysis performed on this two scenarios and studying the evolution of the KPIs in them, we are able to reach our aim and give some final conclutions on the network protocol. 
+Our objective is (as we said at the beginning of the report) the \textit{Assessment of the Effectiveness of the Slotted Random-Access Network Protocol}. In order to do so we choose the mean response time and the mean throughput as Key Performance Indexes. For each KPI we set 2 scenarios: one for \textbf{low traffic condition} (in terms of Transmitters and Channels) and the other one for \textbf{high traffic condition}. For each factor variation of each scenario of each KPI we perform 35 repetitions in order to obtain meaningful and statistically valid data. Data are computed with a confidence level of 95\% (to small to be seen) .Thanks to the analysis performed on this two scenarios and studying the evolution of the KPIs in them, we are able to reach our aim and give some insights on the network protocol. 
 
 \subsubsection{Throughput}
 For what concerns the throughput we set these two scenarios:
@@ -177,7 +180,7 @@ For what concerns the throughput we set these two scenarios:
 	N = 5, C = 100, Send Probability = 0.1
 \end{enumerate}
 
-\noindent In both scenarios we vary the mean inter-arrival time from 125 ms to 500 ms with a step of 75 ms. In fact as we seen in the $r2^k$ analysis it is the most relevant factor for the throughput. 
+\noindent In both scenarios we \textbf{vary the mean inter-arrival time} from 125 ms to 500 ms with a step of 75 ms. In fact as we seen in the $2^kr$ analysis it is the most relevant factor for the throughput. 
 
 \noindent We can see the results obtained in the outlined scenarios when the mean inter-arrival time grows from 125 ms to 500 ms in figure \ref{img: insight1_throughput}.
 
@@ -188,18 +191,18 @@ For what concerns the throughput we set these two scenarios:
 	\label{img: insight1_throughput}
 \end{figure}
 
-\noindent From the plot we can state that the throughput is higher in the high traffic scenario, because the more the traffic the more the packets. We can also see that the best results is obtained with the lower mean inter-arrival time, this because we have to consider the time slot duration that is 5 ms and it is a lot smaller than the mean inter-arrival time: if the mean inter-arrival time increases, then there are slots where no packets are transmitted (because transmitters have no packets in the queue) and this affect the mean throughput and this is the reason why the throughput decreases with the increase of the mean inter-arrival time. So the latter is another validation of what we obtain from the $r2^k$ analysis. So at the end we can say that the throughput depends mainly from the traffic and from the mean inter-arrival time, this is good because this means that the effect of collisions doesn't not affect so much the overall performance of the network protocol. In fact in the high traffic condition there are more collisions w.r.t. to the scenario with low traffic, but nevertheless the throughput it is not affected by this.
+\noindent From the plot we can state that the \textbf{throughput is higher in the high traffic scenario}, because the more the traffic the more the packets. We can also see that the \textbf{best results is obtained with the lower mean inter-arrival time}, this because we have to consider the time slot duration that is 5 ms and it is a lot smaller than the mean inter-arrival time: if the mean inter-arrival time increases, then there are slots where no packets are transmitted (because transmitters have no packets in the queue) and this affect the mean throughput and this is the reason why the throughput decreases with the increase of the mean inter-arrival time. So the latter is another validation of what we obtain from the $2^kr$ analysis. So at the end we can say that the throughput depends mainly from the traffic and from the mean inter-arrival time, this is good because this means that the effect of collisions doesn't not affect so much the overall performance of the network protocol. In fact in the high traffic condition there are more collisions w.r.t. to the scenario with low traffic, but nevertheless the throughput it is not affected by this.
 
-\noindent Now let analyse the fairness of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{img: insight2_throughput}, we show one figure for both cases because they are indeed equals.
+\noindent \colorbox{yellow}{Now let analyse the fairness} of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{img: insight2_throughput}, we show one figure for both cases because they are indeed equals.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/lorenz_throughput.png}
-	\caption{Insight 2}
+	\caption{\colorbox{yellow}{Insight 2}}
 	\label{img: insight2_throughput}
 \end{figure}
 
-\noindent As we can see in the plot in all cases the network protocol is fair for what regards the throughput.
+\noindent \colorbox{yellow}{As we can see in the plot in all cases} the network protocol is fair for what regards the throughput.
 
 \subsubsection{Response Time}
 For what concerns the response time we set these two scenarios:
@@ -212,7 +215,7 @@ For what concerns the response time we set these two scenarios:
 	N = 5, C = 100, Mean Inter-Arrival Time = 125 ms
 \end{enumerate}
 
-\noindent In both scenarios we vary the send probability from 0.1 to 1 with a step of 0.1, in fact for the response time the latter is the most relevant factor (as we seen in the $r2^k$ analysis) and so it is the only that if changes causes a big difference.
+\noindent In both scenarios we \textbf{vary the send probability} from 0.1 to 1 with a step of 0.1, in fact for the response time the latter is the most relevant factor (as we seen in the $2^kr$ analysis) and so it is the only that if changes causes a big difference.
 
 \noindent The results obtained in the previously explained scenario when the send probability (p) varies from 0.1 to 1 is shown in figure \ref{img: insight1_respTime}.
 \begin{figure}[H]
@@ -222,9 +225,9 @@ For what concerns the response time we set these two scenarios:
 	\label{img: insight1_respTime}
 \end{figure}
 
-\noindent From the figure we can infer that in the high traffic scenario the response time is higher than the low traffic scenario, this is something normal. Then we can also say that the mean response time decreases with the increasing of the send probability (as we expected from the $r2^k$ analysis) and that the difference between the two scenarios are lower when p increases. The greater value is about 0.17 seconds that are equal to 170 ms which is not a good response time but it is acceptable one and it is a response time which can be experimented also by other network protocols.
+\noindent From the figure we can infer that in the \textbf{high traffic scenario the response time is higher} than the low traffic scenario, this is something normal. Then we can also say that the m\textbf{ean response time decreases with the increasing of the send probability} (as we expected from the $r2^k$ analysis) and that the \textbf{differences between the two scenarios are lower when p increases}. The greater value is about 0.17 seconds that are equal to 170 ms which is not a good response time but it is acceptable one and it is a response time which can be experimented also by other network protocols.
 
-\noindent Now let focus on the fairness of the protocol as regards the response time. We can see Lorenz Curve for the high traffic scenario in figure \ref{img: insight2_respTime} and Lorenz Curve for the low traffic scenario in figure \ref{img: insight3_respTime}.
+\noindent \colorbox{yellow}{Now let focus on the fairness} of the protocol as regards the response time. We can see Lorenz Curve for the high traffic scenario in figure \ref{img: insight2_respTime} and Lorenz Curve for the low traffic scenario in figure \ref{img: insight3_respTime}.
 
 \begin{figure}[H]
 	\centering
@@ -239,18 +242,18 @@ For what concerns the response time we set these two scenarios:
 	\label{img: insight3_respTime}
 \end{figure}
 
-\noindent We can see that in both cases the curve related to the simulation scenarios are very close to the line of maximum fairness (in the case of low traffic they are overlapping). So we can say that the network protocol is absolutely fair for what regards the response time, whatsoever be the traffic condition.
+\noindent \colorbox{yellow}{We can see that in both cases} the curve related to the simulation scenarios are very close to the line of maximum fairness (in the case of low traffic they are overlapping). So we can say that the network protocol is absolutely fair for what regards the response time, whatsoever be the traffic condition.
 
 \subsection{Response Time Explosion Scenario Study}
-In this chapter we will study more deeply the case in which we have a low mean inter-arrival time which lead to the explosion of the response time. Due to the fact that a \textbf{huge number of collision is expected}, in order to obtain insights for the throughput we created two other sub-scenarios: 
+In this chapter we will study more deeply the case in which we have a low mean inter-arrival time which lead to the "explosion" of the response time. Due to the fact that a \textbf{huge number of collision is expected}, in order to obtain insights for the throughput we created two other sub-scenarios: 
 \begin{itemize}
-	\item \textbf{Change Of Channel in case of collision (default choice)}: in case of collision of a packet, when retrying the retransmission of that packet (after the back-off period) the channel assigned will be picket randomly another time
+	\item \textbf{Change Of Channel in case of collision (default choice)}: in case of collision of a particular packet, when retrying the retransmission of that packet (after the back-off period) the channel assigned will be picket randomly another time
 	\item \textbf{Not Change of Channel in case of collision}
 \end{itemize}
-We repeated the $2^{k}r$ analysis on the throughput for both sub-scenarios and, after verifying the hypothesis (as we shown before) and checking that the $q_{i}$ of the most important factors does non include 0 in the relative 95\% CI scissor, we obtained the following result:
+We repeated the $2^{k}r$ analysis on the throughput for both sub-scenarios and, after verifying the hypothesis (as we shown before) and \textbf{checking that the $q_{i}$ of the most important factors does non include 0 in the relative 95\% CI scissor}, we obtained the following result:
 \begin{itemize}
-	\item In both sub-scenarios the number of Couples TX-RX is the main factor in terms of impact on the \textbf{Throughput} (in both cases an impact greater than 50\%)
-	\item In both sub-scenarios the percentage of the Bernoullian experiment \textbf{p} had a low impact (4-5\%) on the \textbf{Throughput}
+	\item In both sub-scenarios the number of \textbf{Couples TX-RX N} is the main factor in terms of impact on the \textbf{Throughput} (in both cases an impact greater than 50\%)
+	\item In both sub-scenarios the percentage of the Bernoullian experiment success \textbf{p} had a low impact (4-5\%) on the \textbf{Throughput}
 	\item With respect of the limited response time scenario, the mean interarrival time has a low impact on the throughput (around 4\%) 
 \end{itemize}
 \subsubsection{$2^kr$ Overall Results}
@@ -269,8 +272,8 @@ As a reference, in the following table \ref{tab: 2kr_results_explosion} we can s
 		\hline
 		\textbf{} & \multicolumn{2}{c|}{\textit{\textbf{Throughput Change}}} & \multicolumn{2}{c|}{\textit{\textbf{Throughput No-Change}}} \\ \hline
 		Factors   & qi          & Impact on Variability (\%)          & qi            & Impact on Variability (\%)           \\ \hline
-		A    & 1.064	& 55.928\% 	& 1.032 &	53.0041431330267\%  \\ \hline
-		B    & 0.432 &	9.218\% &	0.464034406279573 &	10.7154299060013\%  \\ \hline
+		A    & 1.064	& 55.93\% 	& 1.032 &	53.00\%  \\ \hline
+		B    & 0.432 &	9.218\% &	0.464 &	10.71\%  \\ \hline
 		C    & 0.308 & 4.684\% & 0.290 &	4.207\%  \\ \hline
 		D    & -0.285 &	4.033\% & -0.284 &	4.036\%  \\ \hline
 		AB   & 0.427 & 9.004\% & 0.458 &	10.47\%  \\ \hline
@@ -298,8 +301,8 @@ Due to the fact that the $2^{k}r$ analysis underlined the importance of the Numb
 	\caption{Insight 4}
 	\label{img: insight4}
 \end{figure}
-The plot was also done with respect to different values of \textbf{p}, even if such factor does not have a really big impact. This was done because, thinking about the real world, the parameter \textbf{p} is the simplest thing to change, so, even if his impact is not huge, can be a good idea to show which values tunes the \textbf{throughput}. All things considered: \textbf{increasing p increases slighly the throughput}, however this increase becomes "smaller" with bigger values of p.\\
-For what concerns the comparison between the Change Channel sub-scenario with the No-Change one, the following plot can describe well the differences:
+The plot was also done with respect to different values of \textbf{p}, even if such factor does not have a really big impact. This was done because, thinking about the real world, the parameter \textbf{p} is the simplest thing to change, so, even if his impact is not huge, can be a good idea to show which values of p tunes the \textbf{throughput}. All things considered: \textbf{increasing p increases slighly the throughput}, however this increase becomes "smaller" with bigger values of p.\\
+For what concerns the \textbf{comparison between the Change Channel sub-scenario with the No-Change one}, the following plot can describe well the differences:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{img/MeanThroughputBufferExplosionChangeVSNoChange.png}

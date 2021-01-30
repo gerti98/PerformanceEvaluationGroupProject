@@ -24,9 +24,10 @@ In order to define a metric of performance of the objective, the following Perfo
 	\begin{align*}
 	Tp(slot) = \frac{N_{p}}{N_{t}} \quad [packets/slot]
 	\end{align*}
+	During all the documentation the latter will be used because more meaningful w.r.t. the scenario that will be defined.
 	We can also convert this performance metric in a more standard form, dealing with packets per second:
 	\begin{align*}
-	Tp = Tp(slot) * T_{slot} \quad [packets/s]
+	Tp = \dfrac{Tp(slot)}{T_{slot}} \quad [packets/s]
 	\end{align*}
 	
 	
