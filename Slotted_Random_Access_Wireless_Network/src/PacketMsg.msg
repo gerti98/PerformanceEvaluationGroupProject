@@ -20,10 +20,12 @@ packet PacketMsg {
     //Channel choosed for the current transmission, may change in case of collision
     int idChannel;
     
-    int idTransmitter; // id of the transmitter of the message
-    int idGate; // id of the channel gate at which the message is arrived
+    // id of the transmitter of the message
+    int idTransmitter; 
+    
+    // id of the channel gate at which the message is arrived
+    int idGate; 
 
     //Time in which the packet arrives for the first time at the Transmitter
-    simtime_t creationTime;
-    
+    simtime_t creationTime;    
 }

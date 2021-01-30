@@ -27,14 +27,16 @@ using namespace omnetpp;
 class Receiver : public cSimpleModule
 {
 private:
+    //Linked to signal that measures response time from arrival of packet at tx to the rx reception
     simsignal_t responseTimeSignal_;
+
+    //Linked to signal that counts arrived packets
     simsignal_t numPacketReceivedSignal_;
 
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
     virtual void handleResponseTime(PacketMsg* pkt);
-    //virtual void handleThreshold(PacketMsg* pkt);
 };
 
 #endif

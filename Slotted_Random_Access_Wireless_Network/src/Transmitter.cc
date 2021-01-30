@@ -20,25 +20,17 @@ void Transmitter::initialize()
 {
     numPacketCreatedSignal_ = registerSignal("numPacketCreatedSignal");
     numPacketOnBufferSignal_ = registerSignal("numPacketOnBufferSignal");
+    meanPacketSignal_ = registerSignal("meanPacketSignal");
 
-//    meanPacketSignal_ = registerSignal("meanPacketSignal");
-    meanPacketSignal_ = registerSignal("olgertiMeanPacketSignal");
-
-//    meanPktInBuffer_ = 0;
-
-    lastSimtime_ = 0;
-    meanPktInBuffer_ = 0;
 
     /*
      * buffer related variable initialization
      */
     buffer = std::queue<PacketMsg*>();
-
-    /*
-     * back-off related variable initialization
-     */
     maxBackoffTime = 2;
     backoffTime = 0;
+    lastSimtime_ = 0;
+    meanPktInBuffer_ = 0;
 
     /*
      * retrieve the parameter from the .ned file
@@ -52,6 +44,7 @@ void Transmitter::initialize()
 
 void Transmitter::scheduleNextPacket(){
     simtime_t interArrivalTime = exponential(meanInterarrivalTime,0); 
+
     if(par("deterministicInterarrivalTime"))
         interArrivalTime = meanInterarrivalTime;
 
@@ -70,9 +63,13 @@ void Transmitter::handleMessage(cMessage *msg)
      */
     if(msg->isSelfMessage())
     {
+        //Update buffer count before storing the new packet
         this->updateBufferCount();
+
         handleArrivedPacket(msg);
-        computeModuleStatistics();
+
+        //Status of packet stored
+        emit(numPacketOnBufferSignal_, (long)buffer.size());
     }
     else
     {
@@ -96,8 +93,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     EV << "TX-" << id << ": arrival packet inserted into the buffer " << endl;
     pkt->setIdTransmitter(id);
 
-    //Channel linking only at the beginning in case of not
-    //change of channel in case of collision
+    //Channel linking at the packet arrival (if relative boolean is set
     if(!par("changeOfChannelAfterCollision"))
         pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
 
@@ -108,7 +104,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
 
 /**
  * Handle the eventual acknowledgement from the Channel. In case of collision
- * starts the backoff period
+ * starts the back-off period
  */
 void Transmitter::handleChannelPacket(cMessage* msg){
     int id = this->getId();
@@ -141,12 +137,6 @@ void Transmitter::handleChannelPacket(cMessage* msg){
              */
             if(strcmp(msg->getName(), "ACK") == 0)
             {
-                /*
-                 * Computation of the mean number of packet in the queue (here sum, division in finish())
-                 */
-                simtime_t howManyTimeInQueue = simTime() - buffer.front()->getCreationTime();
-//                meanPktInBuffer_ = meanPktInBuffer_ + buffer.size()*(howManyTimeInQueue.dbl());
-
                 this->updateBufferCount();
                 delete(buffer.front());
                 buffer.pop();
@@ -172,17 +162,17 @@ void Transmitter::handleChannelPacket(cMessage* msg){
     }
 }
 
-void Transmitter::computeModuleStatistics(){
-    emit(numPacketOnBufferSignal_, (long)buffer.size());
-}
 
-
+/*
+ * Computation of the mean number of packet in the queue (here sum, division in finish())
+ */
 void Transmitter::updateBufferCount(){
     double warmup = getSimulation()->getWarmupPeriod().dbl();
 
+    //Statistics computed only in case warm-up has passed
     if(simTime().dbl() >= warmup){
-        // Handle start of count in case of warmup between
-        // current simtime and last simtime registered
+
+        // Handle start of count in case of warmup between current simtime and last simtime registered
         if(lastSimtime_ < warmup)
             lastSimtime_ = warmup;
 
@@ -201,19 +191,14 @@ void Transmitter::finish(){
     // Computation of simulation duration
     long simDuration = simLimit-warmup;
 
-
     //Last update
     this->updateBufferCount();
 
     // Computation of the mean number of packet in the buffer
-//    double toEmit = meanPktInBuffer_/simDuration;
     double ToEmit = meanPktInBuffer_/simDuration;
-
-    // Emission of the value
-//    EV <<  toEmit << " warmup: " << warmup << "simLimiti: " << simLimit << " simdur: " << simDuration << " meanPkt: " << meanPktInBuffer_ << endl;
-//    emit(meanPacketSignal_, toEmit);
     emit(meanPacketSignal_, ToEmit);
 
+    //If buffer is not empty packets are deleted
     while(buffer.empty() == false){
         delete(buffer.front());
         buffer.pop();

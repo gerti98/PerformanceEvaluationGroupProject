@@ -28,8 +28,11 @@ simple Transmitter
         //Probability of sending a packet in the current timeslot
         double sendProbability = default(0.5);
 		
+		//Booleans for verification purposes
         bool deterministicInterarrivalTime = default(false);
         bool isBackoff = default(true);
+        
+        
         bool changeOfChannelAfterCollision = default(true);
         
         @signal[numPacketCreatedSignal](type="long");
@@ -40,9 +43,6 @@ simple Transmitter
         
         @signal[meanPacketSignal](type="double");
         @statistic[meanPacket](source="meanPacketSignal";record=sum);
-        
-        @signal[olgertiMeanPacketSignal](type="double");
-        @statistic[olgertiMeanPacket](source="olgertiMeanPacketSignal";record=sum);
         
         @display("i=block/tx");
     gates:

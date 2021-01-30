@@ -19,6 +19,7 @@ Define_Module(Receiver);
 
 void Receiver::initialize()
 {
+    //Signal linking
     responseTimeSignal_ = registerSignal("responseTimeSignal");
     numPacketReceivedSignal_ = registerSignal("numPacketReceivedSignal");
 }
@@ -26,12 +27,15 @@ void Receiver::initialize()
 
 void Receiver::handleMessage(cMessage *msg)
 {
+    //Receiver can only receive packets from outside (no timers)
     PacketMsg* pkt = check_and_cast<PacketMsg*>(msg);
     EV << "Receiver " << this->getId() << ":packet received from transmitter " << pkt->getIdTransmitter() << endl;
+
     //Register received signal
     emit(numPacketReceivedSignal_, 1);
 
     handleResponseTime(pkt);
+
     delete(msg);
 }
 

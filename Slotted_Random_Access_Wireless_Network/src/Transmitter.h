@@ -27,23 +27,25 @@ using namespace omnetpp;
 class Transmitter : public cSimpleModule
 {
 private:
+    //Signal linking
     simsignal_t numPacketCreatedSignal_;
     simsignal_t numPacketOnBufferSignal_;
-
-//    simsignal_t meanPacketSignal_;
-//    double meanPktInBuffer_;
-
     simsignal_t meanPacketSignal_;
+    simtime_t meanInterarrivalTime;
+
+
     double meanPktInBuffer_;
+    //Will record the starting time for the count of a certain number of packets in the buffer
     simtime_t lastSimtime_;
 
     std::queue<PacketMsg*> buffer;
 
     int maxBackoffTime, backoffTime;
 
+    //Parameter that will be passed from slottedNetwork.ned,
+    //in order to assign to a packet a particular channel
     int numChannels;
 
-    simtime_t meanInterarrivalTime;
     double sendProbability;
 
 protected:
@@ -52,7 +54,6 @@ protected:
     virtual void handleMessage(cMessage *msg);
     virtual void handleArrivedPacket(cMessage *msg);
     virtual void handleChannelPacket(cMessage* msg);
-    virtual void computeModuleStatistics();
     virtual void updateBufferCount();
     virtual void finish();
 };

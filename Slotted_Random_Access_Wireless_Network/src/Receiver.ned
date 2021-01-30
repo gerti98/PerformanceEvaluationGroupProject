@@ -21,12 +21,11 @@ package slotted_random_access_wireless_network;
 simple Receiver
 {
     parameters:
-        //double timeThreshold @unit(s);
-
-        //From the first arrival at the transmitter to the receiver
+        //Measures response time from arrival of packet at tx to the rx reception
         @signal[responseTimeSignal](type="double");
         @statistic[responseTime](source="responseTimeSignal"; record=mean);
 
+		//Counts arrived packets
 		@signal[numPacketReceivedSignal](type="long");
 		@statistic[numPacketReceived](source="numPacketReceivedSignal"; record=sum);
 			

@@ -26,26 +26,20 @@ network slottedNetwork
         int numTransmitters;
         int numChannels;
 
-        //int bufferSize; //todo: cancel buffersize
-
         double sendProbability;
 
         double expMean @unit(s);
 
         double timeSlotSize @unit(s);
-
-        //double thresh @unit(s);
     submodules:
         transmitters[numTransmitters]: Transmitter {
             parameters:
                 numChannels = numChannels;
-                //bufferSize = bufferSize; //todo: cancel buffersize
                 sendProbability = sendProbability;
                 meanInterarrivalTime = expMean;
         }
         receivers[numTransmitters]: Receiver {
             parameters:
-                //timeThreshold = thresh;
                 @display("p=121,106");
         }
         ch: Channel {
