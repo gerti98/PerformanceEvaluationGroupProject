@@ -147,20 +147,20 @@ As a reference, in the table \ref{tab: 2kr_results} we can see the results obtai
 		\textbf{} & \multicolumn{2}{c|}{\textit{\textbf{Throughput}}} & \multicolumn{2}{c|}{\textit{\textbf{Response Time}}} \\ \hline
 		Factors   & qi          & Impact on Variability (\%)          & qi            & Impact on Variability (\%)           \\ \hline
 		A    & 0,312534      & 48,44\%    & 0,006183  & 2,18\%  \\ \hline
-		B    & -4,342100E-07 & 9,35E-11\% & -0,006719 & 2,57\%  \\ \hline
-		C    & -6,710519E-07 & 2,23E-10\% & -0,033927 & 65,67\% \\ \hline
+		B    & -4,342100 x $10^-7$ & 9,35 x $10^{-11}$\% & -0,006719 & 2,57\%  \\ \hline
+		C    & -6,710519 x $10^-7$ & 2,23 x $10^{-10}$\% & -0,033927 & 65,67\% \\ \hline
 		D    & -0,262442     & 34,15\%    & -0,012954 & 9,57\%  \\ \hline
-		AB   & -1,447366E-07 & 1,03E-11\% & -0,005873 & 1,96\%  \\ \hline
-		AC   & -9,078937E-07 & 4,08E-10\% & -0,004269 & 1,04\%  \\ \hline
+		AB   & -1,447366 x $10^-7$ & 1,03 x $10^{-11}$\% & -0,005873 & 1,96\%  \\ \hline
+		AC   & -9,078937 x $10^-7$ & 4,08 x $10^{-10}$\% & -0,004269 & 1,04\%  \\ \hline
 		AD   & -0,187298     & 17,39\%    & -0,005481 & 1,71\%  \\ \hline
-		BC   & 5,657888E-07  & 1,58E-10\% & 0,004619  & 1,21\%  \\ \hline
-		BD   & 4,342100E-07  & 9,35E-11\% & 0,005906  & 1,99\%  \\ \hline
-		CD   & 1,973682E-07  & 1,93E-11\% & 0,010951  & 6,84\%  \\ \hline
-		ABC  & 4,868415E-07  & 1,17E-10\% & 0,004054  & 0,93\%  \\ \hline
-		ABD  & 1,447366E-07  & 1,03E-11\% & 0,005238  & 1,56\%  \\ \hline
-		ACD  & 8,552622E-07  & 3,62E-10\% & 0,003929  & 0,88\%  \\ \hline
-		BCD  & -6,710519E-07 & 2,23E-10\% & -0,004240 & 1,02\%  \\ \hline
-		ABCD & -4,868415E-07 & 1,17E-10\% & -0,003761 & 0,80\%  \\ \hline
+		BC   & 5,657888 x $10^-7$  & 1,58 x $10^{-10}$\% & 0,004619  & 1,21\%  \\ \hline
+		BD   & 4,342100 x $10^-7$  & 9,35 x $10^{-11}$\% & 0,005906  & 1,99\%  \\ \hline
+		CD   & 1,973682 x $10^-7$  & 1,93 x $10^{-11}$\% & 0,010951  & 6,84\%  \\ \hline
+		ABC  & 4,868415 x $10^-7$  & 1,17 x $10^{-10}$\% & 0,004054  & 0,93\%  \\ \hline
+		ABD  & 1,447366 x $10^-7$  & 1,03 x $10^{-11}$\% & 0,005238  & 1,56\%  \\ \hline
+		ACD  & 8,552622 x $10^-7$  & 3,62 x $10^{-10}$\% & 0,003929  & 0,88\%  \\ \hline
+		BCD  & -6,710519 x $10^-7$ & 2,23 x $10^{-10}$\% & -0,004240 & 1,02\%  \\ \hline
+		ABCD & -4,868415 x $10^-7$ & 1,17 x $10^{-10}$\% & -0,003761 & 0,80\%  \\ \hline
 	\end{tabular}
 	\caption{Results of $r2^k$ analysis for Throughput and for Response Time. 95\% of confidence.}
 	\label{tab: 2kr_results}
@@ -293,19 +293,23 @@ As a reference, in the following table \ref{tab: 2kr_results_explosion} we can s
 	\label{tab: 2kr_results_explosion}
 \end{table}
 
+\newpage
+
 \subsection{Response Time Explosion Scenario: Result Analysis}
-Due to the fact that the $2^{k}r$ analysis underlined the importance of the Number of Couples Tx-Rx (\textbf{N}), in the following plot we can see more clearly the effects of changing N: the \textbf{throughput increase by increasing N}.  
+Due to the fact that the $2^{k}r$ analysis underlined the importance of the Number of Couples Tx-Rx (\textbf{N}), in the following plot we can see more clearly the effects of changing N: the \textbf{throughput increase by increasing N}. 
+ 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{img/MeanThroughputBufferExplosion.png}
+	\includegraphics[width=0.8\textwidth]{img/MeanThroughputBufferExplosion.png}
 	\caption{Insight 4}
 	\label{img: insight4}
 \end{figure}
+
 The plot was also done with respect to different values of \textbf{p}, even if such factor does not have a really big impact. This was done because, thinking about the real world, the parameter \textbf{p} is the simplest thing to change, so, even if his impact is not huge, can be a good idea to show which values of p tunes the \textbf{throughput}. All things considered: \textbf{increasing p increases slighly the throughput}, however this increase becomes "smaller" with bigger values of p.\\
 For what concerns the \textbf{comparison between the Change Channel sub-scenario with the No-Change one}, the following plot can describe well the differences:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{img/MeanThroughputBufferExplosionChangeVSNoChange.png}
+	\includegraphics[width=0.8\textwidth]{img/MeanThroughputBufferExplosionChangeVSNoChange.png}
 	\caption{Insight 5}
 	\label{img: insight3_respTime}
 \end{figure}
