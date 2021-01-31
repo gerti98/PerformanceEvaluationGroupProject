@@ -71,7 +71,7 @@ The \textbf{consistency test} verifies that the system react consistently with t
 \subsection{Continuity Test}
 In this test the aim is to prove that the output changes slightly if the input changes a bit. In order to do prove this, different test were made. As an example  two simulations were carried out with the parameters shown in table \ref{tab: continuity test}. With this parameters we \textbf{have changed slightly the input}, and so we \textbf{expect that the outputs don't show particular differences}. Obviously some differences will be present (in particular due to collisions and the increasing in the number of transmitters) but they shouldn't affect a lot the results.
 
-\begin{table}[htpb]
+\begin{table}[H]
 	\centering
 		\begin{tabular}{|c|c|c|ll}
 			\cline{1-3}
@@ -131,7 +131,7 @@ In this test the aim is to prove that the output changes slightly if the input c
 \paragraph{Monotonicity Assessment:}
 \noindent In addition to this, some simulation were taken in order to \textbf{assess the monotonicity} of some KPI by changing some factors, here some examples:
 \begin{itemize}
-	\item \textbf{Mean Throughput}: By \textbf{increasing N} (the numbers of couples tx-rx), with a high number of channels to avoid collisions, an \textbf{increase on the mean throughput is expected}. On the contrary, by \textbf{increasing} $\dfrac{1}{\lambda}$ (the mean inter-arrival time) an \textbf{opposite result is expected}. The following results were obtained:
+	\item \textbf{Mean Throughput}: By \textbf{increasing N} (the numbers of couples tx-rx), with a high number of channels to avoid collisions, an \textbf{increase on the mean throughput is expected}. The following results were obtained:
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\textwidth]{img/continuityTest_Throughput_TXRX_Varying.png}
@@ -144,7 +144,7 @@ In this test the aim is to prove that the output changes slightly if the input c
 	%	\caption{\colorbox{yellow}{Continuity Test} - Increasing Mean Inter-arrival Time (Main factors: \textbf{N} = 2; \textbf{C} = 20000; $\dfrac{1}{\lambda}$ = 5ms, 10ms, 20ms, 50ms, 100ms, 500ms; $T_{slot}$ = 5ms; $p$ = 1)}
 	%	\label {img: continuityTestThLambda}
 	%\end{figure}
-	\item \textbf{Mean Response Time}: By \textbf{Increasing N} (the number of couples tx-rx), with low numbers of channels, an \textbf{increase on the mean response time is expected}. By increasing the transmission probability $p$ (with a low number of couples tx-rx) a decrease on the mean response time is expected due to more transmissions. The following results were obtained:
+	\item \textbf{Mean Response Time}: By \textbf{Increasing N} (the number of couples tx-rx), with low numbers of channels, an \textbf{increase on the mean response time is expected}. The following results were obtained:
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\textwidth]{img/ContinuityTest_ResponseTIme_TXRXVarying}
@@ -158,7 +158,7 @@ In this test the aim is to prove that the output changes slightly if the input c
 	%	\label {img: continuityTestResponseLambda}
 	%\end{figure}
 \end{itemize} 
-\textbf{For the Mean Response Time was also checked the steady state reach} by just plotting that the relative vector stabilizes at some point (this was done in general to make conclusion with this KPI). Here an example for the varying of the Transmission Probability $p$:
+\textbf{For the Mean Response Time was also checked the steady state reach} by just plotting that the relative vector stabilizes at some point (this was done in general to make conclusion with this KPI). Here an example for the response time value, by increasing the value of the Transmission Probability $p$ increases also the mean response time, which converges indeed:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{img/ContinuityTest_ResponseTime_VectorP.png}
@@ -177,14 +177,13 @@ This test simulation has been performed with the following parameters:
 	\item Repeat: 100
 	\item Seed-set: \$\{repetition\}
 \end{itemize}
-In this simplified context there are \textbf{no collisions} (only one couple) and the transmitter will have, for every slot, at least one packet to sent ($\dfrac{1}{\lambda} < T_{slot}$). We can model this particular case as a repeated Bernoullian Experiment, in which a success event correspond to a successful packet sent. In this simplified model we can define X as the number of success in n repeated trials (in independent condition), so $X \sim Bin(n, p)$. For this reason the PMF is the following:
+In this simplified context there are \textbf{no collisions} (only one couple) and the transmitter will have, for every slot, at least one packet to sent ($\dfrac{1}{\lambda} < T_{slot}$ with deterministic inter arrival of packets). We can model this particular case as a repeated Bernoullian Experiment, in which a success event correspond to a successful packet sent. In this simplified model we can define X as the number of success in n repeated trials (in independent condition), so $X \sim Bin(n, p)$. For this reason the PMF is the following:
 \begin{equation}
 	p(i) = P\{X = i\} = \binom{n}{i} p^{i} (1-p)^{n-i}
 \end{equation}
 Where $n$ represents the number of repeated trials and $i$ the number of successes in those trials. With this distribution the mean and the variance are:
 \begin{align*}
-	E[X] = np \qquad     
-	Var(X) = np(1-p)
+	E[X] = np 
 \end{align*}
 In our context we can state the following:
 \begin{equation}
@@ -212,9 +211,9 @@ The 95\% CI are too small to be seen clearly so were not shown in the latter plo
 This test simulation has been performed with the following parameters:
 \paragraph{Parameters}
 \begin{itemize}
-	\item Number of couple tx-rx (\textbf{N}): \$\{2, 5, 10, 30\}
-	\item Number of channels (\textbf{C}): 1
-	\item Send probability (\textbf{p}): \$\{0.2, 0.4, 0.6, 0.8\}
+	\item Number of couple Tx-Rx (\textbf{N}): \$\{2, 5, 10, 30\}
+	\item Number of Channels (\textbf{C}): 1
+	\item Send probability (\textbf{p}): \$\{0.05, 0.1, 0.15, 0.2, 0.4, 0.6, 0.8\}
 	\item Mean inter-arrival time ($\dfrac{1}{\lambda}$): 1s (\textbf{deterministic}) 
 	\item Time-slot size ($T_{slot}$): 2s 
 	\item simulation-duration ($T_{sim}$): 3600s 
@@ -223,7 +222,7 @@ This test simulation has been performed with the following parameters:
 	\item \textbf{No Back-off} in case of collision
 \end{itemize}
 
-\noindent The aim of this verification is to assess if the mean throughput is comparable with some equations that will be found even in the case of presence of collisions. Also in this simulation we are in the hypothesis that each transmitters has a packet to send for every slot ($\dfrac{1}{\lambda} < T_{slot}$).\\
+\noindent The aim of this verification is to assess if the mean throughput is comparable with some equations that will be found even in the case of presence of collisions. Also in this simulation we are in the hypothesis that each transmitters has a packet to send for every slot ($\dfrac{1}{\lambda} < T_{slot}$ with deterministic inter arrival of packets).\\
 
 
 \noindent The \textbf{probability of a successful transmission in a particular time-slot}, in this case, is the following:

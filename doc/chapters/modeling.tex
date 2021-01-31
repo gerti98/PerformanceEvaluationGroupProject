@@ -7,10 +7,10 @@ The following general assumptions have been made:
 \begin{itemize}
 	\item \textbf{Slotted}: packets are attempted to be \textbf{Transmitter} by the Transmitter only at the \textbf{beginning of the time-slot}
 	\item \textbf{Constant Packet Size and Transmission Rate}: each packet has a \textbf{constant packet size} and each \textbf{Transmitter} has a constant and equal transmission rate for which to transmit a packet (without collision) from the \textbf{Receiver} to the transmitter will last \textbf{one time-slot}.
-	\item \textbf{No Propagation Error in the channel}: the only cause of a failed transmission has to be considered as the \textit{packet} collision. Other causes, (i.e. path-loss, shadowing, small-scale fading), are neglected. 
-	\item \textbf{FIFO Queues of unlimited Capacity at the Transmitter} 
+	\item \textbf{No Propagation Error in the channel}: the only cause of a failed transmission has to be considered the \textit{packet} collision. Other causes, (i.e. path-loss, shadowing, small-scale fading), are neglected. 
+	\item \textbf{FIFO Queues of unlimited capacity at the Transmitter} 
 	\item \textbf{Transmitters and Receivers always synchronized with the time-slot period}: the \textbf{Receiver} knows in which \textbf{Channel} the \textbf{Transmitter} will try to send his packet in each time-slot and the \textbf{Receiver} will be ready to listen in the correct \textbf{Channel}.
-	\item \textbf{After an eventual collision the transmitter will change his channel choice}: this is the default configuration, on Chapter 5 this configuration will be compared with the Non-Change one.
+	\item \textbf{After an eventual collision the transmitter will change his channel choice}: this is the default configuration, on Chapter 5 this configuration will be compared with the Non-Change Channel one.
 \end{itemize}
 
 \subsection{Preliminar Validation}

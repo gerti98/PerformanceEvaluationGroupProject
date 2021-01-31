@@ -2,9 +2,9 @@
 \subsection{Modules}
 The following modules have been defined:
 \begin{itemize}
-	\item \textbf{Transmitter}: duty of sending a packet to a specific channel.% Parameters: $lambda$, $p$, packetsInQueue Signal (for the queue)
-	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision.% Parameters: $T_{timeslot}$, Throughput Signal
-	\item \textbf{Receiver}: duty of receiving a packet from the channel.
+	\item \textbf{Transmitter}: duty of sending a packet to a specific channel. Computes \textbf{mean buffer size} statistic.% Parameters: $lambda$, $p$, packetsInQueue Signal (for the queue)
+	\item \textbf{Channel}: duty of checking every channel in each timeslot for any collision. Computes \textbf{throughput}, \textbf{collision count} and \textbf{response time} (generalized for all receivers) statistic.% Parameters: $T_{timeslot}$, Throughput Signal
+	\item \textbf{Receiver}: duty of receiving a packet from the channel. Computes \textbf{response time} statistic.
 \end{itemize}
 
 \begin{figure}[H]
