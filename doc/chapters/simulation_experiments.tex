@@ -107,23 +107,23 @@ In order to analyse the contribution of the factors on the throughput performanc
 \subsubsection{Factorial Analysis $2^kr$ on Response Time}
 Now let analyse the contribution of factors on the other KPI, the response time. Also in this case, as the previously, we perform a $r2^k$ analysis with $r=5$ and $k=4$ and so 80 experiments in total. The factors are the same of the previously analysis.
 
-\noindent \colorbox{yellow}{We can see the plots to check} the hypothesis in figure \ref{img: qqplot_responsetime} (for what concerns the normal hp) and in figure \ref{img: homoskedasticity_responsetime} (for what concerns the homoskedasticity).
+\noindent %\colorbox{yellow}{We can see the plots to check} the hypothesis in figure \ref{img: qqplot_responsetime} (for what concerns the normal hp) and in figure \ref{img: homoskedasticity_responsetime} (for what concerns the homoskedasticity).
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{img/qqplot_2kr_responsetime.png}
-	\caption{\colorbox{yellow}{QQ Plot for testing} the normal hypothesis}
-	\label {img: qqplot_responsetime}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{img/qqplot_2kr_responsetime.png}
+%	\caption{\colorbox{yellow}{QQ Plot for testing} the normal hypothesis}
+%	\label {img: qqplot_responsetime}
+%\end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{img/homoskedasticity_2kr_responsetime.png}
-	\caption{\colorbox{yellow}{QQ Plot for testing} homoskedasticity}
-	\label {img: homoskedasticity_responsetime}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{img/homoskedasticity_2kr_responsetime.png}
+%	\caption{\colorbox{yellow}{QQ Plot for testing} homoskedasticity}
+%	\label {img: homoskedasticity_responsetime}
+%\end{figure}
 
-\noindent \colorbox{yellow}{The plot about the normal hp} is obtained through a logarithmic transformation and it shows an approximating linear trend. Instead for the homoskedasticity we can see that there is a trend but the errors are at least one order of magnitude below the predicted response, and so also this hypothesis is verified.
+%\noindent \colorbox{yellow}{The plot about the normal hp} is obtained through a logarithmic transformation and it shows an approximating linear trend. Instead for the homoskedasticity we can see that there is a trend but the errors are at least one order of magnitude below the predicted response, and so also this hypothesis is verified.
 
 \noindent The most relevant contributions are the ones explained in the following lists, the others one have an impact in the variability that is negligible w.r.t. the following ones: 
 
@@ -193,16 +193,16 @@ For what concerns the throughput we set these two scenarios:
 
 \noindent From the plot we can state that the \textbf{throughput is higher in the high traffic scenario}, because the more the traffic the more the packets. We can also see that the \textbf{best results is obtained with the lower mean inter-arrival time}, this because we have to consider the time slot duration that is 5 ms and it is a lot smaller than the mean inter-arrival time: if the mean inter-arrival time increases, then there are slots where no packets are transmitted (because transmitters have no packets in the queue) and this affect the mean throughput and this is the reason why the throughput decreases with the increase of the mean inter-arrival time. So the latter is another validation of what we obtain from the $2^kr$ analysis. So at the end we can say that the throughput depends mainly from the traffic and from the mean inter-arrival time, this is good because this means that the effect of collisions doesn't not affect so much the overall performance of the network protocol. In fact in the high traffic condition there are more collisions w.r.t. to the scenario with low traffic, but nevertheless the throughput it is not affected by this.
 
-\noindent \colorbox{yellow}{Now let analyse the fairness} of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{img: insight2_throughput}, we show one figure for both cases because they are indeed equals.
+%\noindent \colorbox{yellow}{Now let analyse the fairness} of the network protocol for what regards the throughput. It's possible to see the Lorenz Curve for both scenarios in figure \ref{img: insight2_throughput}, we show one figure for both cases because they are indeed equals.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{img/lorenz_throughput.png}
-	\caption{\colorbox{yellow}{Insight 2}}
-	\label{img: insight2_throughput}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{img/lorenz_throughput.png}
+%	\caption{\colorbox{yellow}{Insight 2}}
+%	\label{img: insight2_throughput}
+%\end{figure}
 
-\noindent \colorbox{yellow}{As we can see in the plot in all cases} the network protocol is fair for what regards the throughput.
+%\noindent \colorbox{yellow}{As we can see in the plot in all cases} the network protocol is fair for what regards the throughput.
 
 \subsubsection{Response Time}
 For what concerns the response time we set these two scenarios:
@@ -227,22 +227,22 @@ For what concerns the response time we set these two scenarios:
 
 \noindent From the figure we can infer that in the \textbf{high traffic scenario the response time is higher} than the low traffic scenario, this is something normal. Then we can also say that the m\textbf{ean response time decreases with the increasing of the send probability} (as we expected from the $r2^k$ analysis) and that the \textbf{differences between the two scenarios are lower when p increases}. The greater value is about 0.17 seconds that are equal to 170 ms which is not a good response time but it is acceptable one and it is a response time which can be experimented also by other network protocols.
 
-\noindent \colorbox{yellow}{Now let focus on the fairness} of the protocol as regards the response time. We can see Lorenz Curve for the high traffic scenario in figure \ref{img: insight2_respTime} and Lorenz Curve for the low traffic scenario in figure \ref{img: insight3_respTime}.
+%\noindent \colorbox{yellow}{Now let focus on the fairness} of the protocol as regards the response time. We can see Lorenz Curve for the high traffic scenario in figure \ref{img: insight2_respTime} and Lorenz Curve for the low traffic scenario in figure \ref{img: insight3_respTime}.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{img/LorenzHighTraffic.png}
-	\caption{Insight 2}
-	\label{img: insight2_respTime}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{img/LorenzLowTraffic.png}
-	\caption{Insight 3}
-	\label{img: insight3_respTime}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{img/LorenzHighTraffic.png}
+%	\caption{Insight 2}
+%	\label{img: insight2_respTime}
+%\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{img/LorenzLowTraffic.png}
+%	\caption{Insight 3}
+%	\label{img: insight3_respTime}
+%\end{figure}
 
-\noindent \colorbox{yellow}{We can see that in both cases} the curve related to the simulation scenarios are very close to the line of maximum fairness (in the case of low traffic they are overlapping). So we can say that the network protocol is absolutely fair for what regards the response time, whatsoever be the traffic condition.
+%\noindent \colorbox{yellow}{We can see that in both cases} the curve related to the simulation scenarios are very close to the line of maximum fairness (in the case of low traffic they are overlapping). So we can say that the network protocol is absolutely fair for what regards the response time, whatsoever be the traffic condition.
 
 \subsection{Response Time Explosion Scenario Study}
 In this chapter we will study more deeply the case in which we have a low mean inter-arrival time which lead to the "explosion" of the response time. Due to the fact that a \textbf{huge number of collision is expected}, in order to obtain insights for the throughput we created two other sub-scenarios: 

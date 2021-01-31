@@ -27,6 +27,7 @@ void Channel::initialize()
     // Array Initialization
     int numOfChannels = getAncestorPar("numChannels");
 
+    //Handler for degeneracy test
     if(numOfChannels==0)
         endSimulation();
 
@@ -131,8 +132,7 @@ void Channel::transmission()
             cMessage* ack = new cMessage("ACK");
             send(ack,"out_tx",idGate);
 
-            // Send the pkt to the receiver
-            //int idRx = packetsOfSlot_[i]->getIdReceiver();
+            //Send the pkt to the receiver
             //Reused indexTx to get the id of the port
             EV << "Sended packet to Receiver " << idGate<< endl;
             send(packetsOfSlot_[i],"out_rx",idGate);
@@ -147,7 +147,7 @@ void Channel::transmission()
         }
     }
 
-    // Emit throughput (num channel with packets sent in the current timeslot)
+    // Emit throughput (number of packets successfully sent in the current time-slot)
     EV << "CH: sent " << packetSent << " packets" << endl;
 
     if(isCollided_.size() > 0)

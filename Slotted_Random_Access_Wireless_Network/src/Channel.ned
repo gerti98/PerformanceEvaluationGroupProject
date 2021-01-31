@@ -24,13 +24,17 @@ simple Channel
 
         double timeSlotSize @unit(s);
 		
-		//For Utility to consider all packets
+		//For Utility to consider all packets (links does not have
+		//propagation delay, so when a packet is judged successfully sent
+		//can be calculated the response time
 		@signal[wholeResponseTimeSignal](type="double");
 		@statistic[wholeResponseTime](source="wholeResponseTimeSignal"; record=vector,mean);
 		
+		//Counts collisions in the channel
 		@signal[collisionSignal](type="long");
         @statistic[collisions](source="collisionSignal"; record=vector,sum);
         
+        //Measures throughput (in terms of packets sent per slot)
         @signal[throughputSignal](type="long");
         @statistic[throughput](source="throughputSignal"; record=vector,sum,mean);
 

@@ -93,7 +93,7 @@ void Transmitter::handleArrivedPacket(cMessage* msg){
     EV << "TX-" << id << ": arrival packet inserted into the buffer " << endl;
     pkt->setIdTransmitter(id);
 
-    //Channel linking at the packet arrival (if relative boolean is set
+    //Channel linking at the packet arrival (if relative boolean is set)
     if(!par("changeOfChannelAfterCollision"))
         pkt->setIdChannel(intuniform(0, numChannels - 1, 2));
 

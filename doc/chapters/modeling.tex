@@ -16,11 +16,11 @@ The following general assumptions have been made:
 \subsection{Preliminar Validation}
 Before the implementation a preliminar validation phase is necessary to ensure that the model is correct. Let analyze if the assumptions made in the previous section are reasonable:
 \begin{itemize}
-	\item The \textbf{slotted assumption} (transmission only at the beginning of the timeslot) is reasonable due to the fact that exist some network protocols which work under this assumption, see for instance Slotted Aloha \colorbox{yellow}{that is the most famous one}.
+	\item The \textbf{slotted assumption} (transmission only at the beginning of the timeslot) is reasonable due to the fact that exist some network protocols which work under this assumption, see for instance Slotted Aloha. % \colorbox{yellow}{that is the most famous one}.
 	\item We consider the \textbf{packet size constant} because if the packet length is so large that more than one slots are needed, we can consider, from the viewpoint of the model, that this unique packet send in two different slots is like two packets of fixed-length send each one in a slot. Taken this into account is reasonable to state that the packet size is constant and that one packet is transmitted within a slot (if no collisions occur).
 	\item The critical issue of every slotted network is the one related to the \textbf{collisions}: they have an huge impact on the general performance of the network, so it is reasonable to neglect the other propagation errors that are not network-specific or that depend from the environment (as path-loss).
 	\item It's reasonable that the transmitter and the receiver are \textbf{synchronized with the time-slot period}, in fact other slotted-based network as slotted ALOHA requires a synchronization of this type.
-	\item \colorbox{yellow}{When a packet collide it's reasonable} to think that the transmitter will change the transmission channel in order to avoid another collision. Indeed this along with the back-off time are the techniques that should avoid another collision. 
+	%\item \colorbox{yellow}{When a packet collide it's reasonable} to think that the transmitter will change the transmission channel in order to avoid another collision. Indeed this along with the back-off time are the techniques that should avoid another collision. 
 \end{itemize}
 \subsection{Factors}
 The following factors have been defined which may affect the performance of the system:

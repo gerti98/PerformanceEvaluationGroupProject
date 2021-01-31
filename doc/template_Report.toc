@@ -21,26 +21,26 @@
 \contentsline {subsection}{\numberline {4.3}Consistency Test}{7}%
 \contentsline {paragraph}{Test 1}{7}%
 \contentsline {paragraph}{Test 2: Two couple TX-RX with half packets arrival rate}{7}%
-\contentsline {subsection}{\numberline {4.4}Continuity Test}{9}%
-\contentsline {paragraph}{Monotonicity Assessment:}{11}%
-\contentsline {subsection}{\numberline {4.5}Test Simulations with Binomial Model (1)}{14}%
-\contentsline {paragraph}{Parameters}{14}%
-\contentsline {subsection}{\numberline {4.6}Test Simulations with Collisions (2)}{15}%
-\contentsline {paragraph}{Parameters}{15}%
-\contentsline {section}{\numberline {5}Simulations Experiments}{20}%
-\contentsline {subsection}{\numberline {5.1}Study on Response Time Limits}{20}%
-\contentsline {subsection}{\numberline {5.2}Scenario Calibration}{21}%
-\contentsline {paragraph}{Limited Response Time Scenario}{21}%
-\contentsline {paragraph}{Explosion of Response Time Scenario}{21}%
-\contentsline {subsection}{\numberline {5.3}Calibration of Warm-Up Period and Simulation duration}{22}%
-\contentsline {subsection}{\numberline {5.4}Limited Response Time Scenario Study}{22}%
-\contentsline {subsubsection}{\numberline {5.4.1}Factorial Analysis $2^kr$ on Throughput}{22}%
-\contentsline {subsubsection}{\numberline {5.4.2}Factorial Analysis $2^kr$ on Response Time}{24}%
-\contentsline {subsubsection}{\numberline {5.4.3}$2^kr$ Overall Results}{26}%
-\contentsline {subsection}{\numberline {5.5}Limited Response Time Scenario: Result Analysis}{26}%
-\contentsline {subsubsection}{\numberline {5.5.1}Throughput}{26}%
-\contentsline {subsubsection}{\numberline {5.5.2}Response Time}{28}%
-\contentsline {subsection}{\numberline {5.6}Response Time Explosion Scenario Study}{30}%
-\contentsline {subsubsection}{\numberline {5.6.1}$2^kr$ Overall Results}{30}%
-\contentsline {subsection}{\numberline {5.7}Response Time Explosion Scenario: Result Analysis}{31}%
-\contentsline {section}{\numberline {6}Conclusions}{33}%
+\contentsline {subsection}{\numberline {4.4}Continuity Test}{8}%
+\contentsline {paragraph}{Monotonicity Assessment:}{10}%
+\contentsline {subsection}{\numberline {4.5}Test Simulations with Binomial Model (1)}{11}%
+\contentsline {paragraph}{Parameters}{11}%
+\contentsline {subsection}{\numberline {4.6}Test Simulations with Collisions (2)}{13}%
+\contentsline {paragraph}{Parameters}{13}%
+\contentsline {section}{\numberline {5}Simulations Experiments}{15}%
+\contentsline {subsection}{\numberline {5.1}Study on Response Time Limits}{15}%
+\contentsline {subsection}{\numberline {5.2}Scenario Calibration}{16}%
+\contentsline {paragraph}{Limited Response Time Scenario}{16}%
+\contentsline {paragraph}{Explosion of Response Time Scenario}{16}%
+\contentsline {subsection}{\numberline {5.3}Calibration of Warm-Up Period and Simulation duration}{17}%
+\contentsline {subsection}{\numberline {5.4}Limited Response Time Scenario Study}{17}%
+\contentsline {subsubsection}{\numberline {5.4.1}Factorial Analysis $2^kr$ on Throughput}{17}%
+\contentsline {subsubsection}{\numberline {5.4.2}Factorial Analysis $2^kr$ on Response Time}{19}%
+\contentsline {subsubsection}{\numberline {5.4.3}$2^kr$ Overall Results}{20}%
+\contentsline {subsection}{\numberline {5.5}Limited Response Time Scenario: Result Analysis}{20}%
+\contentsline {subsubsection}{\numberline {5.5.1}Throughput}{20}%
+\contentsline {subsubsection}{\numberline {5.5.2}Response Time}{21}%
+\contentsline {subsection}{\numberline {5.6}Response Time Explosion Scenario Study}{22}%
+\contentsline {subsubsection}{\numberline {5.6.1}$2^kr$ Overall Results}{23}%
+\contentsline {subsection}{\numberline {5.7}Response Time Explosion Scenario: Result Analysis}{23}%
+\contentsline {section}{\numberline {6}Conclusions}{26}%
