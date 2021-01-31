@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  31 JAN 2021 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  31 JAN 2021 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -651,13 +651,9 @@ osionChangeVSNoChange.png>] [25]
 \openout2 = `chapters/conclusions.aux'.
 
  (./chapters/conclusions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
-LaTeX Warning: Reference `img: insight2_throughput' on page 26 undefined on inp
-ut line 5.
-
-
-LaTeX Warning: Reference `img: insight2_respTime' on page 26 undefined on input
- line 5.
+ []
 
 ) [26
 
@@ -667,17 +663,14 @@ LaTeX Warning: Reference `img: insight2_respTime' on page 26 undefined on input
 (./chapters/verification.aux) (./chapters/simulation_experiments.aux)
 (./chapters/conclusions.aux))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7923 strings out of 483183
- 121097 string characters out of 5966291
+ 7921 strings out of 483183
+ 121047 string characters out of 5966291
  389842 words of memory out of 5000000
- 22768 multiletter control sequences out of 15000+600000
+ 22766 multiletter control sequences out of 15000+600000
  541144 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,10n,43p,1249b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -695,7 +688,7 @@ sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on template_Report.pdf (27 pages, 1188735 bytes).
+Output written on template_Report.pdf (27 pages, 1187623 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
