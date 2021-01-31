@@ -1,46 +1,46 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Introduction}{2}%
-\contentsline {subsection}{\numberline {1.1}Problem Description}{2}%
-\contentsline {subsection}{\numberline {1.2}Objectives}{2}%
-\contentsline {subsection}{\numberline {1.3}Performance Indexes}{2}%
-\contentsline {section}{\numberline {2}Modeling}{3}%
-\contentsline {subsection}{\numberline {2.1}Introduction}{3}%
-\contentsline {subsection}{\numberline {2.2}General Assumptions}{3}%
-\contentsline {subsection}{\numberline {2.3}Preliminar Validation}{3}%
-\contentsline {subsection}{\numberline {2.4}Factors}{4}%
-\contentsline {section}{\numberline {3}Implementation}{5}%
-\contentsline {subsection}{\numberline {3.1}Modules}{5}%
-\contentsline {subsection}{\numberline {3.2}Messages}{5}%
-\contentsline {subsection}{\numberline {3.3}Modules Behaviour}{5}%
-\contentsline {subsubsection}{\numberline {3.3.1}\textit {Transmitter} Module Behaviour in the implementation}{5}%
-\contentsline {subsubsection}{\numberline {3.3.2}\textit {Channel} Module Behaviour in the implementation}{6}%
-\contentsline {subsubsection}{\numberline {3.3.3}\textit {Receiver} Module Behaviour in the implementation:}{6}%
-\contentsline {section}{\numberline {4}Verification}{7}%
-\contentsline {subsection}{\numberline {4.1}Deterministic and Simple Cases}{7}%
-\contentsline {subsection}{\numberline {4.2}Degeneracy Tests}{7}%
-\contentsline {subsection}{\numberline {4.3}Consistency Test}{7}%
-\contentsline {paragraph}{Test 1}{7}%
-\contentsline {paragraph}{Test 2: Two couple TX-RX with half packets arrival rate}{7}%
-\contentsline {subsection}{\numberline {4.4}Continuity Test}{8}%
-\contentsline {paragraph}{Monotonicity Assessment:}{10}%
-\contentsline {subsection}{\numberline {4.5}Test Simulations with Binomial Model (1)}{11}%
-\contentsline {paragraph}{Parameters}{11}%
-\contentsline {subsection}{\numberline {4.6}Test Simulations with Collisions (2)}{12}%
-\contentsline {paragraph}{Parameters}{13}%
-\contentsline {section}{\numberline {5}Simulations Experiments}{15}%
-\contentsline {subsection}{\numberline {5.1}Study on Response Time Limits}{15}%
-\contentsline {subsection}{\numberline {5.2}Scenario Calibration}{16}%
-\contentsline {paragraph}{Limited Response Time Scenario}{16}%
-\contentsline {paragraph}{Explosion of Response Time Scenario}{16}%
-\contentsline {subsection}{\numberline {5.3}Calibration of Warm-Up Period and Simulation duration}{16}%
-\contentsline {subsection}{\numberline {5.4}Limited Response Time Scenario Study}{17}%
-\contentsline {subsubsection}{\numberline {5.4.1}Factorial Analysis $2^kr$ on Throughput}{17}%
-\contentsline {subsubsection}{\numberline {5.4.2}Factorial Analysis $2^kr$ on Response Time}{19}%
-\contentsline {subsubsection}{\numberline {5.4.3}$2^kr$ Overall Results}{20}%
-\contentsline {subsection}{\numberline {5.5}Limited Response Time Scenario: Result Analysis}{20}%
-\contentsline {subsubsection}{\numberline {5.5.1}Throughput}{20}%
-\contentsline {subsubsection}{\numberline {5.5.2}Response Time}{21}%
-\contentsline {subsection}{\numberline {5.6}Response Time Explosion Scenario Study}{22}%
-\contentsline {subsubsection}{\numberline {5.6.1}$2^kr$ Overall Results}{23}%
-\contentsline {subsection}{\numberline {5.7}Response Time Explosion Scenario: Result Analysis}{23}%
-\contentsline {section}{\numberline {6}Conclusions}{25}%
+\contentsline {section}{\numberline {1}Introduction}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Problem Description}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Objectives}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Performance Indexes}{2}{}%
+\contentsline {section}{\numberline {2}Modeling}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {2.2}General Assumptions}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Preliminar Validation}{3}{}%
+\contentsline {subsection}{\numberline {2.4}Factors}{4}{}%
+\contentsline {section}{\numberline {3}Implementation}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Modules}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Messages}{5}{}%
+\contentsline {subsection}{\numberline {3.3}Modules Behaviour}{5}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}\textit {Transmitter} Module Behaviour in the implementation}{5}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}\textit {Channel} Module Behaviour in the implementation}{6}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}\textit {Receiver} Module Behaviour in the implementation:}{6}{}%
+\contentsline {section}{\numberline {4}Verification}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Deterministic and Simple Cases}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Degeneracy Tests}{7}{}%
+\contentsline {subsection}{\numberline {4.3}Consistency Test}{7}{}%
+\contentsline {paragraph}{Test 1}{7}{}%
+\contentsline {paragraph}{Test 2: Two couple TX-RX with half packets arrival rate}{7}{}%
+\contentsline {subsection}{\numberline {4.4}Continuity Test}{8}{}%
+\contentsline {paragraph}{Monotonicity Assessment:}{10}{}%
+\contentsline {subsection}{\numberline {4.5}Test Simulations with Binomial Model (1)}{11}{}%
+\contentsline {paragraph}{Parameters}{11}{}%
+\contentsline {subsection}{\numberline {4.6}Test Simulations with Collisions (2)}{12}{}%
+\contentsline {paragraph}{Parameters}{13}{}%
+\contentsline {section}{\numberline {5}Simulations Experiments}{15}{}%
+\contentsline {subsection}{\numberline {5.1}Study on Response Time Limits}{15}{}%
+\contentsline {subsection}{\numberline {5.2}Scenario Calibration}{16}{}%
+\contentsline {paragraph}{Limited Response Time Scenario}{16}{}%
+\contentsline {paragraph}{Explosion of Response Time Scenario}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Calibration of Warm-Up Period and Simulation duration}{16}{}%
+\contentsline {subsection}{\numberline {5.4}Limited Response Time Scenario Study}{17}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}Factorial Analysis $2^kr$ on Throughput}{17}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}Factorial Analysis $2^kr$ on Response Time}{19}{}%
+\contentsline {subsubsection}{\numberline {5.4.3}$2^kr$ Overall Results}{20}{}%
+\contentsline {subsection}{\numberline {5.5}Limited Response Time Scenario: Result Analysis}{20}{}%
+\contentsline {subsubsection}{\numberline {5.5.1}Throughput}{20}{}%
+\contentsline {subsubsection}{\numberline {5.5.2}Response Time}{21}{}%
+\contentsline {subsection}{\numberline {5.6}Response Time Explosion Scenario Study}{22}{}%
+\contentsline {subsubsection}{\numberline {5.6.1}$2^kr$ Overall Results}{23}{}%
+\contentsline {subsection}{\numberline {5.7}Response Time Explosion Scenario: Result Analysis}{23}{}%
+\contentsline {section}{\numberline {6}Conclusions}{25}{}%

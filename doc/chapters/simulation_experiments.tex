@@ -75,14 +75,14 @@ In order to analyse the contribution of the factors on the throughput performanc
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/QQplot_2kr_throughput.png}
+	\includegraphics[width=0.85\textwidth]{img/QQplot_2kr_throughput.png}
 	\caption{QQ Plot for testing the normal hypothesis}
 	\label {img: qqplot_throughput}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/homoskedasticity_2kr_throughput.png}
+	\includegraphics[width=0.85\textwidth]{img/homoskedasticity_2kr_throughput.png}
 	\caption{QQ Plot for testing homoskedasticity}
 	\label {img: homoskedasticity_throughput}
 \end{figure}
@@ -139,6 +139,12 @@ Now let analyse the contribution of factors on the other KPI, the \textbf{Respon
 \newpage
 \subsubsection{$2^kr$ Overall Results}
 As a reference, in the table \ref{tab: 2kr_results} we can see the results obtained through the $r2^k$ analysis.
+\begin{itemize}
+	\item Number of Couples Tx-Rx: [5, 30] \textbf{(A)}
+	\item Number of Channels C : [6, 100] \textbf{(B)}
+	\item Send Probability p: [0.1, 0.5] \textbf{(C)}
+	\item Mean Inter-arrival Time: [125ms, 500ms] \textbf{(D)}    
+\end{itemize}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
