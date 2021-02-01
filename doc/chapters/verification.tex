@@ -187,7 +187,7 @@ Where $n$ represents the number of repeated trials and $i$ the number of success
 \end{align*}
 In our context we can state the following:
 \begin{equation}
-	n = \left \lfloor{\dfrac{T_{slot}}{T_{sim}}}\right \rfloor = 1800
+	n = \left \lfloor{\dfrac{T_{sim}}{T_{slot}}}\right \rfloor = 1800
 \end{equation}
 We would expect in the case of $p = 0.5$:
 \begin{equation}
@@ -227,7 +227,7 @@ This test simulation has been performed with the following parameters:
 
 \noindent The \textbf{probability of a successful transmission in a particular time-slot}, in this case, is the following:
 \begin{equation}
-	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmit"\} = N\cdot p \cdot(1-p)^{N-1}
+	P\{" successful\ transmission"\} = P\{"only\ one\ tx\ transmits"\} = N\cdot p \cdot(1-p)^{N-1}
 \end{equation}
 This probability of successful transmission can be seen as the mean throughput of the system in the single channel case. In fact, let $N_{p}$ the number of packets successfully sent to the corresponding receiver, $N_{t}$ the number of time-slot considered in the count:
 \begin{align*}
