@@ -2,7 +2,7 @@
 
 Project carried out as part of the *Performance Evaluation of Computer Systems and Networks* Exam.
 
-**Project Specifics**:
+**Project Specifications**:
 
 In a *slotted random-access network*, **N** couples transmitter-receiver share the same communication
 medium, which consists of **C** separate channels. Multiple attempts to use the same channel in the
